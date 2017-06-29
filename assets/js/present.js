@@ -80,7 +80,7 @@ var sid = {};
 
 function showresult(stru) {
     if (stru.length == 0) {
-        $('#searchinfo').text("Search Box is Empty!");
+        $('#searchinfo').empty();
         $('#searchresults').empty();
         return false;
     } else {
@@ -99,7 +99,7 @@ function showresult(stru) {
         }, function(data) {
             var searchcount = data.count;
             if (searchcount == 0) {
-                var resultText = "No Shabads Found! Please Check Your Input";
+                var resultText = "No Shabads Found!";
                 $('#searchresults').empty();
             } else {
                 $('#searchresults').empty();
@@ -130,9 +130,9 @@ function showresult(stru) {
                     $('#searchresults').append(html);
                 });
                 if (searchcount == 1) {
-                    var resultText = "Your Search Returned 1 Shabad";
+                    var resultText = "Found 1 Shabad";
                 } else {
-                    var resultText = "Your Search Returned " + searchcount + " Shabads";
+                    var resultText = "Found " + searchcount + " Shabads";
                 }
             }
             $('#searchinfo').text(resultText);
@@ -201,10 +201,10 @@ function showang(angnum) {
         if (searchcount == 0) {
             var resultText = "No Page Found!";
         } else if (searchcount == 1) {
-            var resultText = "Found 1 Line on Page " + angnum;
+            var resultText = "Found 1 Line";
             $('#divShowMore').hide();
         } else {
-            resultText = "Found " + searchcount + " Lines on Page " + angnum;
+            resultText = "Found " + searchcount + " Lines";
         }
         $('#searchinfo').text(resultText);
     });
