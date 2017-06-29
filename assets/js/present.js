@@ -62,6 +62,12 @@ $(document).ready(function() {
         localStorage.setItem('punjabipfontsize', '4');
     }
     $("#punjabifontvalue").text(localStorage.getItem('punjabipfontsize'));
+    if (localStorage.getItem('assakivaar-on') == null) {
+        localStorage.setItem('assakivaar-on', false);
+    }
+    if (localStorage.getItem('assakivaar-id') == null) {
+        localStorage.setItem('assakivaar-id', '');
+    }
 });
 
 jQuery.fn.scrollTo = function(elem, speed) {
@@ -206,6 +212,7 @@ function showang(angnum) {
 
 function getshabad(shabadid, lineid) {
     $('#shabad').empty();
+    localStorage.setItem('assakivaar-on', false);
     $.getJSON("https://api.gurbaninow.com/v2/shabad/" + shabadid, function(data) {
         localStorage.setItem('shabad', JSON.stringify(data));
         sid.minid = data.shabad[0].line.id;
@@ -232,6 +239,7 @@ function getshabad(shabadid, lineid) {
 
 function assakivaar() {
     $('#shabad').empty();
+    localStorage.setItem('assakivaar-on', true);
     $.getJSON("https://api.gurbaninow.com/dev/assakivaar", function(data) {
         localStorage.setItem('shabad', JSON.stringify(data));
         sid.minid = data.shabad[0].line.id;
@@ -240,7 +248,11 @@ function assakivaar() {
             html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
-        $("#shabad").scrollTo("#s1", 300);
+        if(localStorage.getItem('assakivaar-on') == true && localStorage.getItem('assakivaar-id') != '') {
+            setline(localStorage.getItem('assakivaar-id'));
+        } else {
+            $("#shabad").scrollTo("#s1", 300);
+        }
     });
 }
 
@@ -249,6 +261,9 @@ function setline(lineid) {
     $('.list-group-item.active').removeClass("active");
     $('#s' + lineid).addClass("active");
     $("#shabad").scrollTo("#s" + lineid, 300);
+    if(localStorage.getItem('assakivaar-on') == true) {
+        localStorage.setItem('assakivaar-id', lineid);
+    }
 }
 
 function homeline() {
