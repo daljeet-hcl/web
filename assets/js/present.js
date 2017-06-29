@@ -223,7 +223,7 @@ function getshabad(shabadid, lineid) {
                 home = "";
                 icon = "";
             }
-            html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item' + active + home + '"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\';">' + icon + shabad.line.gurmukhi.akhar + '</h3></a>';
+            html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item' + active + home + '"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + icon + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
         $("#shabad").scrollTo("#s" + lineid, 300);
@@ -237,7 +237,7 @@ function assakivaar() {
         sid.minid = data.shabad[0].line.id;
         $.each(data.shabad, function(i, shabad) {
             sid.maxid = shabad.line.id;
-            html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\';">' + shabad.line.gurmukhi.akhar + '</h3></a>';
+            html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
         $("#shabad").scrollTo("#s1", 300);
