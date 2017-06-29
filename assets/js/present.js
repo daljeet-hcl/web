@@ -118,7 +118,7 @@ function showresult(stru) {
                         var writer = shabads.shabad.writer.english;
                     }
                     var html = '<a href="javascript:void(0)" onclick="getshabad(' + shabads.shabad.shabadid + ', ' + shabads.shabad.id + ')" class="list-group-item">';
-                    html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick;">' + shabads.shabad.gurmukhi.akhar + '</h3>';
+                    html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + shabads.shabad.gurmukhi.akhar + '</h3>';
                     html += '<p class="list-group-item-text"><small><b>' + shabads.shabad.raag.english + ', ' + writer + ', ' + ang + ' ' + shabads.shabad.pageno + source + '</b></small></p>';
                     html += '</a>';
                     $('#searchresults').append(html);
@@ -186,7 +186,7 @@ function showang(angnum) {
                 var writer = lines.line.writer.english;
             }
             var html = '<a href="javascript:void(0)" onclick="getshabad(\'' + lines.line.shabadid + '\', \'' + lines.line.id + '\')" class="list-group-item">';
-            html += '<h4 class="list-group-item-heading" style="font-family: GurbaniAkharThick;">' + lines.line.gurmukhi.akhar + '</h4>';
+            html += '<h4 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + lines.line.gurmukhi.akhar + '</h4>';
             html += '<p class="list-group-item-text"><small>' + lines.line.translation.english.default+'</small></p>';
             html += '<p class="list-group-item-text"><small><b>' + lines.line.raag.english + ', ' + writer + ', ' + ang + ' ' + lines.line.pageno + source + '</b></small></p>';
             html += '</a>';
