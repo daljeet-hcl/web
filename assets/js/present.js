@@ -66,7 +66,7 @@ $(document).ready(function() {
         localStorage.setItem('assakivaar-on', false);
     }
     if (localStorage.getItem('assakivaar-id') == null) {
-        localStorage.setItem('assakivaar-id', '');
+        localStorage.setItem('assakivaar-id', 1);
     }
 });
 
@@ -248,7 +248,7 @@ function assakivaar() {
             html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
-        if(localStorage.getItem('assakivaar-on') == true && localStorage.getItem('assakivaar-id') != '') {
+        if(localStorage.getItem('assakivaar-id') != 1) {
             setline(localStorage.getItem('assakivaar-id'));
         } else {
             $("#shabad").scrollTo("#s1", 300);
