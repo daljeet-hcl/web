@@ -247,19 +247,41 @@
 						<div class="col-md-6">
 							<div class="checkbox checkbox-primary disabled">
 								<input type="checkbox" id="gurmukhi" onclick="showhide('gurmukhi');" disabled checked>
-								<label>Gurmukhi</label>
+								<label>Gurmukhi (Size: <span id="gurmukhifontvalue"></span>)</label>
 							</div>
-							<div class="checkbox">
-								<input type="checkbox" id="english" onclick="showhide('english');">
-								<label>English Translation</label>
+							<div class="btn-group btn-group-sm">
+								<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fa fa-minus" aria-hidden="true"></i></button>
+								<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus" aria-hidden="true"></i></button>
 							</div>
 							<div class="checkbox">
 								<input type="checkbox" id="transliteration" onclick="showhide('transliteration');">
-								<label>Transliteration</label>
+								<label>Transliteration <span id="transliterationfontvalue"></span>)</label>
+							</div>
+							<div id="transliterationfontsize">
+								<div class="btn-group btn-group-sm">
+									<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus" aria-hidden="true"></i></button>
+								</div>
+							</div>
+							<div class="checkbox">
+								<input type="checkbox" id="english" onclick="showhide('english');">
+								<label>English (Size: <span id="englishfontvalue"></span>)</label>
+							</div>
+							<div id="englishfontsize">
+								<div class="btn-group btn-group-sm">
+									<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus" aria-hidden="true"></i></button>
+								</div>
 							</div>
 							<div class="checkbox">
 								<input type="checkbox" id="punjabi" onclick="showhide('punjabi');">
-								<label>Punjabi Translation</label>
+								<label>Punjabi (Size: <span id="punjabifontvalue"></span>)</label>
+							</div>
+							<div id="punjabifontsize">
+								<div class="btn-group btn-group-sm">
+									<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus" aria-hidden="true"></i></button>
+									<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus" aria-hidden="true"></i></button>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -271,38 +293,6 @@
 								<input type="checkbox" id="daynight" onclick="daynight();">
 								<label>Day/Night Toggle</label>
 							</div>
-						</div>
-					</div>
-                    <hr>
-					<div>
-						Gurmukhi Font Size: <span id="gurmukhifontvalue"></span><br>
-						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fa fa-minus" aria-hidden="true"></i></button>
-							<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus" aria-hidden="true"></i></button>
-						</div>
-						<br><br>
-					</div>
-					<div id="englishfontsize">
-						English Font Size: <span id="englishfontvalue"></span><br>
-						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus" aria-hidden="true"></i></button>
-							<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus" aria-hidden="true"></i></button>
-						</div>
-						<br><br>
-					</div>
-					<div id="transliterationfontsize">
-						Transliteration Font Size: <span id="transliterationfontvalue"></span><br>
-						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus" aria-hidden="true"></i></button>
-							<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus" aria-hidden="true"></i></button>
-						</div>
-						<br><br>
-					</div>
-					<div id="punjabifontsize">
-						Punjabi Font Size: <span id="punjabifontvalue"></span><br>
-						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus" aria-hidden="true"></i></button>
-							<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus" aria-hidden="true"></i></button>
 						</div>
 					</div>
                 </div>
@@ -493,5 +483,4 @@
         </div>
     </div>
 </body>
-
 </html>
