@@ -171,10 +171,22 @@ function searchtype() {
 		var type = "First Letter (Anywhere)";
 	} else if (selectedvaluetype == '2') {
 		var lang = "Gurmukhi";
-		var type = "Full Word";
+		var type = "Full Word/Line";
 	}  else if (selectedvaluetype == '3') {
 		var lang = "English";
-		var type = "Full Word";
+		var type = "Full Word/Line";
+	} else if (selectedvaluetype == '4') {
+		var lang = "Gurmukhi";
+		var type = "Search All Words";
+	} else if (selectedvaluetype == '5') {
+		var lang = "English";
+		var type = "Search All Words";
+	} else if (selectedvaluetype == '6') {
+		var lang = "Gurmukhi";
+		var type = "Search Any Words";
+	} else if (selectedvaluetype == '7') {
+		var lang = "English";
+		var type = "Search Any Words";
 	}
 	$('#searchinfo').text("Search: " + lang + " - " + type + " - " + source);
 }
