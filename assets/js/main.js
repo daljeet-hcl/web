@@ -194,15 +194,17 @@ function searchtype() {
 function searchsetmsg() {
 	var typelist = $('select#searchtypeoption');
 	var selectedvalue = $('option:selected', typelist).val();
-	if (selectedvalue == '0' || selectedvalue == '2' || selectedvalue == '3') {
+	if (selectedvalue == '0' || selectedvalue == '1' || selectedvalue == '2' || selectedvalue == '4' || selectedvalue == '6') {
 		document.getElementById('searchbox').setAttribute('style', 'font-family: GurbaniAkharThick; font-size: 1.2em;');
 		document.getElementById('searchbox').setAttribute('placeholder', 'ਖੋਜ...');
 	}
-	if (selectedvalue == '3') {
+	if (selectedvalue == '3' || selectedvalue == '5' || selectedvalue == '7') {
 		document.getElementById('searchbox').setAttribute('style', '');
 		document.getElementById('searchbox').setAttribute('placeholder', 'Search...');
 	}
 }
+
+setInterval(searchsetmsg, 1000);
 
 $(document).keyup(function(e) {
 	if (e.which === 13) {
