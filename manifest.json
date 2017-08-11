@@ -42,7 +42,6 @@
 		"sizes": "128x128"
 	}],
 	"display": "fullscreen",
-	"orientation": "portrait-primary",
 	"theme_color": "#4B6A8B",
 	"background_color": "#222222"
 }
