@@ -1,9 +1,11 @@
 {
-	"start_url": "https://gurbaninow.com/",
+	"name": "GurbaniNow",
 	"short_name": "GurbaniNow",
-	"background_color": "#222222",
+	"description": "Modern, Clean, and Simple Way of Searching Gurbani",
+	"lang": "en-US",
+	"start_url": "/",
 	"icons": [{
-		"src": "https://gurbaninow.com/logo.png",
+		"src": "https://gurbaninow.com/icons/256.png",
 		"sizes": "256x256"
 	}, {
 		"src": "https://gurbaninow.com/icons/hdpi.png",
@@ -40,6 +42,7 @@
 		"sizes": "128x128"
 	}],
 	"display": "fullscreen",
-	"orientation": "any",
-	"name": "GurbaniNow"
+	"orientation": "portrait-primary",
+	"theme_color": "#4B6A8B",
+	"background_color": "#222222"
 }
