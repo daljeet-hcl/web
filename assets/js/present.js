@@ -24,49 +24,49 @@ $(document).ready(function() {
             showresult($('#searchbox').val());
         }
     });
-    if (localStorage.getItem('daynight') === null) {
-        localStorage.setItem('daynight', 'day');
+    if (localStorage.getItem('p.onoff.daynight') === null) {
+        localStorage.setItem('p.onoff.daynight', 'day');
     }
-    if (localStorage.getItem('daynight') === "night") {
+    if (localStorage.getItem('p.onoff.daynight') === "night") {
         $('#daynight').attr('checked', 'true');
     }
-    if (localStorage.getItem('transliterationpon') == 'true') {
+    if (localStorage.getItem('p.onoff.transliteration') == 'true') {
         $('#transliteration').attr('checked', 'true');
     }
     showhide('transliteration');
-    if (localStorage.getItem('englishpon') == 'true') {
+    if (localStorage.getItem('p.onoff.english') == 'true') {
         $('#english').attr('checked', 'true');
     }
     showhide('english');
-    if (localStorage.getItem('punjabipon') == 'true') {
+    if (localStorage.getItem('p.onoff.punjabi') == 'true') {
         $('#punjabi').attr('checked', 'true');
     }
     showhide('punjabi');
-    if (localStorage.getItem('larivaarpon') == 'true') {
+    if (localStorage.getItem('p.onoff.larivaar') == 'true') {
         $('#larivaar').attr('checked', 'true');
     }
     showhide('larivaar');
-    if (localStorage.getItem('gurmukhipfontsize') == null) {
-        localStorage.setItem('gurmukhipfontsize', '11');
+    if (localStorage.getItem('p.fontsize.gurmukhi') == null) {
+        localStorage.setItem('p.fontsize.gurmukhi', '11');
     }
-    $("#gurmukhifontvalue").text(localStorage.getItem('gurmukhipfontsize'));
-    if (localStorage.getItem('transliterationpfontsize') == null) {
-        localStorage.setItem('transliterationpfontsize', '4');
+    $("#gurmukhifontvalue").text(localStorage.getItem('p.fontsize.gurmukhi'));
+    if (localStorage.getItem('p.fontsize.transliteration') == null) {
+        localStorage.setItem('p.fontsize.transliteration', '4');
     }
-    $("#transliterationfontvalue").text(localStorage.getItem('transliterationpfontsize'));
-    if (localStorage.getItem('englishpfontsize') == null) {
-        localStorage.setItem('englishpfontsize', '5');
+    $("#transliterationfontvalue").text(localStorage.getItem('p.fontsize.transliteration'));
+    if (localStorage.getItem('p.fontsize.english') == null) {
+        localStorage.setItem('p.fontsize.english', '5');
     }
-    $("#englishfontvalue").text(localStorage.getItem('englishpfontsize'));
-    if (localStorage.getItem('punjabipfontsize') == null) {
-        localStorage.setItem('punjabipfontsize', '4');
+    $("#englishfontvalue").text(localStorage.getItem('p.fontsize.english'));
+    if (localStorage.getItem('p.fontsize.punjabi') == null) {
+        localStorage.setItem('p.fontsize.punjabi', '4');
     }
-    $("#punjabifontvalue").text(localStorage.getItem('punjabipfontsize'));
-    if (localStorage.getItem('assakivaar-on') == null) {
-        localStorage.setItem('assakivaar-on', false);
+    $("#punjabifontvalue").text(localStorage.getItem('p.fontsize.punjabi'));
+    if (localStorage.getItem('p.onoff.assakivaar') == null) {
+        localStorage.setItem('p.onoff.assakivaar', false);
     }
-    if (localStorage.getItem('assakivaar-id') == null) {
-        localStorage.setItem('assakivaar-id', '1');
+    if (localStorage.getItem('p.data.assakivaarid') == null) {
+        localStorage.setItem('p.data.assakivaarid', '1');
     }
 });
 
@@ -141,7 +141,7 @@ function showresult(stru) {
 }
 
 function fontplus(divName) {
-    var currentFontSize = localStorage.getItem(divName + 'pfontsize');
+    var currentFontSize = localStorage.getItem('p.fontsize.' + divName);
     var currentFontSizeNum = parseInt(currentFontSize);
     if (currentFontSizeNum < 12) {
         var newFontSize = currentFontSizeNum + 1;
@@ -149,12 +149,12 @@ function fontplus(divName) {
         var newFontSize = 12;
     }
     $("#" + divName + "fontvalue").text(newFontSize);
-    localStorage.setItem(divName + "pfontsize", newFontSize);
+    localStorage.setItem('p.fontsize.' + divName, newFontSize);
     return false;
 }
 
 function fontminus(divName) {
-    var currentFontSize = localStorage.getItem(divName + 'pfontsize');
+    var currentFontSize = localStorage.getItem('p.fontsize.' + divName);
     var currentFontSizeNum = parseInt(currentFontSize);
     if (currentFontSizeNum > 1) {
         var newFontSize = currentFontSizeNum - 1;
@@ -162,7 +162,7 @@ function fontminus(divName) {
         var newFontSize = 1;
     }
     $("#" + divName + "fontvalue").text(newFontSize);
-    localStorage.setItem(divName + "pfontsize", newFontSize);
+    localStorage.setItem('p.fontsize.' + divName, newFontSize);
     return false;
 }
 
@@ -211,16 +211,16 @@ function showang(angnum) {
 
 function getshabad(shabadid, lineid) {
     $('#shabad').empty();
-    localStorage.setItem('assakivaar-on', false);
+    localStorage.setItem('p.onoff.assakivaar', false);
     $.getJSON("https://api.gurbaninow.com/v2/shabad/" + shabadid, function(data) {
-        localStorage.setItem('shabad', JSON.stringify(data));
+        localStorage.setItem('p.data.shabad', JSON.stringify(data));
         sid.minid = data.shabad[0].line.id;
         $.each(data.shabad, function(i, shabad) {
             sid.maxid = shabad.line.id;
             if (lineid == shabad.line.id) {
                 $('#h' + shabadid).remove();
                 $('#history').prepend('<a href="javascript:void(0)" id="h' + shabadid + '" onclick="getshabad(' + shabadid + ', ' + shabad.line.id + ')" class="list-group-item"><span style="font-size: large; font-family: \'GurbaniAkharThick\';">' + shabad.line.gurmukhi.akhar + '</span></a>');
-                localStorage.setItem('lineid', shabad.line.id);
+                localStorage.setItem('p.data.lineid', shabad.line.id);
                 active = " active";
                 home = " home";
                 icon = '<i class="fa fa-home" aria-hidden="true"></i> ';
@@ -238,17 +238,17 @@ function getshabad(shabadid, lineid) {
 
 function assakivaar() {
     $('#shabad').empty();
-    localStorage.setItem('assakivaar-on', true);
+    localStorage.setItem('p.onoff.assakivaar', true);
     $.getJSON("https://api.gurbaninow.com/dev/assakivaar", function(data) {
-        localStorage.setItem('shabad', JSON.stringify(data));
+        localStorage.setItem('p.data.shabad', JSON.stringify(data));
         sid.minid = data.shabad[0].line.id;
         $.each(data.shabad, function(i, shabad) {
             sid.maxid = shabad.line.id;
             html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
-        if(localStorage.getItem('assakivaar-id') != "1") {
-            setline(localStorage.getItem('assakivaar-id'));
+        if(localStorage.getItem('p.data.assakivaarid') != "1") {
+            setline(localStorage.getItem('p.data.assakivaarid'));
         } else {
             $("#shabad").scrollTo("#s1", 300);
         }
@@ -256,12 +256,12 @@ function assakivaar() {
 }
 
 function setline(lineid) {
-    localStorage.setItem('lineid', lineid);
+    localStorage.setItem('p.data.lineid', lineid);
     $('.list-group-item.active').removeClass("active");
     $('#s' + lineid).addClass("active");
     $("#shabad").scrollTo("#s" + lineid, 300);
-    if(localStorage.getItem('assakivaar-on') == "true") {
-        localStorage.setItem('assakivaar-id', lineid);
+    if(localStorage.getItem('p.onoff.assakivaar') == "true") {
+        localStorage.setItem('p.data.assakivaarid', lineid);
     }
 }
 
@@ -287,7 +287,7 @@ $(document).keyup(function(e) {
         document.activeElement.blur();
     }
     if (e.which === 38) {
-        var lineid = localStorage.getItem('lineid');
+        var lineid = localStorage.getItem('p.data.lineid');
         var newid = lineid - 1;
         if (newid < sid.minid) {
             setline(sid.minid);
@@ -296,7 +296,7 @@ $(document).keyup(function(e) {
         }
     }
     if (e.which === 40) {
-        var lineid = localStorage.getItem('lineid');
+        var lineid = localStorage.getItem('p.data.lineid');
         var newid = lineid * 1 + 1;
         if (newid > sid.maxid) {
             setline(sid.maxid);
@@ -305,7 +305,7 @@ $(document).keyup(function(e) {
         }
     }
     if (e.which === 37) {
-        var lineid = localStorage.getItem('lineid');
+        var lineid = localStorage.getItem('p.data.lineid');
         var newid = lineid - 1;
         if (newid < sid.minid) {
             setline(sid.minid);
@@ -314,7 +314,7 @@ $(document).keyup(function(e) {
         }
     }
     if (e.which === 39) {
-        var lineid = localStorage.getItem('lineid');
+        var lineid = localStorage.getItem('p.data.lineid');
         var newid = lineid * 1 + 1;
         if (newid > sid.maxid) {
             setline(sid.maxid);
@@ -329,21 +329,21 @@ $(document).keyup(function(e) {
 
 function showhide(className) {
     if ($("#" + className).is(':checked')) {
-        localStorage.setItem(className + 'pon', 'true');
+        localStorage.setItem('p.onoff.' + className, 'true');
         $("#" + className + "fontsize").show();
     } else {
         $("#" + className).removeAttr('checked');
-        localStorage.setItem(className + 'pon', 'false');
+        localStorage.setItem('p.onoff.' + className, 'false');
         $("#" + className + "fontsize").hide();
     }
 }
 
 function daynight() {
-    if (localStorage.getItem('daynight') === "day") {
-        localStorage.setItem('daynight', 'night');
+    if (localStorage.getItem('p.onoff.daynight') === "day") {
+        localStorage.setItem('p.onoff.daynight', 'night');
         $('#daynight').attr('checked', 'true');
     } else {
-        localStorage.setItem('daynight', 'day');
+        localStorage.setItem('p.onoff.daynight', 'day');
         $('#daynight').attr('checked', 'false');
     }
 }
