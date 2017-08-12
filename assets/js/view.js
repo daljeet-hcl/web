@@ -4,8 +4,8 @@ function update() {
     if (localStorage.getItem('p.onoff.daynight') === 'night') {
         $("body").css('background-color', '#333');
         $("#gurmukhi").css('color', '#f1f1f1');
-        $("#english").css('color', '#217DBB');
-        $("#transliteration").css('color', '#afaeae');
+        $("#english").css('color', '#4D97C8');
+        $("#transliteration").css('color', '#BFBEBE');
         $("#punjabi").css('color', '#f1f1f1');
     } else {
         $("body").css('background-color', '#f1f1f1');
