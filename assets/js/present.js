@@ -247,7 +247,7 @@ function assakivaar() {
             html = '<a href="javascript:void(0)" id="s' + shabad.line.id + '" data-id="' + shabad.line.id + '" onclick="setline(' + shabad.line.id + ')" class="list-group-item"><h3 class="list-group-item-heading" style="font-family: \'GurbaniAkharThick\'; color: #ffffff;">' + shabad.line.gurmukhi.akhar + '</h3></a>';
             $('#shabad').append(html);
         });
-        if(localStorage.getItem('p.data.assakivaarid') != "1") {
+        if (localStorage.getItem('p.data.assakivaarid') != "1") {
             setline(localStorage.getItem('p.data.assakivaarid'));
         } else {
             $("#shabad").scrollTo("#s1", 300);
@@ -260,7 +260,7 @@ function setline(lineid) {
     $('.list-group-item.active').removeClass("active");
     $('#s' + lineid).addClass("active");
     $("#shabad").scrollTo("#s" + lineid, 300);
-    if(localStorage.getItem('p.onoff.assakivaar') == "true") {
+    if (localStorage.getItem('p.onoff.assakivaar') == "true") {
         localStorage.setItem('p.data.assakivaarid', lineid);
     }
 }
