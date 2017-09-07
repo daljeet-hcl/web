@@ -15,8 +15,10 @@ route('GET', '/', function () {
 });
 
 route('GET', '/assets/js/:file/:version/js.js', function ($args) {
-	$name = $args['file'];
-	$file = file_get_contents('assets/js/'.$name);
+	$name = realpath('assets/js/'.$args['file']);
+	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
+		$file = file_get_contents($name);
+	}
 	require('inc/php/packer.php');
 	$packer = new Tholu\Packer\Packer($file, 'Normal', true, false, true);
 	$packedjs = $packer->pack();
@@ -24,8 +26,10 @@ route('GET', '/assets/js/:file/:version/js.js', function ($args) {
 });
 
 route('GET', '/assets/css/:file/:version/css.css', function ($args) {
-	$name = $args['file'];
-	$file = file_get_contents('assets/css/'.$name);
+	$name = realpath('assets/css/'.$args['file']);
+	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
+		$file = file_get_contents($name);
+	}
 	return response($file, 200, ['content-type' => 'text/css; charset=utf-8', 'cache-control' => 'public, max-age=31536000']);
 });
 
@@ -83,6 +87,10 @@ route('GET', '/hukamnama', function () {
 
 route('GET', '/about', function () {
 	return response(file_get_contents('inc/about.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+});
+
+route('GET', '/about/opensource', function () {
+	return response(file_get_contents('inc/oss.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
 });
 
 route('GET', '/about/terms', function () {
