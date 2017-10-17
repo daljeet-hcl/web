@@ -22,7 +22,7 @@ route('GET', '/assets/js/:file/:version/js.js', function ($args) {
 	require('inc/php/packer.php');
 	$packer = new Tholu\Packer\Packer($file, 'Normal', true, false, true);
 	$packedjs = $packer->pack();
-	return response($packedjs, 200, ['content-type' => 'application/javascript; charset=utf-8', 'cache-control' => 'public, max-age=31536000']);
+	return response($packedjs, 200, ['content-type' => 'application/javascript; charset=utf-8', 'cache-control' => 'public, max-age=31536000', 'Etag' => 'W/"'.md5($packedjs).'"']);
 });
 
 route('GET', '/assets/css/:file/:version/css.css', function ($args) {
@@ -30,7 +30,7 @@ route('GET', '/assets/css/:file/:version/css.css', function ($args) {
 	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
 		$file = file_get_contents($name);
 	}
-	return response($file, 200, ['content-type' => 'text/css; charset=utf-8', 'cache-control' => 'public, max-age=31536000']);
+	return response($file, 200, ['content-type' => 'text/css; charset=utf-8', 'cache-control' => 'public, max-age=31536000', 'Etag' => 'W/"'.md5($file).'"']);
 });
 
 route('GET', '/shabad/random', function () {
