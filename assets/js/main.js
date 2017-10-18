@@ -212,5 +212,7 @@ setInterval(searchsetmsg, 1000);
 $(document).keyup(function(e) {
     if (e.which === 13) {
         document.activeElement.blur();
-    }
+    } if (e.which === 27) {
+		$('.clearbtn').show();
+	}
 });
