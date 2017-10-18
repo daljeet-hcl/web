@@ -42,13 +42,3 @@ body { padding-top: 80px; }
 	color: black;
 	border-color: transparent;
 }
-
-::-ms-clear {
-  display: none;
-}
-
-.form-control-clear {
-  z-index: 10;
-  pointer-events: auto;
-  cursor: pointer;
-}

@@ -24,14 +24,8 @@ $(document).ready(function() {
             showresult($('#searchbox').val(), true);
         }
     });
-	$('.has-clear input[type="search"]').on('input propertychange', function() {
-		var $this = $(this);
-		var visible = Boolean($this.val());
-		$this.siblings('.form-control-clear').toggleClass('hidden', !visible);
-	}).trigger('propertychange');
-	$('.form-control-clear').click(function() {
-		$(this).siblings('input[type="search"]').val('')
-		.trigger('propertychange').focus();
+	$("#searchbox").keyup(function() {
+		$('.clearbtn').show();
 	});
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         $("#presenter").hide();
