@@ -197,7 +197,7 @@
 					</div>
 				</div>
 			</span>
-			<input autocomplete="on" autocorrect="off" autocapitalize="off" spellcheck="false" id="searchbox" class="form-control" style="font-family: GurbaniAkharThick; font-size: 1.2em;" onkeyup="showresult(this.value, true);" type="search" placeholder="ਖੋਜ...">
+			<input autocomplete="false" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus id="searchbox" class="form-control" style="font-family: GurbaniAkharThick; font-size: 1.2em;" onkeyup="showresult(this.value, true);" type="search" placeholder="ਖੋਜ...">
 			<span class="input-group-btn">
 				<a href="javascript:void(0)" type="button" class="btn btn-default clearbtn" style="display: none;" onclick="$('#searchbox').val(''); $(this).hide(); $('#searchinfo').text('Search Box is Empty!'); $('#searchresults').empty();"><i class="fa fa-times-circle-o fa-lg"></i></a>
 				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult($('#searchbox').val()); document.activeElement.blur();"><i class="fa fa-search fa-lg"></i></a>
