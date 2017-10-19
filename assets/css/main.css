@@ -42,3 +42,7 @@ body { padding-top: 80px; }
 	color: black;
 	border-color: transparent;
 }
+
+input::-ms-clear {
+	display: none;
+}

@@ -25,7 +25,11 @@ $(document).ready(function() {
         }
     });
 	$("#searchbox").keyup(function() {
-		$('.clearbtn').show();
+		if ($("#searchbox").val().length == 0) {
+			$('.clearbtn').hide();
+		} else {
+			$('.clearbtn').show();
+		}
 	});
     if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         $("#presenter").hide();
@@ -35,8 +39,7 @@ $(document).ready(function() {
 function showresult(stru, ontype) {
     if (ontype == "") {
         var ontype = false;
-    }
-    if (stru.length == 0) {
+    } if (stru.length == 0) {
         $('#searchinfo').text("Search Box is Empty!");
         $('#searchresults').empty();
         return false;
