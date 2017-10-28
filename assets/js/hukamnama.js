@@ -261,13 +261,13 @@ function gethukam() {
             var splitunicodelength = unisplit.length;
             html = '<div class="sline" id="s' + shabad.line.id + '">';
             html += '<div class="gurmukhi akhar normal" style="font-family: GurbaniAkharThick;">' + shabad.line.gurmukhi.akhar + "</div>";
-            html += '<div class="gurmukhi unicode normal" style="font-family: AnmolBaniBold; display: none;">' + shabad.line.gurmukhi.unicode + "</div>";
+            html += '<div class="gurmukhi unicode normal" style="font-family: AnmolBani; font-weight: 900; display: none;">' + shabad.line.gurmukhi.unicode + "</div>";
             html += '<div class="gurmukhi akhar assist" style="font-family: GurbaniAkharThick; display: none;">';
             for (var i = 0; i < splitakharlength; i++) {
                 html += "<span>" + akharsplit[i] + "</span><wbr>";
             }
             html += "</div>";
-            html += '<div class="gurmukhi unicode assist" style="font-family: AnmolBaniBold; display: none;">';
+            html += '<div class="gurmukhi unicode assist" style="font-family: AnmolBani; font-weight: 900; display: none;">';
             for (var i = 0; i < splitunicodelength; i++) {
                 html += "<span>" + unisplit[i] + "</span><wbr>";
             }
