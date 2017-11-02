@@ -222,7 +222,7 @@ function fontminus(divName) {
 
 function togglefont(font) {
     $(".akhar").css("font-family", font);
-    localStorage.setItem("s.fontsize.", font);
+    localStorage.setItem("s.data.font", font);
 }
 
 function getshabad(shabadNo, shabadId) {
