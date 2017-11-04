@@ -46,13 +46,13 @@ route('GET', '/shabad/:shabadid', function ($args) {
 	$html .= "\n<div id=\"shabadid\" data-shabadid=\"".$args['shabadid']."\"></div>\n";
 	$html .= "<div id=\"lineid\" data-lineid=\"\"></div>\n";
 	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
-route('GET', '/dev/assakivaar', function ($args) {
+route('GET', '/dev/assakivaar', function () {
 	$html = file_get_contents('inc/dev.assakivaar.html');
 	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/shabad/:shabadid/:id', function ($args) {
@@ -60,15 +60,15 @@ route('GET', '/shabad/:shabadid/:id', function ($args) {
 	$html .= "\n<div id=\"shabadid\" data-shabadid=\"".$args['shabadid']."\"></div>\n";
 	$html .= "<div id=\"lineid\" data-lineid=\"".$args['id']."\"></div>\n";
 	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/present', function () {
-	return response(file_get_contents('inc/present.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/present.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/present/view', function () {
-	return response(file_get_contents('inc/view.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/view.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/page/:page', function ($args) {
@@ -76,7 +76,7 @@ route('GET', '/page/:page', function ($args) {
 	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
 	$html .= "<div id=\"sourceid\" data-sourceid=\"G\"></div>\n";
 	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/page/:page/:id', function ($args) {
@@ -84,28 +84,28 @@ route('GET', '/page/:page/:id', function ($args) {
 	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
 	$html .= "<div id=\"sourceid\" data-sourceid=\"".$args['id']."\"></div>\n";
 	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/hukamnama', function () {
-	return response(file_get_contents('inc/hukamnama.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/hukamnama.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/about', function () {
-	return response(file_get_contents('inc/about.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/about.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/about/opensource', function () {
-	return response(file_get_contents('inc/oss.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/oss.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/about/terms', function () {
-	return response(file_get_contents('inc/tos.html'), 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response(file_get_contents('inc/tos.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/amritkeertan', function () {
 	$html = "Coming Soon!";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/share/hukamnama', function () {
@@ -294,4 +294,3 @@ route('GET', '/share/page/:page/:id', function ($args) {
 });
 
 dispatch();
-?>
