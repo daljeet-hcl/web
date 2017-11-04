@@ -236,32 +236,6 @@ function getshabad(shabadNo, shabadId) {
     $("#shabadinfogurmukhi").empty();
     $("#shabadinfoenglish").empty();
     $.getJSON("https://api.gurbaninow.com/dev/assakivaar", function(data) {
-        if (data.shabadinfo.source.id == "G") {
-            angen = "Ang";
-            anggur = "ਅੰਗ";
-        } else if (data.shabadinfo.source.id == "D" || data.shabadinfo.source.id == "A" || data.shabadinfo.source.id == "U") {
-            angen = "Panaa";
-            anggur = "ਪੰਨਾ";
-        } else {
-            angen = "Vaar";
-            anggur = "ਵਾਰ";
-        }
-        if (data.shabadinfo.source.id == "G") {
-            raagEnglishOut = " (Sri Guru Granth Sahib Ji)";
-            raagGurOut = " (ਸ੍ਰੀ ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ ਜੀ)";
-        } else if (data.shabadinfo.source.id == "D") {
-            raagEnglishOut = " (Sri Dasam Granth)";
-            raagGurOut = " (ਸ੍ਰੀ ਦਸਮ ਗ੍ਰੰਥ)";
-        } else {
-            raagEnglishOut = "";
-            raagGurOut = "";
-        }
-        var pageno = "" + data.shabadinfo.pageno;
-        var unipagenum = pageno.replace(/0/g, "੦").replace(/1/g, "੧").replace(/2/g, "੨").replace(/3/g, "੩").replace(/4/g, "੪").replace(/5/g, "੫").replace(/6/g, "੬").replace(/7/g, "੭").replace(/8/g, "੮").replace(/9/g, "੯");
-        htmlen = data.shabadinfo.raag.english + " - " + data.shabadinfo.writer.english + " - " + '<a href="/page/' + data.shabadinfo.pageno + "/" + data.shabadinfo.source.id + '">' + angen + " " + data.shabadinfo.pageno + "</a>" + raagEnglishOut;
-        htmlgur = data.shabadinfo.raag.unicode + " - " + data.shabadinfo.writer.unicode + " - " + '<a href="/page/' + data.shabadinfo.pageno + "/" + data.shabadinfo.source.id + '">' + anggur + " " + unipagenum + "</a>" + raagGurOut;
-        $("#shabadinfoenglish").append(htmlen);
-        $("#shabadinfogurmukhi").append(htmlgur);
         $.each(data.shabad, function(i, shabad) {
             if (shabadId == shabad.line.id) {
                 active = " activeline";
