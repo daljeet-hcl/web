@@ -49,6 +49,12 @@ route('GET', '/shabad/:shabadid', function ($args) {
 	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
 });
 
+route('GET', '/dev/assakivaar', function ($args) {
+	$html = file_get_contents('inc/dev.assakivaar.html');
+	$html .= "</html>";
+	return response($html, 200, ['content-type' => 'text/html; charset=utf-8', ]);
+});
+
 route('GET', '/shabad/:shabadid/:id', function ($args) {
 	$html = file_get_contents('inc/shabad.html');
 	$html .= "\n<div id=\"shabadid\" data-shabadid=\"".$args['shabadid']."\"></div>\n";
