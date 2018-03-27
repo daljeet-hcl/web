@@ -1,0 +1,6 @@
+User-agent: * 
+Allow: /shabad/random$
+Allow: /page/1/G$
+Disallow: /shabad/*
+Disallow: /page/*
+Sitemap: https://gurbaninow.com/sitemap.xml
