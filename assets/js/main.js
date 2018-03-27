@@ -31,9 +31,6 @@ $(document).ready(function() {
 			$('.clearbtn').show();
 		}
 	});
-    if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        $("#presenter").hide();
-    }
 });
 
 function showresult(stru, ontype) {

@@ -35,12 +35,12 @@ route('GET', '/assets/css/:file/:version/css.css', function ($args) {
 
 route('GET', '/shabad', function () {
 	$shabadid = rand(1, 5540);
-	return response("", 307, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
+	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
 });
 
 route('GET', '/shabad/random', function () {
 	$shabadid = rand(1, 5540);
-	return response("", 307, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
+	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
 });
 
 route('GET', '/shabad/:shabadid', function ($args) {
@@ -51,26 +51,12 @@ route('GET', '/shabad/:shabadid', function ($args) {
 	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
-route('GET', '/dev/assakivaar', function () {
-	$html = file_get_contents('inc/dev.assakivaar.html');
-	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
-});
-
 route('GET', '/shabad/:shabadid/:id', function ($args) {
 	$html = file_get_contents('inc/shabad.html');
 	$html .= "\n<div id=\"shabadid\" data-shabadid=\"".$args['shabadid']."\"></div>\n";
 	$html .= "<div id=\"lineid\" data-lineid=\"".$args['id']."\"></div>\n";
 	$html .= "</html>";
 	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
-});
-
-route('GET', '/present', function () {
-	return response(file_get_contents('inc/present.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
-});
-
-route('GET', '/present/view', function () {
-	return response(file_get_contents('inc/view.html'), 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/page/:page', function ($args) {
