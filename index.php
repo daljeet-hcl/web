@@ -33,12 +33,14 @@ route('GET', '/assets/css/:file/:version/css.css', function ($args) {
 	return response($file, 200, ['content-type' => 'text/css; charset=utf-8', 'cache-control' => 'public, max-age=31536000', 'Etag' => 'W/"'.md5($file).'"']);
 });
 
+route('GET', '/shabad', function () {
+	$shabadid = rand(1, 5540);
+	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
+});
+
 route('GET', '/shabad/random', function () {
-	$html = file_get_contents('inc/shabad.html');
-	$html .= "\n<div id=\"shabadid\" data-shabadid=\"".rand(1, 5540)."\"></div>\n";
-	$html .= "<div id=\"lineid\" data-lineid=\"\"></div>\n";
-	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
+	$shabadid = rand(1, 5540);
+	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
 });
 
 route('GET', '/shabad/:shabadid', function ($args) {
