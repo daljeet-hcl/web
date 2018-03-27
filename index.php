@@ -35,12 +35,12 @@ route('GET', '/assets/css/:file/:version/css.css', function ($args) {
 
 route('GET', '/shabad', function () {
 	$shabadid = rand(1, 5540);
-	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
+	return response("", 307, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
 });
 
 route('GET', '/shabad/random', function () {
 	$shabadid = rand(1, 5540);
-	return response("", 302, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
+	return response("", 307, ['Location' => 'https://gurbaninow.com/shabad/'.$shabadid]);
 });
 
 route('GET', '/shabad/:shabadid', function ($args) {
