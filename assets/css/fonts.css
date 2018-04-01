@@ -1,99 +1,99 @@
 @font-face {
 	font-family: 'GurbaniAkharThick';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.svg#GurbaniAkharTrue-Black') format('svg');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.eot');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Black/GurbaniAkharTrue-Black.svg#GurbaniAkharTrue-Black') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'GurbaniAkharHeavy';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.svg#GurbaniAkharTrue-Bold') format('svg');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.eot');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Bold/GurbaniAkharTrue-Bold.svg#GurbaniAkharTrue-Bold') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'GurbaniAkhar';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.svg#GurbaniAkharTrue-Regular') format('svg');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.eot');
+	src: url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/GurbaniAkhar/Regular/GurbaniAkharTrue-Regular.svg#GurbaniAkharTrue-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'AnmolLipi';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.svg#AnmolLipiTrue-Regular') format('svg');
+	src: url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.eot');
+	src: url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Regular/AnmolLipiTrue-Regular.svg#AnmolLipiTrue-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'AnmolLipiBold';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.svg#AnmolLipiTrue-Bold') format('svg');
+	src: url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.eot');
+	src: url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/AnmolLipi/Bold/AnmolLipiTrue-Bold.svg#AnmolLipiTrue-Bold') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'NotoSansGurmukhi';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.svg#NotoSansGurmukhiTrue-Regular') format('svg');
+	src: url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.eot');
+	src: url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Regular/NotoSansGurmukhiTrue-Regular.svg#NotoSansGurmukhiTrue-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'NotoSansGurmukhiBold';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.svg#NotoSansGurmukhiTrue-Bold') format('svg');
+	src: url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.eot');
+	src: url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/NotoSansGurmukhi/Bold/NotoSansGurmukhiTrue-Bold.svg#NotoSansGurmukhiTrue-Bold') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Prabhki';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.svg#PrabhkiTrue-Regular') format('svg');
+	src: url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.eot');
+	src: url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/Prabhki/PrabhkiTrue-Regular.svg#PrabhkiTrue-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'AnmolBani';
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.eot');
-	src: url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.eot?#iefix') format('embedded-opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.woff2') format('woff2'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.woff') format('woff'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.otf')  format('opentype'),
-		url('https://gurbaninow.com/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.svg#AnmolUniBaniTrue-Regular') format('svg');
+	src: url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.eot');
+	src: url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.woff2') format('woff2'),
+		url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.woff') format('woff'),
+		url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.otf')  format('opentype'),
+		url('/assets/fonts/gurmukhi/AnmolUniBani/Regular/AnmolUniBaniTrue-Regular.svg#AnmolUniBaniTrue-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

@@ -7,7 +7,7 @@ function ready(fn) {
 }
 
 function fn() {
-    $(".gurmukhi-keyboard button").click(function() {
+    /* document.getElementsByClassName('gurmukhi-keyboard button').onclick = function() {
         if ($(this).data("action")) {
             var action = $(this).data("action");
             if (action == 'bksp') {
@@ -31,14 +31,14 @@ function fn() {
             });
             showresult($('#searchbox').val(), true);
         }
-    });
-	$("#searchbox").keyup(function() {
-		if ($("#searchbox").val().length == 0) {
-			$('.clearbtn').hide();
+    }); */
+	document.getElementById('searchbox').onkeyup = function() {
+		if (document.getElementById('searchbox').value.length === 0) {
+			document.getElementsByClassName('clearbtn').style.display = 'none';
 		} else {
-			$('.clearbtn').show();
+			document.getElementsByClassName('clearbtn').style.display = '';
 		}
-	});
+	};
 }
 
 function showresult(string, ontype) {
@@ -71,7 +71,7 @@ function showresult(string, ontype) {
 					document.getElementById('searchresults').innerHTML = '';
 				} else {
 					document.getElementById('searchresults').innerHTML = '';
-					data.shabads.forEach(function(shabads, i){
+					data.shabads.forEach(function(shabads, i) {
 						if (shabads.shabad.source.id == "G") {
 							var ang = 'Ang';
 						} else if (shabads.shabad.source.id == "D" || shabads.shabad.source.id == "A" || shabads.shabad.source.id == "U") {
@@ -119,55 +119,67 @@ function showresult(string, ontype) {
 }
 
 function showang(angnum) {
-    $('#searchresults').empty();
-    $('#searchinfo').text('Searching...');
-    $.getJSON("https://api.gurbaninow.com/v2/ang/" + angnum + "/" + $('#sourceoption').val(), "", function(data) {
-        var searchcount = data.count;
-        $.each(data.page, function(i, lines) {
-            if (data.source.id == "G") {
-                var ang = 'Ang';
-            } else if (data.source.id == "D" || data.source.id == "A" || data.source.id == "U") {
-                var ang = 'Panaa';
-            } else {
-                var ang = 'Vaar';
-            }
-            if (data.source.id == "G") {
-                var source = " (SGGS)";
-            } else if (data.source.id == "D") {
-                var source = " (Sri Dasam Granth)";
-            } else {
-                var source = "";
-            }
-            if (lines.line.writer.english === "") {
-                var writer = lines.line.raag.english;
-            } else {
-                var writer = lines.line.writer.english;
-            }
-            var html = "<div class=\"list-group\">";
-            html += '<a href="/shabad/' + lines.line.shabadid + '/' + lines.line.id + '" class="list-group-item">';
-            html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + lines.line.gurmukhi.akhar + '</h3>';
-            html += '<p class="list-group-item-text"><small>' + lines.line.translation.english.default+'</small></p>';
-            html += '<p class="list-group-item-text"><small><b>' + lines.line.raag.english + ', ' + writer + ', ' + ang + ' ' + lines.line.pageno + source + '</b></small></p>';
-            html += '</a>';
-            html += '</div>';
-            $('#searchresults').append(html);
-        });
-        if (searchcount == 0) {
-            var resultText = "No Page Found! Please Check Your Input";
-        } else if (searchcount == 1) {
-            var resultText = "Your Search Returned 1 Line on Page " + angnum;
-            $('#divShowMore').hide();
-        } else {
-            resultText = "Your Search Returned " + searchcount + " Lines on Page " + angnum;
-        }
-        $('#searchinfo').text(resultText);
-    });
+    document.getElementById('searchresults').innerHTML = '';
+    document.getElementById('searchinfo').textContent = 'Searching...';
+	var source = document.getElementById('sourceoption').value;
+	var request = new XMLHttpRequest();
+	var url = GurbaniNow.buildApiUrl({ang: angnum, source: source});
+	request.open('GET', url, true);
+	request.onload = function() {
+		if (this.status >= 200 && this.status < 400) {
+			var data = JSON.parse(this.response);
+			var searchcount = data.count;
+			data.page.forEach(function(lines, i) {
+				if (data.source.id == "G") {
+					var ang = 'Ang';
+				} else if (data.source.id == "D" || data.source.id == "A" || data.source.id == "U") {
+					var ang = 'Panaa';
+				} else {
+					var ang = 'Vaar';
+				}
+				if (data.source.id == "G") {
+					var source = " (SGGS)";
+				} else if (data.source.id == "D") {
+					var source = " (Sri Dasam Granth)";
+				} else {
+					var source = "";
+				}
+				if (lines.line.writer.english === "") {
+					var writer = lines.line.raag.english;
+				} else {
+					var writer = lines.line.writer.english;
+				}
+				var html = "<div class=\"list-group\">";
+				html += '<a href="/shabad/' + lines.line.shabadid + '/' + lines.line.id + '" class="list-group-item">';
+				html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + lines.line.gurmukhi.akhar + '</h3>';
+				html += '<p class="list-group-item-text"><small>' + lines.line.translation.english.default+'</small></p>';
+				html += '<p class="list-group-item-text"><small><b>' + lines.line.raag.english + ', ' + writer + ', ' + ang + ' ' + lines.line.pageno + source + '</b></small></p>';
+				html += '</a>';
+				html += '</div>';
+				document.getElementById('searchresults').appendChild(html);
+			});
+			if (searchcount === 0) {
+				var resultText = "No Page Found! Please Check Your Input";
+			} else if (searchcount === 1) {
+				var resultText = "Your Search Returned 1 Line on Page " + angnum;
+			} else {
+				resultText = "Your Search Returned " + searchcount + " Lines on Page " + angnum;
+			}
+			document.getElementById('searchinfo').textContent = resultText;
+		} else {
+			document.getElementById('searchinfo').textContent = 'An Error has occurred, Try Again.';
+		}
+	};
+	request.onerror = function() {
+		document.getElementById('searchinfo').textContent = 'An Error has occurred, Try Again.';
+	};
+	request.send();
 }
 
 function searchtype() {
-    var selectedvaluesource = $('option:selected', $('select#sourceoption')).val();
-    var selectedvaluetype = $('option:selected', $('select#searchtypeoption')).val();
-    if (selectedvaluesource == '') {
+    var selectedvaluesource = document.getElementById('sourceoption').value;
+    var selectedvaluetype = document.getElementById('searchtypeoption').value;
+    if (selectedvaluesource === '') {
         var source = "All Scriptures";
     } else if (selectedvaluesource == 'G') {
         var source = "Sri Guru Granth Sahib";
@@ -207,12 +219,11 @@ function searchtype() {
         var lang = "English";
         var type = "Search Any Words";
     }
-    $('#searchinfo').text("Search: " + lang + " - " + type + " - " + source);
+    document.getElementById('searchinfo').textContent = 'Search: ' + lang + ' - ' + type + ' - ' + source;
 }
 
 function searchsetmsg() {
-    var typelist = $('select#searchtypeoption');
-    var selectedvalue = $('option:selected', typelist).val();
+    var selectedvalue = document.getElementById('searchtypeoption').value;
     if (selectedvalue == '0' || selectedvalue == '1' || selectedvalue == '2' || selectedvalue == '4' || selectedvalue == '6') {
         document.getElementById('searchbox').setAttribute('style', 'font-family: GurbaniAkharThick; font-size: 1.2em;');
         document.getElementById('searchbox').setAttribute('placeholder', 'ਖੋਜ...');
@@ -225,10 +236,10 @@ function searchsetmsg() {
 
 setInterval(searchsetmsg, 1000);
 
-$(document).keyup(function(e) {
+document.onkeyup = function(e) {
     if (e.which === 13) {
         document.activeElement.blur();
     } if (e.which === 27) {
-		$('.clearbtn').hide();
+		document.getElementById('clearbtn').style.display = 'none';
 	}
-});
+};
