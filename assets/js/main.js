@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('load', function() {
     /* document.getElementsByClassName('gurmukhi-keyboard button').onclick = function() {
         if ($(this).data("action")) {
             var action = $(this).data("action");
@@ -175,49 +175,25 @@ function showang(angnum) {
 }
 
 function searchtype() {
-    var selectedvaluesource = document.getElementById('sourceoption').value;
     var selectedvaluetype = document.getElementById('searchtypeoption').value;
-    if (selectedvaluesource === '') {
-        var source = "All Scriptures";
-    } else if (selectedvaluesource == 'G') {
-        var source = "Sri Guru Granth Sahib";
-    } else if (selectedvaluesource == 'D') {
-        var source = "Sri Dasam Granth";
-    } else if (selectedvaluesource == 'B') {
-        var source = "Bhai Gurdas Ji Vaaran";
-    } else if (selectedvaluesource == 'N') {
-        var source = "Bhai Nand Lal Ji Guzals";
-    } else if (selectedvaluesource == 'A') {
-        var source = "Amrit Keertan";
-    } else if (selectedvaluesource == 'U') {
-        var source = "Uggardanti";
-    }
     if (selectedvaluetype == '0') {
-        var lang = "Gurmukhi";
-        var type = "First Letter (Start)";
+        var type = 'Gurmukhi - First Letter (Start)';
     } else if (selectedvaluetype == '1') {
-        var lang = "Gurmukhi";
-        var type = "First Letter (Anywhere)";
+        var type = 'Gurmukhi - First Letter (Anywhere)';
     } else if (selectedvaluetype == '2') {
-        var lang = "Gurmukhi";
-        var type = "Full Word/Line";
+        var type = 'Gurmukhi - Full Word/Line';
     } else if (selectedvaluetype == '3') {
-        var lang = "English";
-        var type = "Full Word/Line";
+        var type = 'English - Full Word/Line';
     } else if (selectedvaluetype == '4') {
-        var lang = "Gurmukhi";
-        var type = "Search All Words";
+        var type = 'Gurmukhi - Search All Words';
     } else if (selectedvaluetype == '5') {
-        var lang = "English";
-        var type = "Search All Words";
+        var type = 'English - Search All Words';
     } else if (selectedvaluetype == '6') {
-        var lang = "Gurmukhi";
-        var type = "Search Any Words";
+        var type = 'Gurmukhi - Search Any Words';
     } else if (selectedvaluetype == '7') {
-        var lang = "English";
-        var type = "Search Any Words";
+        var type = 'English - Search Any Words';
     }
-    document.getElementById('searchinfo').textContent = 'Search: ' + lang + ' - ' + type + ' - ' + source;
+    document.getElementById('searchinfo').textContent = 'Search: ' + type;
 }
 
 function searchsetmsg() {
