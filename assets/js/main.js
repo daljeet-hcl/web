@@ -24,19 +24,23 @@ document.addEventListener("DOMContentLoaded", function() {
             showresult($('#searchbox').val(), true);
         }
     }); */
-	document.getElementById('searchbox').onkeyup = function() {
+	document.getElementById('searchbox').addEventListener('keyup', function() {
 		if (document.getElementById('searchbox').value.length === 0) {
 			document.getElementById('clearbtn').style.display = 'none';
 		} else {
 			document.getElementById('clearbtn').style.display = '';
 		}
-	};
+	});
+	document.addEventListener('keyup', function(e) {
+		if (e.which === 13) {
+			document.activeElement.blur();
+		} if (e.which === 27) {
+			document.getElementById('clearbtn').style.display = 'none';
+		}
+	});
 });
 
 function showresult(string, ontype) {
-    if (ontype === "") {
-        var ontype = false;
-    }
 	if (string.length === 0) {
 		document.getElementById('searchinfo').textContent = 'Search Box is Empty!';
 		document.getElementById('searchresults').innerHTML = '';
@@ -234,12 +238,4 @@ function clearbtn() {
 	document.getElementById('clearbtn').style.display = 'none';
 	document.getElementById('searchinfo').textContent = 'Search Box is Empty!';
 	document.getElementById('searchresults').innerHTML = '';
-};
-
-document.onkeyup = function(e) {
-    if (e.which === 13) {
-        document.activeElement.blur();
-    } if (e.which === 27) {
-		document.getElementById('clearbtn').style.display = 'none';
-	}
 };
