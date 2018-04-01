@@ -91,14 +91,15 @@ function showresult(string, ontype) {
 						} else {
 							var writer = shabads.shabad.writer.english;
 						}
-						var html = "<div class=\"list-group\">";
-						html += '<a href="/shabad/' + shabads.shabad.shabadid + '/' + shabads.shabad.id + '" class="list-group-item">';
+						var append = document.createElement('div');
+						append.classList.add("list-group");
+						var html = '<a href="/shabad/' + shabads.shabad.shabadid + '/' + shabads.shabad.id + '" class="list-group-item">';
 						html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + shabads.shabad.gurmukhi.akhar + '</h3>';
 						html += '<p class="list-group-item-text"><small>' + shabads.shabad.translation.english.default+'</small></p>';
 						html += '<p class="list-group-item-text"><small><b>' + shabads.shabad.raag.english + ', ' + writer + ', ' + ang + ' ' + shabads.shabad.pageno + source + '</b></small></p>';
 						html += '</a>';
-						html += '</div>';
-						document.getElementById('searchresults').appendChild(html);
+						append.innerHTML = html;
+						document.getElementById('searchresults').appendChild(append);
 					});
 					if (searchcount == 1) {
 						var resultText = "Your Search Returned 1 Shabad";
@@ -149,14 +150,15 @@ function showang(angnum) {
 				} else {
 					var writer = lines.line.writer.english;
 				}
-				var html = "<div class=\"list-group\">";
-				html += '<a href="/shabad/' + lines.line.shabadid + '/' + lines.line.id + '" class="list-group-item">';
+				var append = document.createElement('div');
+				append.classList.add("list-group");
+				var html = '<a href="/shabad/' + lines.line.shabadid + '/' + lines.line.id + '" class="list-group-item">';
 				html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + lines.line.gurmukhi.akhar + '</h3>';
 				html += '<p class="list-group-item-text"><small>' + lines.line.translation.english.default+'</small></p>';
 				html += '<p class="list-group-item-text"><small><b>' + lines.line.raag.english + ', ' + writer + ', ' + ang + ' ' + lines.line.pageno + source + '</b></small></p>';
 				html += '</a>';
-				html += '</div>';
-				document.getElementById('searchresults').appendChild(html);
+				append.innerHTML = html;
+				document.getElementById('searchresults').appendChild(append);
 			});
 			if (searchcount === 0) {
 				var resultText = "No Page Found! Please Check Your Input";
