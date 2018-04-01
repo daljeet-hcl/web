@@ -1,12 +1,4 @@
-function ready(fn) {
-  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-
-function fn() {
+document.addEventListener("DOMContentLoaded", function() {
     /* document.getElementsByClassName('gurmukhi-keyboard button').onclick = function() {
         if ($(this).data("action")) {
             var action = $(this).data("action");
@@ -34,12 +26,12 @@ function fn() {
     }); */
 	document.getElementById('searchbox').onkeyup = function() {
 		if (document.getElementById('searchbox').value.length === 0) {
-			document.getElementsByClassName('clearbtn').style.display = 'none';
+			document.getElementById('clearbtn').style.display = 'none';
 		} else {
-			document.getElementsByClassName('clearbtn').style.display = '';
+			document.getElementById('clearbtn').style.display = '';
 		}
 	};
-}
+});
 
 function showresult(string, ontype) {
     if (ontype === "") {
@@ -239,7 +231,7 @@ setInterval(searchsetmsg, 1000);
 
 function clearbtn() {
 	document.getElementById('searchbox').value = '';
-	document.getElementsByClassName('clearbtn').style.display = 'none';
+	document.getElementById('clearbtn').style.display = 'none';
 	document.getElementById('searchinfo').textContent = 'Search Box is Empty!';
 	document.getElementById('searchresults').innerHTML = '';
 };
