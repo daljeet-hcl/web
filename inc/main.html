@@ -19,7 +19,7 @@
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.22/bootstrap-native.min.js" integrity="sha256-Kv93byFhUzwIVDch/he4AyOLfroKwM9FIc6OAtqqaow=" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/gurbaninow@1/index.js"></script>
 	<script defer src="https://cdn.rawgit.com/boyofgreen/ManUp.js/6dae0a97/manup.min.js"></script>
-	<script defer src="/assets/js/main.js/1.3.0-3/js.js"></script>
+	<script defer src="/assets/js/main.js/1.3.0-4/js.js"></script>
 	<!--[if lt IE 9]>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
@@ -189,8 +189,8 @@
 			</span>
 			<input autocomplete="false" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus id="searchbox" class="form-control" style="font-family: GurbaniAkharThick; font-size: 1.2em;" onkeyup="showresult(this.value, true);" type="search" placeholder="ਖੋਜ...">
 			<span class="input-group-btn">
-				<a href="javascript:void(0)" type="button" class="btn btn-default clearbtn" style="display: none;" onclick="$('#searchbox').val(''); $(this).hide(); $('#searchinfo').text('Search Box is Empty!'); $('#searchresults').empty();"><i class="fa fa-times-circle-o fa-lg"></i></a>
-				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult($('#searchbox').val()); document.activeElement.blur();"><i class="fa fa-search fa-lg"></i></a>
+				<a href="javascript:void(0)" type="button" class="btn btn-default clearbtn" style="display: none;" onclick="clearbtn();"><i class="fa fa-times-circle-o fa-lg"></i></a>
+				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult(document.getElementById('searchbox').value); document.activeElement.blur();"><i class="fa fa-search fa-lg"></i></a>
 			</span>
 		</div>
 		<div id="searchsettings" class="modal fade" role="dialog">
@@ -347,7 +347,7 @@
 							<div class="input-group">
 								<input class="form-control" id="angsearch" type="number" min="1" max="1429" />
 								<span class="input-group-btn">
-									<button id="angs" onclick="showang($('#angsearch').val());" type="button" value="GO" class="btn btn-primary"><b>Search Page</b></button>
+									<button id="angs" onclick="showang(document.getElementById('angsearch').value);" type="button" value="GO" class="btn btn-primary"><b>Search Page</b></button>
 								</span>
 							</div>
 						</div>

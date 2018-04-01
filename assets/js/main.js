@@ -235,8 +235,14 @@ function searchsetmsg() {
         document.getElementById('searchbox').setAttribute('placeholder', 'Search...');
     }
 }
-
 setInterval(searchsetmsg, 1000);
+
+function clearbtn() {
+	document.getElementById('searchbox').value = '';
+	document.getElementsByClassName('clearbtn').style.display = 'none';
+	document.getElementById('searchinfo').textContent = 'Search Box is Empty!';
+	document.getElementById('searchresults').innerHTML = '';
+};
 
 document.onkeyup = function(e) {
     if (e.which === 13) {
