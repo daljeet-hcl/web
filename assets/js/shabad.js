@@ -32,19 +32,19 @@ if (localStorage.getItem("s.data.font") === null) {
 	localStorage.setItem("s.data.font", "GurbaniAkharThick");
 }
 if (localStorage.getItem("s.fontsize.gurmukhi") === null) {
-	localStorage.setItem("s.fontsize.gurmukhi", getComputedStyle(document.querySelector(".gurmukhi")).fontsize);
+	localStorage.setItem("s.fontsize.gurmukhi", window.getComputedStyle(document.getElementsByClassName("gurmukhi")[0]).fontsize);
 }
 if (localStorage.getItem("s.fontsize.hindi") === null) {
-	localStorage.setItem("s.fontsize.hindi", getComputedStyle(document.querySelector(".hindi")).fontsize);
+	localStorage.setItem("s.fontsize.hindi", window.getComputedStyle(document.getElementsByClassName("hindi")[0]).fontsize);
 }
 if (localStorage.getItem("s.fontsize.transliteration") === null) {
-	localStorage.setItem("s.fontsize.transliteration", getComputedStyle(document.querySelector(".transliteration")).fontsize);
+	localStorage.setItem("s.fontsize.transliteration", window.getComputedStyle(document.getElementsByClassName("transliteration")[0]).fontsize);
 }
 if (localStorage.getItem("s.fontsize.english") === null) {
-	localStorage.setItem("s.fontsize.english", getComputedStyle(document.querySelector(".english")).fontsize);
+	localStorage.setItem("s.fontsize.english", window.getComputedStyle(document.getElementsByClassName("english")[0]).fontsize);
 }
 if (localStorage.getItem("s.fontsize.punjabi") === null) {
-	localStorage.setItem("s.fontsize.punjabi", getComputedStyle(document.querySelector(".punjabi")).fontsize);
+	localStorage.setItem("s.fontsize.punjabi", window.getComputedStyle(document.getElementsByClassName("punjabi")[0]).fontsize);
 }
 if (localStorage.getItem("s.onoff.unicode") === null) {
 	localStorage.setItem("s.onoff.unicode", "false");
@@ -207,7 +207,7 @@ function showhide(divName, className) {
 }
 
 function fontplus(divName) {
-	var currentFontSize = getComputedStyle(document.querySelector("." + divName)).fontsize;
+	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontsize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 1.2;
 	document.querySelectorAll("." + divName).forEach(function(el) {
@@ -218,7 +218,7 @@ function fontplus(divName) {
 }
 
 function fontminus(divName) {
-	var currentFontSize = getComputedStyle(document.querySelector("." + divName)).fontsize;
+	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontsize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 0.8;
 	document.querySelectorAll("." + divName).forEach(function(el) {
