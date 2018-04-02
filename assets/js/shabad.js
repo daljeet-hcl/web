@@ -81,7 +81,6 @@ if (getshabadid !== null) {
 		getshabad(getshabadid, 0);
 	}
 }
-});
 
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
@@ -336,19 +335,19 @@ function getshabad(shabadNo, shabadId) {
 				document.getElementById("shabad").appendChild(append);
 			});
 			document.querySelectorAll(".gurmukhi").forEach(function(el) {
-				el.style.font - size = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
+				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
 			});
 			document.querySelectorAll(".hindi").forEach(function(el) {
-				el.style.font - size = parseInt(localStorage.getItem("s.fontsize.hindi"));
+				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.hindi"));
 			});
 			document.querySelectorAll(".transliteration").forEach(function(el) {
-				el.style.font - size = parseInt(localStorage.getItem("s.fontsize.transliteration"));
+				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.transliteration"));
 			});
 			document.querySelectorAll(".english").forEach(function(el) {
-				el.style.font - size = parseInt(localStorage.getItem("s.fontsize.english"));
+				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.english"));
 			});
 			document.querySelectorAll(".punjabi").forEach(function(el) {
-				el.style.font - size = parseInt(localStorage.getItem("s.fontsize.punjabi"));
+				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.punjabi"));
 			});
 			if (localStorage.getItem("s.onoff.larivaar") == "true") {
 				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
@@ -456,9 +455,9 @@ function scrollToDiv(shabadId) {
 
 document.addEventListener("keyup", function(e) {
 	if (e.which === 39) {
-		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid + 1, 0);
+		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid) + 1, 0);
 	}
 	if (e.which === 37) {
-		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid - 1, 0);
+		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid) - 1, 0);
 	}
 });
