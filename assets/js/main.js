@@ -104,7 +104,7 @@ function setsourceinfo(selectedvalue) {
 	document.getElementById("searchinfo").textContent = "Search: " + type;
 	if (selectedvalue == "0" || selectedvalue == "1" || selectedvalue == "2" || selectedvalue == "4" || selectedvalue == "6") {
 		document.getElementById("searchbox").setAttribute("style", "font-family: GurbaniAkharThick; font-size: 1.2em;");
-		document.getElementById("searchbox").setAttribute("placeholder", "koj...");
+		document.getElementById("searchbox").setAttribute("placeholder", "Koj...");
 	}
 	if (selectedvalue == "3" || selectedvalue == "5" || selectedvalue == "7") {
 		document.getElementById("searchbox").setAttribute("style", "");
