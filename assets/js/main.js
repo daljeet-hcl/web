@@ -24,21 +24,6 @@ document.addEventListener("load", function() {
 	        showresult($("#searchbox").val(), true);
 	    }
 	}); */
-	document.getElementById("searchbox").addEventListener("keyup", function() {
-		if (document.getElementById("searchbox").value.length === 0) {
-			document.getElementById("clearbtn").style.display = "none";
-		} else {
-			document.getElementById("clearbtn").style.display = "";
-		}
-	});
-	document.addEventListener("keyup", function(e) {
-		if (e.which === 13) {
-			document.activeElement.blur();
-		}
-		if (e.which === 27) {
-			document.getElementById("clearbtn").style.display = "none";
-		}
-	});
 });
 
 function showresult(string, ontype) {
@@ -234,3 +219,19 @@ function togglekeyboard() {
 		x.style.display = "none";
 	}
 }
+
+document.getElementById("searchbox").addEventListener("keyup", function() {
+	if (document.getElementById("searchbox").value.length === 0) {
+		document.getElementById("clearbtn").style.display = "none";
+	} else {
+		document.getElementById("clearbtn").style.display = "";
+	}
+});
+document.addEventListener("keyup", function(e) {
+	if (e.which === 13) {
+		document.activeElement.blur();
+	}
+	if (e.which === 27) {
+		document.getElementById("clearbtn").style.display = "none";
+	}
+});
