@@ -1,29 +1,25 @@
 document.addEventListener("load", function() {
-	/* $(".gurmukhi-keyboard button").click(function() {
-	    if ($(this).data("action")) {
-	        var action = $(this).data("action");
-	        if (action == "bksp") {
-	            $("#searchbox").val(function() {
-	                return this.value.substring(0, this.value.length - 1);
-	            });
-	            showresult($("#searchbox").val(), true);
-	        } else if (action == "close") {
-	            $(".gurmukhi-keyboard").hide();
-	        } else if (action == "search") {
-	            showresult($("#searchbox").val());
-	            $(".gurmukhi-keyboard").hide();
-	        } else if (action.includes("page")) {
-	            $(".gurmukhi-keyboard .page").hide();
-	            $("#gurmukhi-keyboard-" + action).show();
-	        }
-	    } else {
-	        var charinput = $(this).text();
-	        $("#searchbox").val(function() {
-	            return this.value + charinput;
-	        });
-	        showresult($("#searchbox").val(), true);
-	    }
-	}); */
+	document.getElementById("gurmukhi-keyboard").getElementsByTagName("button").click(function() {
+		if (this.data("action")) {
+			var action = this.data("action");
+			if (action == "bksp") {
+				document.getElementById("searchbox").value.substring(0, this.value.length - 1);
+				showresult($("#searchbox").val(), true);
+			} else if (action == "close") {
+				document.getElementById("clearbtn").style.display = "none";
+			} else if (action == "search") {
+				showresult(document.getElementById("searchbox").value, false);
+				document.getElementById("clearbtn").style.display = "none";
+			} else if (action.includes("page")) {
+				document.getElementById("clearbtn").style.display = "none";
+				document.getElementById("gurmukhi-keyboard-" + action).style.display = "";
+			}
+		} else {
+			var charinput = this.textContent;
+			document.getElementById("searchbox").value = document.getElementById("searchbox").value + charinput;
+			showresult(document.getElementById("searchbox").value, true);
+		}
+	});
 });
 
 function showresult(string, ontype) {
