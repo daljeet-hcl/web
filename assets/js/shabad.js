@@ -32,19 +32,19 @@ if (localStorage.getItem("s.data.font") === null) {
 	localStorage.setItem("s.data.font", "GurbaniAkharThick");
 }
 if (localStorage.getItem("s.fontsize.gurmukhi") === null) {
-	localStorage.setItem("s.fontsize.gurmukhi", $(".gurmukhi").css("font-size"));
+	localStorage.setItem("s.fontsize.gurmukhi", getComputedStyle(document.querySelector(".gurmukhi")).fontsize);
 }
 if (localStorage.getItem("s.fontsize.hindi") === null) {
-	localStorage.setItem("s.fontsize.hindi", $(".hindi").css("font-size"));
+	localStorage.setItem("s.fontsize.hindi", getComputedStyle(document.querySelector(".hindi")).fontsize);
 }
 if (localStorage.getItem("s.fontsize.transliteration") === null) {
-	localStorage.setItem("s.fontsize.transliteration", $(".transliteration").css("font-size"));
+	localStorage.setItem("s.fontsize.transliteration", getComputedStyle(document.querySelector(".transliteration")).fontsize);
 }
 if (localStorage.getItem("s.fontsize.english") === null) {
-	localStorage.setItem("s.fontsize.english", $(".english").css("font-size"));
+	localStorage.setItem("s.fontsize.english", getComputedStyle(document.querySelector(".english")).fontsize);
 }
 if (localStorage.getItem("s.fontsize.punjabi") === null) {
-	localStorage.setItem("s.fontsize.punjabi", $(".punjabi").css("font-size"));
+	localStorage.setItem("s.fontsize.punjabi", getComputedStyle(document.querySelector(".punjabi")).fontsize);
 }
 if (localStorage.getItem("s.onoff.unicode") === null) {
 	localStorage.setItem("s.onoff.unicode", "false");
@@ -84,10 +84,10 @@ if (getshabadid !== null) {
 
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
-		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-darkly.min.css");
+		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-flatly.min.css");
 		localStorage.setItem("s.onoff.day", "true");
 	} else {
-		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-flatly.min.css");
+		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-darkly.min.css");
 		localStorage.setItem("s.onoff.day", "false");
 	}
 }
@@ -166,17 +166,17 @@ function toggleunicode() {
 		$("#unicodebutton").html('Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i>');
 		$("#unicodebtn").removeClass("active");
 	}
-}
+}*/
 
 function togglecenter() {
-	if ($("#centertoggle").is(":checked")) {
+	if (document.getElementById('centertoggle').checked) {
 		localStorage.setItem("s.onoff.center", "true");
-		$("#shabad").css("text-align", "center");
+		document.getElementById('shabad').style.textalign = "center";
 	} else {
 		localStorage.setItem("s.onoff.center", "false");
-		$("#shabad").css("text-align", "left");
+		document.getElementById('shabad').style.textalign = "left";
 	}
-}*/
+}
 
 function toggleshabadinfo() {
 	if (document.getElementById('shabadinfotoggle').checked) {
@@ -205,21 +205,25 @@ function showhide(divName, className) {
 		localStorage.setItem("s.onoff." + className, "false");
 	}
 }
-/*
+
 function fontplus(divName) {
-	var currentFontSize = $("." + divName).css("font-size");
+	var currentFontSize = getComputedStyle(document.querySelector("." + divName)).fontsize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 1.2;
-	$("." + divName).css("font-size", newFontSize);
+	document.querySelectorAll("." + divName).forEach(function(el) {
+		el.style.fontsize = newFontSize;
+	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
 }
 
 function fontminus(divName) {
-	var currentFontSize = $("." + divName).css("font-size");
+	var currentFontSize = getComputedStyle(document.querySelector("." + divName)).fontsize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 0.8;
-	$("." + divName).css("font-size", newFontSize);
+	document.querySelectorAll("." + divName).forEach(function(el) {
+		el.style.fontsize = newFontSize;
+	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
 }
@@ -228,7 +232,7 @@ function togglefont(font) {
 	$(".akhar").css("font-family", font);
 	localStorage.setItem("s.data.font", font);
 }
-*/
+
 function getshabad(shabadNo, shabadId) {
 	document.getElementById("shabadid").dataset.shabadid = shabadNo;
 	document.getElementById("shabadinfo").style.display = "none";
@@ -289,7 +293,7 @@ function getshabad(shabadNo, shabadId) {
 				var splitunicodelength = unisplit.length;
 				var append = document.createElement("div");
 				append.classList.add("sline");
-				if(active !== "") {
+				if (active !== "") {
 					append.classList.add(active);
 				}
 				append.id = "s" + shabad.line.id;
@@ -425,7 +429,7 @@ function getshabad(shabadNo, shabadId) {
 			}
 			toggleday();
 			toggleshabadinfo();
-			/* togglecenter();*/
+			togglecenter();
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("shabadinfo").style.display = "";
 			document.getElementById("shabad").style.display = "";
