@@ -434,7 +434,7 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabad").style.display = "";
 			document.getElementById("shabadcontrol").style.display = "";
 			if (shabadId > 0) {
-				scrollToDiv(shabadId);
+				//document.getElementById("#s" + shabadId).scrollIntoView();
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
@@ -445,18 +445,7 @@ function getshabad(shabadNo, shabadId) {
 	};
 	request.send();
 }
-/*
-function scrollToDiv(shabadId) {
-	var settings = jQuery.extend({
-		speed: 1100
-	}, settings);
-	var destination = $("#s" + shabadId).offset().top - 80;
-	$("html:not(:animated),body:not(:animated)").animate({
-		scrollTop: destination
-	}, settings.speed);
-	return false;
-}
-*/
+
 document.addEventListener("keyup", function(e) {
 	if (e.which === 39) {
 		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid) + 1, 0);
