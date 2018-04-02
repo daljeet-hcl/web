@@ -1,27 +1,3 @@
-document.addEventListener("load", function() {
-	document.getElementById("gurmukhi-keyboard").getElementsByTagName("button").click(function() {
-		if (this.data("action")) {
-			var action = this.data("action");
-			if (action == "bksp") {
-				document.getElementById("searchbox").value.substring(0, this.value.length - 1);
-				showresult($("#searchbox").val(), true);
-			} else if (action == "close") {
-				document.getElementById("clearbtn").style.display = "none";
-			} else if (action == "search") {
-				showresult(document.getElementById("searchbox").value, false);
-				document.getElementById("clearbtn").style.display = "none";
-			} else if (action.includes("page")) {
-				document.getElementById("clearbtn").style.display = "none";
-				document.getElementById("gurmukhi-keyboard-" + action).style.display = "";
-			}
-		} else {
-			var charinput = this.textContent;
-			document.getElementById("searchbox").value = document.getElementById("searchbox").value + charinput;
-			showresult(document.getElementById("searchbox").value, true);
-		}
-	});
-});
-
 function showresult(string, ontype) {
 	if (string.length === 0) {
 		document.getElementById("searchinfo").textContent = "Search Box is Empty!";
@@ -230,4 +206,30 @@ document.addEventListener("keyup", function(e) {
 	if (e.which === 27) {
 		document.getElementById("clearbtn").style.display = "none";
 	}
+});
+
+document.querySelectorAll("#gurmukhi-keyboard button").forEach(function(el) {
+	el.addEventListener('click', function() {
+		if (this.dataset.action) {
+			var action = this.dataset.action;
+			if (action == "bksp") {
+				document.getElementById("searchbox").value = document.getElementById("searchbox").value.substring(0, document.getElementById("searchbox").value.length - 1);
+				showresult(document.getElementById("searchbox").value, true);
+			} else if (action == "close") {
+				document.getElementById("gurmukhi-keyboard").style.display = "none";
+			} else if (action == "search") {
+				showresult(document.getElementById("searchbox").value, false);
+				document.getElementById("gurmukhi-keyboard").style.display = "none";
+			} else if (action.includes("page")) {
+				document.querySelectorAll("#gurmukhi-keyboard .page").forEach(function(el) {
+					el.style.display = "none";
+				});
+				document.querySelector("#gurmukhi-keyboard-" + action).style.display = "block";
+			}
+		} else {
+			var charinput = this.textContent;
+			document.getElementById("searchbox").value = document.getElementById("searchbox").value + charinput;
+			showresult(document.getElementById("searchbox").value, true);
+		}
+	});
 });
