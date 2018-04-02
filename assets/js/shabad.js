@@ -433,9 +433,9 @@ function getshabad(shabadNo, shabadId) {
 			toggleshabadinfo();
 			togglecenter();
 			document.getElementById("loading").style.display = "none";
-			document.getElementById("shabadinfo").style.display = "";
-			document.getElementById("shabad").style.display = "";
-			document.getElementById("shabadcontrol").style.display = "";
+			document.getElementById("shabadinfo").style.display = "block";
+			document.getElementById("shabad").style.display = "block";
+			document.getElementById("shabadcontrol").style.display = "block";
 			if (shabadId > 0) {
 				document.getElementById("s" + shabadId).scrollIntoView();
 			}
