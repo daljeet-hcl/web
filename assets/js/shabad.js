@@ -207,29 +207,31 @@ function showhide(divName, className) {
 }
 
 function fontplus(divName) {
-	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontsize;
+	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontSize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 1.2;
 	document.querySelectorAll("." + divName).forEach(function(el) {
-		el.style.fontsize = newFontSize;
+		el.style.fontSize = newFontSize;
 	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
 }
 
 function fontminus(divName) {
-	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontsize;
+	var currentFontSize = window.getComputedStyle(document.getElementsByClassName(divName)[0]).fontSize;
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 0.8;
 	document.querySelectorAll("." + divName).forEach(function(el) {
-		el.style.fontsize = newFontSize;
+		el.style.fontSize = newFontSize;
 	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
 }
 
 function togglefont(font) {
-	$(".akhar").css("font-family", font);
+	document.querySelectorAll(".akhar").forEach(function(el) {
+		el.style.fontFamily = font;
+	});
 	localStorage.setItem("s.data.font", font);
 }
 
@@ -344,19 +346,19 @@ function getshabad(shabadNo, shabadId) {
 				}
 			});
 			document.querySelectorAll(".gurmukhi").forEach(function(el) {
-				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
 			});
 			document.querySelectorAll(".hindi").forEach(function(el) {
-				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.hindi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.hindi"));
 			});
 			document.querySelectorAll(".transliteration").forEach(function(el) {
-				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.transliteration"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.transliteration"));
 			});
 			document.querySelectorAll(".english").forEach(function(el) {
-				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.english"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.english"));
 			});
 			document.querySelectorAll(".punjabi").forEach(function(el) {
-				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.punjabi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.punjabi"));
 			});
 			if (localStorage.getItem("s.onoff.larivaar") == "true") {
 				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
