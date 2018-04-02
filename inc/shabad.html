@@ -164,7 +164,7 @@
 										<li><a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('https://gurbaninow.com/shabad/' + $('#shabadid').data('shabadid') + '/' + $('#lineid').data('lineid')) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a></li>
 										<li><a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Shabad' + '%20' +  encodeURI('https://gurbaninow.com/shabad/' + $('#shabadid').data('shabadid') + '/' + $('#lineid').data('lineid'))); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a></li>
 									</ul>
-									<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/' + $('#shabadid').data('shabadid'));">Unicode Share</a>
+									<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/' + parseInt(document.getElementById('shabadid').dataset.shabadid));">Unicode Share</a>
 								</center>
 							</div>
 						</div>
@@ -191,9 +191,9 @@
 			<div id="shabadcontrol">
 				<center>
 					<ul class="pagination pagination-sm">
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt($('#shabadid').data('shabadid')) - 1, 0);"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) - 1, 0);"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
 						<li class="active"><a>SHABAD</a></li>
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt($('#shabadid').data('shabadid')) + 1, 0);"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) + 1, 0);"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
 					</ul>
 				</center>
 			</div>

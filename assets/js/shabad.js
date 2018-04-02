@@ -194,14 +194,14 @@ function showhide(divName, className) {
 		document.querySelectorAll("." + className).forEach(function(el) {
 			el.style.display = "";
 		});
-		document.getElementById("#" + className + "fontsize").style.display = "";
+		document.getElementById(className + "fontsize").style.display = "";
 		localStorage.setItem("s.onoff." + className, "true");
 	} else {
 		document.getElementById(divName).checked = false;
 		document.querySelectorAll("." + className).forEach(function(el) {
 			el.style.display = "none";
 		});
-		document.getElementById("#" + className + "fontsize").style.display = "none";
+		document.getElementById(className + "fontsize").style.display = "none";
 		localStorage.setItem("s.onoff." + className, "false");
 	}
 }
@@ -435,7 +435,7 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabad").style.display = "";
 			document.getElementById("shabadcontrol").style.display = "";
 			if (shabadId > 0) {
-				//document.getElementById("#s" + shabadId).scrollIntoView();
+				document.getElementById("s" + shabadId).scrollIntoView();
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
