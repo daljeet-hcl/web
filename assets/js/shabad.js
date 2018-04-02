@@ -276,11 +276,10 @@ function getshabad(shabadNo, shabadId) {
 			appendgur.innerHTML = htmlgur;
 			document.getElementById("shabadinfoenglish").appendChild(appenden);
 			document.getElementById("shabadinfogurmukhi").appendChild(appendgur);
-			data.shabad.forEach(function(shabads, i) {
+			data.shabad.forEach(function(shabad, i) {
 				if (shabadId == shabad.line.id) {
 					var active = "activeline";
 					document.title = shabad.line.gurmukhi.unicode + " - GurbaniNow Search";
-					document.getElementById("whatsappbtn").dataset.text = document.title;
 				} else {
 					var active = "";
 				}
@@ -290,7 +289,9 @@ function getshabad(shabadNo, shabadId) {
 				var splitunicodelength = unisplit.length;
 				var append = document.createElement("div");
 				append.classList.add("sline");
-				append.classList.add(active);
+				if(active !== "") {
+					append.classList.add(active);
+				}
 				append.id = "s" + shabad.line.id;
 				var html = '<div class="gurmukhi akhar normal" style="font-family: GurbaniAkharThick;">' + shabad.line.gurmukhi.akhar + "</div>";
 				html += '<div class="gurmukhi unicode normal" style="font-family: AnmolBani; font-weight: 900; display: none;">' + shabad.line.gurmukhi.unicode + "</div>";
@@ -378,19 +379,19 @@ function getshabad(shabadNo, shabadId) {
 			if (localStorage.getItem("s.onoff.hindi") == "true") {
 				document.getElementById("hinditoggle").setAttribute("checked", "true");
 			}
-			showhide("hinditoggle", "hindi");
+			/* showhide("hinditoggle", "hindi"); */
 			if (localStorage.getItem("s.onoff.transliteration") == "true") {
 				document.getElementById("transliterationtoggle").setAttribute("checked", "true");
 			}
-			showhide("transliterationtoggle", "transliteration");
+			/* showhide("transliterationtoggle", "transliteration"); */
 			if (localStorage.getItem("s.onoff.english") == "true") {
 				document.getElementById("englishtranslationtoggle").setAttribute("checked", "true");
 			}
-			showhide("englishtranslationtoggle", "english");
+			/* showhide("englishtranslationtoggle", "english"); */
 			if (localStorage.getItem("s.onoff.punjabi") == "true") {
 				document.getElementById("punjabitranslationtoggle").setAttribute("checked", "true");
 			}
-			showhide("punjabitranslationtoggle", "punjabi");
+			/* showhide("punjabitranslationtoggle", "punjabi"); */
 			if (localStorage.getItem("s.onoff.day") == "true") {
 				document.getElementById("daytoggle").setAttribute("checked", "true");
 			}
@@ -443,7 +444,6 @@ function getshabad(shabadNo, shabadId) {
 		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
 	};
 	request.send();
-	document.getElementById("whatsappbtn").dataset.href = encodeURI('https://gurbaninow.com/shabad/' + $('#shabadid').data('shabadid') + '/' + $('#lineid').data('lineid'));
 }
 /*
 function scrollToDiv(shabadId) {
