@@ -434,7 +434,7 @@ function getshabad(shabadNo, shabadId) {
 			togglecenter();
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("shabadinfo").classList.add("animated");
-			document.getElementById("shabadinfo").classList.add("bounceOutLeft");'
+			document.getElementById("shabadinfo").classList.add("bounceOutLeft");
 			document.getElementById("shabad").classList.add("animated");
 			document.getElementById("shabad").classList.add("bounceOutLeft");
 			document.getElementById("shabadcontrol").classList.add("animated");
