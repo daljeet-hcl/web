@@ -85,9 +85,11 @@ if (getshabadid !== null) {
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-flatly.min.css");
+		document.querySelector(".activeline").style.backgroundColor = "#ECF0F1";
 		localStorage.setItem("s.onoff.day", "true");
 	} else {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-darkly.min.css");
+		document.querySelector(".activeline").style.backgroundColor = "#303030";
 		localStorage.setItem("s.onoff.day", "false");
 	}
 }
@@ -470,6 +472,7 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadcontrol").style.display = "block";
 			if (shabadId > 0) {
 				document.getElementById("s" + shabadId).scrollIntoView();
+				window.scrollBy(0, -80);
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
