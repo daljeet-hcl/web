@@ -49,7 +49,7 @@ if (localStorage.getItem("s.fontsize.punjabi") === null) {
 if (localStorage.getItem("s.onoff.unicode") === null) {
 	localStorage.setItem("s.onoff.unicode", "false");
 }
-
+/*
 $(function() {
 	$(window).scroll(function() {
 		if ($(this).scrollTop() !== 0) {
@@ -70,7 +70,7 @@ $(function() {
 			scrollTop: $(document).height()
 		}, 800);
 	});
-});
+});*/
 
 var getshabadid = document.getElementById("shabadid").dataset.shabadid;
 if (getshabadid !== null) {
@@ -81,7 +81,7 @@ if (getshabadid !== null) {
 		getshabad(getshabadid, 0);
 	}
 }
-
+/*
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-darkly.min.css");
@@ -187,21 +187,25 @@ function toggleshabadinfo() {
 		localStorage.setItem("s.onoff.shabadinfo", "false");
 		$("#shabadinforoot").hide();
 	}
-}
+}*/
 
 function showhide(divName, className) {
-	if ($("#" + divName).is(":checked")) {
-		$("." + className).show();
-		$("#" + className + "fontsize").show();
+	if (document.getElementById(divName).checked) {
+		document.querySelectorAll("." + className).forEach(function(el) {
+			el.style.display = "";
+		});
+		document.getElementById("#" + className + "fontsize").style.display = "";
 		localStorage.setItem("s.onoff." + className, "true");
 	} else {
-		$("#" + divName).removeAttr("checked");
-		$("." + className).hide();
-		$("#" + className + "fontsize").hide();
+		document.getElementById(divName).checked = false;
+		document.querySelectorAll("." + className).forEach(function(el) {
+			el.style.display = "none";
+		});
+		document.getElementById("#" + className + "fontsize").style.display = "none";
 		localStorage.setItem("s.onoff." + className, "false");
 	}
 }
-
+/*
 function fontplus(divName) {
 	var currentFontSize = $("." + divName).css("font-size");
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
@@ -224,7 +228,7 @@ function togglefont(font) {
 	$(".akhar").css("font-family", font);
 	localStorage.setItem("s.data.font", font);
 }
-
+*/
 function getshabad(shabadNo, shabadId) {
 	document.getElementById("shabadid").dataset.shabadid = shabadNo;
 	document.getElementById("shabadinfo").style.display = "none";
@@ -418,9 +422,9 @@ function getshabad(shabadNo, shabadId) {
 			if (localStorage.getItem("s.data.font") != "GurbaniAkharThick") {
 				togglefont(localStorage.getItem("s.data.font"));
 			}
-			toggleday();
+			/*toggleday();
 			toggleshabadinfo();
-			togglecenter();
+			togglecenter();*/
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("shabadinfo").classList.add("fadeInDown");
 			document.getElementById("shabad").classList.add("fadeInDown");
@@ -441,7 +445,7 @@ function getshabad(shabadNo, shabadId) {
 	request.send();
 	document.getElementById("whatsappbtn").dataset.href = encodeURI('https://gurbaninow.com/shabad/' + $('#shabadid').data('shabadid') + '/' + $('#lineid').data('lineid'));
 }
-
+/*
 function scrollToDiv(shabadId) {
 	var settings = jQuery.extend({
 		speed: 1100
@@ -452,7 +456,7 @@ function scrollToDiv(shabadId) {
 	}, settings.speed);
 	return false;
 }
-
+*/
 document.addEventListener("keyup", function(e) {
 	if (e.which === 39) {
 		getshabad(parseInt(document.getElementById("shabadid").dataset.shabadid) + 1, 0);
