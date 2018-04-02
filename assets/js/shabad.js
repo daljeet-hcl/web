@@ -96,16 +96,17 @@ function togglelarivaar() {
 	if (localStorage.getItem("s.onoff.larivaar") == "false") {
 		localStorage.setItem("s.onoff.larivaar", "true");
 		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
-			el.innerHTML = el.textContent.split(" ").join("<wbr>");
+			el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 		});
 		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 		document.getElementById("larivaarbtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.larivaar", "false");
 		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
-			el.innerHTML = el.textContent.split("<wbr>").join(" ");
+			el.innerHTML = el.innerHTML.split("<wbr>").join(" ");
 		});
 		document.getElementById("assist").innerHTML = "";
+		document.getElementById("assist").classList.remove("active");
 		localStorage.setItem("s.onoff.larivaarassist", "false");
 		document.getElementById("assist").style.display = "none";
 		if (localStorage.getItem("s.onoff.unicode") == "true") {
@@ -391,13 +392,13 @@ function getshabad(shabadNo, shabadId) {
 			});
 			if (localStorage.getItem("s.onoff.larivaar") == "true") {
 				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
-					el.innerHTML = el.textContent.split(" ").join("<wbr>");
+					el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 				});
 				document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
-				document.getElementById("assist").classList.add("active");
+				document.getElementById("larivaarbtn").classList.add("active");
 			}
 			if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
-				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
+				document.querySelectorAll(".normal").forEach(function(el) {
 					el.style.display = "none";
 				});
 				if (localStorage.getItem("s.onoff.unicode") == "true") {
@@ -446,14 +447,14 @@ function getshabad(shabadNo, shabadId) {
 					});
 				} else {
 					document.querySelectorAll(".akhar.normal").forEach(function(el) {
-						el.style.display = "";
+						el.style.display = "none";
 					});
 					document.querySelectorAll(".unicode.normal").forEach(function(el) {
-						el.style.display = "none";
+						el.style.display = "";
 					});
 				}
 				document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<span class="fa fa-fw">ਸ</span>';
-				document.getElementById("unicodebutton").classList.add("active");
+				document.getElementById("unicodebtn").classList.add("active");
 			}
 			if (localStorage.getItem("s.data.font") != "GurbaniAkharThick") {
 				togglefont(localStorage.getItem("s.data.font"));
