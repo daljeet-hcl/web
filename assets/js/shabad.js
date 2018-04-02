@@ -108,7 +108,9 @@ function togglelarivaar() {
 		document.getElementById("assist").innerHTML = "";
 		document.getElementById("assist").classList.remove("active");
 		localStorage.setItem("s.onoff.larivaarassist", "false");
-		document.getElementById("assist").style.display = "none";
+		document.querySelectorAll(".assist").forEach(function(el) {
+			el.style.display = "none";
+		});
 		if (localStorage.getItem("s.onoff.unicode") == "true") {
 			document.querySelectorAll(".unicode.normal").forEach(function(el) {
 				el.style.display = "";
