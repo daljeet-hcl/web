@@ -81,7 +81,7 @@ if (getshabadid !== null) {
 		getshabad(getshabadid, 0);
 	}
 }
-/*
+
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-2/dist/bootstrap-darkly.min.css");
@@ -91,7 +91,7 @@ function toggleday() {
 		localStorage.setItem("s.onoff.day", "false");
 	}
 }
-
+/*
 function togglelarivaar() {
 	if (localStorage.getItem("s.onoff.larivaar") == "false") {
 		localStorage.setItem("s.onoff.larivaar", "true");
@@ -176,18 +176,18 @@ function togglecenter() {
 		localStorage.setItem("s.onoff.center", "false");
 		$("#shabad").css("text-align", "left");
 	}
-}
+}*/
 
 function toggleshabadinfo() {
-	if ($("#shabadinfotoggle").is(":checked")) {
+	if (document.getElementById('shabadinfotoggle').checked) {
 		localStorage.setItem("s.onoff.shabadinfo", "true");
-		$("#shabadinforoot").show();
+		document.getElementById('shabadinforoot').style.display = "";
 	} else {
-		$("#shabadinfotoggle").removeAttr("checked");
+		document.getElementById('shabadinfotoggle').checked = false;
 		localStorage.setItem("s.onoff.shabadinfo", "false");
-		$("#shabadinforoot").hide();
+		document.getElementById('shabadinforoot').style.display = "none";
 	}
-}*/
+}
 
 function showhide(divName, className) {
 	if (document.getElementById(divName).checked) {
@@ -423,9 +423,9 @@ function getshabad(shabadNo, shabadId) {
 			if (localStorage.getItem("s.data.font") != "GurbaniAkharThick") {
 				togglefont(localStorage.getItem("s.data.font"));
 			}
-			/*toggleday();
+			toggleday();
 			toggleshabadinfo();
-			togglecenter();*/
+			/* togglecenter();*/
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("shabadinfo").style.display = "";
 			document.getElementById("shabad").style.display = "";
