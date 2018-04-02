@@ -310,6 +310,7 @@ function getshabad(shabadNo, shabadId) {
 				html += '<div class="english">' + shabad.line.translation.english.default+"</div>";
 				html += '<div class="punjabi">' + shabad.line.translation.punjabi.default.akhar + "</div>";
 				append.innerHTML = html;
+				document.getElementById("shabad").appendChild(append);
 				if (shabad.line.transliteration === "") {
 					document.querySelectorAll(".transliteration").forEach(function(el) {
 						el.style.display = "none";
@@ -337,7 +338,6 @@ function getshabad(shabadNo, shabadId) {
 						el.style.display = "";
 					});
 				}
-				document.getElementById("shabad").appendChild(append);
 			});
 			document.querySelectorAll(".gurmukhi").forEach(function(el) {
 				el.style.fontsize = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
@@ -427,10 +427,7 @@ function getshabad(shabadNo, shabadId) {
 			toggleshabadinfo();
 			togglecenter();*/
 			document.getElementById("loading").style.display = "none";
-			document.getElementById("shabadinfo").classList.add("fadeInDown");
-			document.getElementById("shabad").classList.add("fadeInDown");
-			document.getElementById("shabadinfo").classList.add("fadeInDown");
-			document.getElementById("shabadcontrol").style.display = "";
+			document.getElementById("shabadinfo").style.display = "";
 			document.getElementById("shabad").style.display = "";
 			document.getElementById("shabadcontrol").style.display = "";
 			if (shabadId > 0) {
