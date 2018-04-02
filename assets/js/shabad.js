@@ -85,11 +85,15 @@ if (getshabadid !== null) {
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-flatly.min.css");
-		document.querySelector(".activeline").style.backgroundColor = "#ECF0F1";
+		if(document.querySelector(".activeline")) {
+			document.querySelector(".activeline").style.backgroundColor = "#ECF0F1";
+		}
 		localStorage.setItem("s.onoff.day", "true");
 	} else {
 		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-darkly.min.css");
-		document.querySelector(".activeline").style.backgroundColor = "#303030";
+		if(document.querySelector(".activeline")) {
+			document.querySelector(".activeline").style.backgroundColor = "#303030";
+		}
 		localStorage.setItem("s.onoff.day", "false");
 	}
 }
@@ -245,7 +249,7 @@ function fontplus(divName) {
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 1.2;
 	document.querySelectorAll("." + divName).forEach(function(el) {
-		el.style.fontSize = newFontSize;
+		el.style.fontSize = newFontSize + "px";
 	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
@@ -256,7 +260,7 @@ function fontminus(divName) {
 	var currentFontSizeNum = parseFloat(currentFontSize, 10);
 	var newFontSize = currentFontSizeNum * 0.8;
 	document.querySelectorAll("." + divName).forEach(function(el) {
-		el.style.fontSize = newFontSize;
+		el.style.fontSize = newFontSize + "px";
 	});
 	localStorage.setItem("s.fontsize." + divName, newFontSize);
 	return false;
