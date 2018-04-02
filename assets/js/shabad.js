@@ -181,7 +181,7 @@ function togglecenter() {
 function toggleshabadinfo() {
 	if (document.getElementById('shabadinfotoggle').checked) {
 		localStorage.setItem("s.onoff.shabadinfo", "true");
-		document.getElementById('shabadinforoot').style.display = "";
+		document.getElementById('shabadinforoot').style.display = "block";
 	} else {
 		document.getElementById('shabadinfotoggle').checked = false;
 		localStorage.setItem("s.onoff.shabadinfo", "false");
@@ -385,19 +385,19 @@ function getshabad(shabadNo, shabadId) {
 			if (localStorage.getItem("s.onoff.hindi") == "true") {
 				document.getElementById("hinditoggle").setAttribute("checked", "true");
 			}
-			/* showhide("hinditoggle", "hindi"); */
+			showhide("hinditoggle", "hindi");
 			if (localStorage.getItem("s.onoff.transliteration") == "true") {
 				document.getElementById("transliterationtoggle").setAttribute("checked", "true");
 			}
-			/* showhide("transliterationtoggle", "transliteration"); */
+			showhide("transliterationtoggle", "transliteration");
 			if (localStorage.getItem("s.onoff.english") == "true") {
 				document.getElementById("englishtranslationtoggle").setAttribute("checked", "true");
 			}
-			/* showhide("englishtranslationtoggle", "english"); */
+			showhide("englishtranslationtoggle", "english");
 			if (localStorage.getItem("s.onoff.punjabi") == "true") {
 				document.getElementById("punjabitranslationtoggle").setAttribute("checked", "true");
 			}
-			/* showhide("punjabitranslationtoggle", "punjabi"); */
+			showhide("punjabitranslationtoggle", "punjabi");
 			if (localStorage.getItem("s.onoff.day") == "true") {
 				document.getElementById("daytoggle").setAttribute("checked", "true");
 			}
