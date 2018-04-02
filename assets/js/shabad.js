@@ -384,19 +384,19 @@ function getshabad(shabadNo, shabadId) {
 				}
 			});
 			document.querySelectorAll(".gurmukhi").forEach(function(el) {
-				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.gurmukhi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.gurmukhi")) + "px";
 			});
 			document.querySelectorAll(".hindi").forEach(function(el) {
-				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.hindi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.hindi")) + "px";
 			});
 			document.querySelectorAll(".transliteration").forEach(function(el) {
-				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.transliteration"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.transliteration")) + "px";
 			});
 			document.querySelectorAll(".english").forEach(function(el) {
-				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.english"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.english")) + "px";
 			});
 			document.querySelectorAll(".punjabi").forEach(function(el) {
-				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.punjabi"));
+				el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.punjabi")) + "px";
 			});
 			if (localStorage.getItem("s.onoff.larivaar") == "true") {
 				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
