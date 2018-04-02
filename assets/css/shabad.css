@@ -76,3 +76,9 @@ ul.share-buttons .sr-only {
 .assist span:nth-of-type(2n) {
 	color: #3498DB;
 }
+.activeline {
+	background-color: #303030;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
