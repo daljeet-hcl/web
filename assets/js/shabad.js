@@ -91,54 +91,67 @@ function toggleday() {
 		localStorage.setItem("s.onoff.day", "false");
 	}
 }
-/*
+
 function togglelarivaar() {
 	if (localStorage.getItem("s.onoff.larivaar") == "false") {
 		localStorage.setItem("s.onoff.larivaar", "true");
-		$(".gurmukhi.normal").each(function() {
-			var value = $(this).text();
-			$(this).html(value.split(" ").join("<wbr>"));
+		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
+			el.innerHTML = el.textContent.split(" ").join("<wbr>");
 		});
-		$("#assist").html('<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>');
-		$("#larivaarbtn").addClass("active");
+		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
+		document.getElementById("larivaarbtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.larivaar", "false");
-		$(".gurmukhi.normal").each(function() {
-			var value = $(this).html();
-			$(this).html(value.split("<wbr>").join(" "));
+		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
+			el.innerHTML = el.textContent.split("<wbr>").join(" ");
 		});
-		$("#assist").html("");
-		$("#assist").removeClass("active");
+		document.getElementById("assist").innerHTML = "";
 		localStorage.setItem("s.onoff.larivaarassist", "false");
-		$(".assist").hide();
+		document.getElementById("assist").style.display = "none";
 		if (localStorage.getItem("s.onoff.unicode") == "true") {
-			$(".unicode.normal").show();
+			document.querySelectorAll(".unicode.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		} else {
-			$(".akhar.normal").show();
+			document.querySelectorAll(".akhar.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		}
-		$("#larivaarbtn").removeClass("active");
+		document.getElementById("larivaarbtn").classList.remove("active");
 	}
 }
 
 function togglelarivaarassist() {
 	if (localStorage.getItem("s.onoff.larivaarassist") == "false") {
 		localStorage.setItem("s.onoff.larivaarassist", "true");
-		$(".normal").hide();
+		document.querySelectorAll(".normal").forEach(function(el) {
+			el.style.display = "none";
+		});
 		if (localStorage.getItem("s.onoff.unicode") == "true") {
-			$(".unicode.assist").show();
+			document.querySelectorAll(".unicode.assist").forEach(function(el) {
+				el.style.display = "";
+			});
 		} else {
-			$(".akhar.assist").show();
+			document.querySelectorAll(".akhar.assist").forEach(function(el) {
+				el.style.display = "";
+			});
 		}
-		$("#assist").addClass("active");
+		document.getElementById("assist").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.larivaarassist", "false");
-		$(".assist").hide();
+		document.querySelectorAll(".assist").forEach(function(el) {
+			el.style.display = "none";
+		});
 		if (localStorage.getItem("s.onoff.unicode") == "true") {
-			$(".unicode.normal").show();
+			document.querySelectorAll(".unicode.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		} else {
-			$(".akhar.normal").show();
+			document.querySelectorAll(".akhar.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		}
-		$("#assist").removeClass("active");
+		document.getElementById("assist").classList.remove("active");
 	}
 }
 
@@ -146,27 +159,43 @@ function toggleunicode() {
 	if (localStorage.getItem("s.onoff.unicode") == "false") {
 		localStorage.setItem("s.onoff.unicode", "true");
 		if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
-			$(".akhar.assist").hide();
-			$(".unicode.assist").show();
+			document.querySelectorAll(".akhar.assist").forEach(function(el) {
+				el.style.display = "none";
+			});
+			document.querySelectorAll(".unicode.assist").forEach(function(el) {
+				el.style.display = "";
+			});
 		} else {
-			$(".akhar.normal").hide();
-			$(".unicode.normal").show();
+			document.querySelectorAll(".akhar.normal").forEach(function(el) {
+				el.style.display = "none";
+			});
+			document.querySelectorAll(".unicode.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		}
-		$("#unicodebutton").html('Unicode&nbsp;&nbsp;<span class="fa fa-fw">ਸ</span>');
-		$("#unicodebtn").addClass("active");
+		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<span class="fa fa-fw">ਸ</span>';
+		document.getElementById("unicodebtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.unicode", "false");
 		if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
-			$(".unicode.assist").hide();
-			$(".akhar.assist").show();
+			document.querySelectorAll(".unicode.assist").forEach(function(el) {
+				el.style.display = "none";
+			});
+			document.querySelectorAll(".akhar.assist").forEach(function(el) {
+				el.style.display = "";
+			});
 		} else {
-			$(".unicode.normal").hide();
-			$(".akhar.normal").show();
+			document.querySelectorAll(".unicode.normal").forEach(function(el) {
+				el.style.display = "none";
+			});
+			document.querySelectorAll(".akhar.normal").forEach(function(el) {
+				el.style.display = "";
+			});
 		}
-		$("#unicodebutton").html('Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i>');
-		$("#unicodebtn").removeClass("active");
+		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i>';
+		document.getElementById("unicodebtn").classList.remove("active");
 	}
-}*/
+}
 
 function togglecenter() {
 	if (document.getElementById('centertoggle').checked) {
@@ -433,13 +462,11 @@ function getshabad(shabadNo, shabadId) {
 			toggleshabadinfo();
 			togglecenter();
 			document.getElementById("loading").style.display = "none";
-			document.getElementById("shabadout").classList.add("animated");
-			document.getElementById("shabadout").classList.add("slideInDown");
 			document.getElementById("shabadinfo").style.display = "block";
 			document.getElementById("shabad").style.display = "block";
 			document.getElementById("shabadcontrol").style.display = "block";
 			if (shabadId > 0) {
-				//document.getElementById("s" + shabadId).scrollIntoView();
+				document.getElementById("s" + shabadId).scrollIntoView();
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
