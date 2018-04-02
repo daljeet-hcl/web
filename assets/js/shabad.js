@@ -32,19 +32,19 @@ if (localStorage.getItem("s.data.font") === null) {
 	localStorage.setItem("s.data.font", "GurbaniAkharThick");
 }
 if (localStorage.getItem("s.fontsize.gurmukhi") === null) {
-	localStorage.setItem("s.fontsize.gurmukhi", window.getComputedStyle(document.getElementsByClassName("gurmukhi")[0]).fontsize);
+	localStorage.setItem("s.fontsize.gurmukhi", "");
 }
 if (localStorage.getItem("s.fontsize.hindi") === null) {
-	localStorage.setItem("s.fontsize.hindi", window.getComputedStyle(document.getElementsByClassName("hindi")[0]).fontsize);
+	localStorage.setItem("s.fontsize.hindi", "");
 }
 if (localStorage.getItem("s.fontsize.transliteration") === null) {
-	localStorage.setItem("s.fontsize.transliteration", window.getComputedStyle(document.getElementsByClassName("transliteration")[0]).fontsize);
+	localStorage.setItem("s.fontsize.transliteration", "");
 }
 if (localStorage.getItem("s.fontsize.english") === null) {
-	localStorage.setItem("s.fontsize.english", window.getComputedStyle(document.getElementsByClassName("english")[0]).fontsize);
+	localStorage.setItem("s.fontsize.english", "");
 }
 if (localStorage.getItem("s.fontsize.punjabi") === null) {
-	localStorage.setItem("s.fontsize.punjabi", window.getComputedStyle(document.getElementsByClassName("punjabi")[0]).fontsize);
+	localStorage.setItem("s.fontsize.punjabi", "");
 }
 if (localStorage.getItem("s.onoff.unicode") === null) {
 	localStorage.setItem("s.onoff.unicode", "false");
