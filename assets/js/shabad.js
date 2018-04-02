@@ -434,11 +434,11 @@ function getshabad(shabadNo, shabadId) {
 			togglecenter();
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("shabadinfo").classList.add("animated");
-			document.getElementById("shabadinfo").classList.add("bounceOutLeft");
+			document.getElementById("shabadinfo").classList.add("fadeInDown");
 			document.getElementById("shabad").classList.add("animated");
-			document.getElementById("shabad").classList.add("bounceOutLeft");
+			document.getElementById("shabad").classList.add("fadeInDown");
 			document.getElementById("shabadcontrol").classList.add("animated");
-			document.getElementById("shabadcontrol").classList.add("bounceOutLeft");
+			document.getElementById("shabadcontrol").classList.add("fadeInDown");
 			document.getElementById("shabadinfo").style.display = "block";
 			document.getElementById("shabad").style.display = "block";
 			document.getElementById("shabadcontrol").style.display = "block";
