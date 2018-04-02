@@ -1,5 +1,12 @@
-body { padding-top: 80px; }
-
+body { 
+	padding-top: 80px;
+}
+.gurmukhi {
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
 .navbar-brand {
 	padding: 0px;
 }
@@ -8,32 +15,26 @@ body { padding-top: 80px; }
 	padding: 15px;
 	width: auto;
 }
-
 .gurmukhi-keyboard {
 	background-color: #ccc;
 	display: none;
 	font-size: 0;
 	width: 300px;
 }
-
 .gurmukhi-keyboard .page {
 	display: none;
 }
-
 .gurmukhi-keyboard .keyboard-row {
 	border-bottom: 2px solid #999;
 }
-
 .gurmukhi-keyboard .keyboard-row-set {
 	display: inline-block;
 	width: 50%;
 }
-
 .gurmukhi-keyboard .keyboard-row:nth-child(2n-1) .keyboard-row-set:nth-child(1),
 .gurmukhi-keyboard .keyboard-row:nth-child(2n) .keyboard-row-set:nth-child(2) {
 	background-color: #fff;
 }
-
 .gurmukhi-keyboard button {
 	background-color: transparent;
 	font-size: 2rem;
@@ -42,7 +43,6 @@ body { padding-top: 80px; }
 	color: black;
 	border-color: transparent;
 }
-
 input::-ms-clear {
 	display: none;
 }

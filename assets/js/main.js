@@ -58,7 +58,7 @@ function showresult(string, ontype) {
 						var append = document.createElement("div");
 						append.classList.add("list-group");
 						var html = '<a href="/shabad/' + shabads.shabad.shabadid + '/' + shabads.shabad.id + '" class="list-group-item">';
-						html += '<h3 class="list-group-item-heading" style="font-family: GurbaniAkharThick; color: #ffffff;">' + shabads.shabad.gurmukhi.akhar + '</h3>';
+						html += '<h3 class="list-group-item-heading gurmukhi" style="font-family: GurbaniAkharThick; color: #ffffff;">' + shabads.shabad.gurmukhi.akhar + '</h3>';
 						html += '<p class="list-group-item-text"><small>' + shabads.shabad.translation.english.default+'</small></p>';
 						html += '<p class="list-group-item-text"><small><b>' + shabads.shabad.raag.english + ', ' + writer + ', ' + ang + ' ' + shabads.shabad.pageno + source + '</b></small></p>';
 						html += "</a>";

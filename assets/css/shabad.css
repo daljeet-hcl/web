@@ -1,4 +1,6 @@
-body { padding-top: 80px; }
+body { 
+	padding-top: 80px;
+}
 .navbar-brand {
 	padding: 0px;
 }
@@ -22,15 +24,31 @@ body { padding-top: 80px; }
 }
 .gurmukhi {
 	font-size: 2em;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 .hindi {
 	font-size: 1.5em;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 .transliteration {
 	font-size: 1em;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 .english, .punjabi {
 	font-size: 1em;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 .punjabi {
 	font-family: GurbaniAkharHeavy;
