@@ -171,10 +171,10 @@ function toggleunicode() {
 function togglecenter() {
 	if (document.getElementById('centertoggle').checked) {
 		localStorage.setItem("s.onoff.center", "true");
-		document.getElementById('shabad').style.textalign = "center";
+		document.getElementById('shabad').style.textAlign = "center";
 	} else {
 		localStorage.setItem("s.onoff.center", "false");
-		document.getElementById('shabad').style.textalign = "left";
+		document.getElementById('shabad').style.textAlign = "left";
 	}
 }
 
@@ -284,10 +284,10 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadinfogurmukhi").appendChild(appendgur);
 			data.shabad.forEach(function(shabad, i) {
 				if (shabadId == shabad.line.id) {
-					var active = "activeline";
+					var active = true;
 					document.title = shabad.line.gurmukhi.unicode + " - GurbaniNow Search";
 				} else {
-					var active = "";
+					var active = false;
 				}
 				var akharsplit = shabad.line.gurmukhi.akhar.split(" ");
 				var unisplit = shabad.line.gurmukhi.unicode.split(" ");
@@ -295,8 +295,8 @@ function getshabad(shabadNo, shabadId) {
 				var splitunicodelength = unisplit.length;
 				var append = document.createElement("div");
 				append.classList.add("sline");
-				if (active !== "") {
-					append.classList.add(active);
+				if (active) {
+					append.classList.add("activeline");
 				}
 				append.id = "s" + shabad.line.id;
 				var html = '<div class="gurmukhi akhar normal" style="font-family: GurbaniAkharThick;">' + shabad.line.gurmukhi.akhar + "</div>";
@@ -433,11 +433,17 @@ function getshabad(shabadNo, shabadId) {
 			toggleshabadinfo();
 			togglecenter();
 			document.getElementById("loading").style.display = "none";
+			document.getElementById("shabadinfo").classList.add("animated");
+			document.getElementById("shabadinfo").classList.add("bounceOutLeft");'
+			document.getElementById("shabad").classList.add("animated");
+			document.getElementById("shabad").classList.add("bounceOutLeft");
+			document.getElementById("shabadcontrol").classList.add("animated");
+			document.getElementById("shabadcontrol").classList.add("bounceOutLeft");
 			document.getElementById("shabadinfo").style.display = "block";
 			document.getElementById("shabad").style.display = "block";
 			document.getElementById("shabadcontrol").style.display = "block";
 			if (shabadId > 0) {
-				document.getElementById("s" + shabadId).scrollIntoView();
+				//document.getElementById("s" + shabadId).scrollIntoView();
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
