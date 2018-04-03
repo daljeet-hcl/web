@@ -15,7 +15,7 @@ route('GET', '/', function () {
 });
 
 route('GET', '/assets/js/:file/:version/js.js', function ($args) {
-	$name = realpath('assets/js/'.$args['file']);
+	$name = realpath('inc/assets/js/'.$args['file']);
 	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
 		$file = file_get_contents($name);
 	}
@@ -26,7 +26,7 @@ route('GET', '/assets/js/:file/:version/js.js', function ($args) {
 });
 
 route('GET', '/assets/css/:file/:version/css.css', function ($args) {
-	$name = realpath('assets/css/'.$args['file']);
+	$name = realpath('inc/assets/css/'.$args['file']);
 	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
 		$file = file_get_contents($name);
 	}
