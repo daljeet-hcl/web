@@ -115,7 +115,7 @@ function setsourceinfo(selectedvalue) {
 
 function updatesourceinfo() {
 	var searchtype = sessionStorage.getItem('s.data.searchtype');
-	if (searchtype != 0) {
+	if (searchtype !== 0 && document.getElementById("searchbox").value.length === 0) {
 		setsourceinfo(document.getElementById("searchtypeoption").value);
 	}
 }
