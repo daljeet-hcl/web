@@ -52,28 +52,24 @@ if (localStorage.getItem("s.onoff.unicode") === null) {
 
 new ClipboardJS("#sharecopybutton");
 
-/*
-$(function() {
-	$(window).scroll(function() {
-		if ($(this).scrollTop() !== 0) {
-			$("#scrollup").fadeIn();
-			$("#scrolldown").fadeIn();
-		} else {
-			$("#scrollup").fadeOut();
-			$("#scrolldown").fadeOut();
-		}
-	});
-	$("#scrollup").click(function() {
-		$("body,html").animate({
-			scrollTop: 0
-		}, 800);
-	});
-	$("#scrolldown").click(function() {
-		$("body,html").animate({
-			scrollTop: $(document).height()
-		}, 800);
-	});
-});*/
+window.addEventListener('scroll', function() {
+	if (window.scrollY !== 0) {
+		document.getElementById("scrollup").classList.add('show');
+		document.getElementById("scrollup").classList.remove('hide');
+		document.getElementById("scrolldown").classList.add('show');
+		document.getElementById("scrolldown").classList.remove('hide');
+	} else {
+		document.getElementById("scrollup").classList.add('hide');
+		document.getElementById("scrolldown").classList.add('hide');
+	}
+});
+document.getElementById("scrollup").addEventListener('click', function() {
+	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+});
+document.getElementById("scrolldown").addEventListener('click', function() {
+	window.scroll({ top: document.documentElement.clientHeight, left: 0, behavior: 'smooth' });
+});
+
 
 var getshabadid = document.getElementById("shabadid").dataset.shabadid;
 if (getshabadid !== null) {
@@ -479,8 +475,8 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadcontrol").style.display = "block";
 			document.getElementById("sharelink").value = "http://gbnow.cc/s/" + shabadNo + "/" + document.getElementById("lineid").dataset.lineid;
 			if (shabadId > 0) {
-				document.getElementById("s" + shabadId).scrollIntoView();
-				window.scrollBy(0, -80);
+				document.getElementById("s" + shabadId).scrollIntoView({ behavior: "smooth", block: "start" });
+				window.scrollBy({ top: -80, left: 0, behavior: 'smooth' });
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
