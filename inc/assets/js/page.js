@@ -293,9 +293,9 @@ function getpage(pageno, sourceid) {
 		if (this.status >= 200 && this.status < 400) {
 			var data = JSON.parse(this.response);
 			if (pageno <= 0) {
-				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
+				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
 			} else if (data.count === 0 && pageno > 0) {
-				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
+				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
 			} else {
 				if (data.source.id == "G") {
 					angen = "Ang";
@@ -465,11 +465,11 @@ function getpage(pageno, sourceid) {
 				document.getElementById("sharelink").value = "http://gbnow.cc/p/" + pageno + "/" + sourceid;
 			}
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
 	};
 	request.send();
 }

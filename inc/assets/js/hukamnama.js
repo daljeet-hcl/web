@@ -464,11 +464,11 @@ function gethukam() {
 			document.getElementById("shabadinfo").style.display = "block";
 			document.getElementById("shabad").style.display = "block";
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Hukamnama.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Hukamnama.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Hukamnama.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Hukamnama.</p></center>';
 	};
 	request.send();
 }

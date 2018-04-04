@@ -495,11 +495,11 @@ function getshabad(shabadNo, shabadId) {
 				});
 			}
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Shabad.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Shabad.</p></center>';
 	};
 	request.send();
 }
