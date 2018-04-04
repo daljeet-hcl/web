@@ -292,11 +292,9 @@ function getpage(pageno, sourceid) {
 		if (this.status >= 200 && this.status < 400) {
 			var data = JSON.parse(this.response);
 			if (pageno <= 0) {
-				getpage(1, sourceid);
-				changeurl("Page View - GurbaniNow Search", "https://gurbaninow.com/page/1?source=" + sourceid);
+				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
 			} else if (data.count === 0 && pageno > 0) {
-				getpage(pageno - 1, sourceid);
-				changeurl("Page View - GurbaniNow Search", "https://gurbaninow.com/page/" + (pageno - 1) + "?source=" + sourceid);
+				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
 			} else {
 				if (data.source.id == "G") {
 					angen = "Ang";
@@ -466,11 +464,11 @@ function getpage(pageno, sourceid) {
 				document.getElementById("sharelink").value = "http://gbnow.cc/p/" + pageno + "/" + sourceid;
 			}
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Page.</p></center>';
 	};
 	request.send();
 }
