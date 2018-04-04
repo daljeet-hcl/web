@@ -274,6 +274,7 @@ function togglefont(font) {
 function gethukam() {
 	document.getElementById("shabadinfo").style.display = "none";
 	document.getElementById("shabad").style.display = "none";
+	document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></center>';
 	document.getElementById("loading").style.display = "";
 	document.getElementById("shabad").innerHTML = "";
 	document.getElementById("shabadinfogurmukhi").innerHTML = "";
