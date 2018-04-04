@@ -60,15 +60,19 @@ route('GET', '/shabad/:shabadid/:id', function ($args) {
 });
 
 route('GET', '/page/:page', function ($args) {
-	$html = file_get_contents('inc/ang.html');
+	@$source = $_GET['source'];
+	if($source == "") {
+		$source = "G"
+	}
+	$html = file_get_contents('inc/page.html');
 	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
-	$html .= "<div id=\"sourceid\" data-sourceid=\"G\"></div>\n";
+	$html .= "<div id=\"sourceid\" data-sourceid=\"".$source."\"></div>\n";
 	$html .= "</html>";
 	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
 
 route('GET', '/page/:page/:id', function ($args) {
-	$html = file_get_contents('inc/ang.html');
+	$html = file_get_contents('inc/page.html');
 	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
 	$html .= "<div id=\"sourceid\" data-sourceid=\"".$args['id']."\"></div>\n";
 	$html .= "</html>";

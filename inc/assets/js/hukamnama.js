@@ -64,10 +64,18 @@ window.addEventListener('scroll', function() {
 	}
 });
 document.getElementById("scrollup").addEventListener('click', function() {
-	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+	window.scroll({
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	});
 });
 document.getElementById("scrolldown").addEventListener('click', function() {
-	window.scroll({ top: document.documentElement.clientHeight, left: 0, behavior: 'smooth' });
+	window.scroll({
+		top: document.documentElement.clientHeight,
+		left: 0,
+		behavior: 'smooth'
+	});
 });
 
 gethukam();

@@ -66,10 +66,18 @@ window.addEventListener('scroll', function() {
 	}
 });
 document.getElementById("scrollup").addEventListener('click', function() {
-	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+	window.scroll({
+		top: 0,
+		left: 0,
+		behavior: 'smooth'
+	});
 });
 document.getElementById("scrolldown").addEventListener('click', function() {
-	window.scroll({ top: document.documentElement.clientHeight, left: 0, behavior: 'smooth' });
+	window.scroll({
+		top: document.documentElement.clientHeight,
+		left: 0,
+		behavior: 'smooth'
+	});
 });
 
 
@@ -479,7 +487,11 @@ function getshabad(shabadNo, shabadId) {
 			if (shabadId > 0) {
 				var rect = document.getElementById("s" + shabadId).getBoundingClientRect();
 				var ypos = rect.top - 80;
-				window.scrollBy({ top: ypos, left: 0, behavior: "smooth" });
+				window.scrollBy({
+					top: ypos,
+					left: 0,
+					behavior: "smooth"
+				});
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
