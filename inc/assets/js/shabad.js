@@ -273,6 +273,7 @@ function togglefont(font) {
 }
 
 function getshabad(shabadNo, shabadId) {
+	window.scrollTo(0,0);
 	document.getElementById("shabadid").dataset.shabadid = shabadNo;
 	document.getElementById("shabadinfo").style.display = "none";
 	document.getElementById("shabad").style.display = "none";
@@ -477,7 +478,7 @@ function getshabad(shabadNo, shabadId) {
 			if (shabadId > 0) {
 				var rect = document.getElementById("s" + shabadId).getBoundingClientRect();
 				var ypos = rect.top - 80;
-				window.scroll({ top: ypos, left: 0, behavior: 'smooth' });
+				window.scroll({ top: ypos, left: 0, behavior: "smooth" });
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
