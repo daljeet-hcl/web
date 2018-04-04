@@ -49,6 +49,9 @@ if (localStorage.getItem("s.fontsize.punjabi") === null) {
 if (localStorage.getItem("s.onoff.unicode") === null) {
 	localStorage.setItem("s.onoff.unicode", "false");
 }
+
+new ClipboardJS("#sharecopybutton");
+
 /*
 $(function() {
 	$(window).scroll(function() {
