@@ -325,9 +325,6 @@ function getpage(pageno, sourceid) {
 					var splitunicodelength = unisplit.length;
 					var append = document.createElement("div");
 					append.classList.add("sline");
-					if (active) {
-						append.classList.add("activeline");
-					}
 					append.id = "s" + shabad.line.id;
 					var html = '<div class="gurmukhi akhar normal" style="font-family: GurbaniAkharThick;">' + shabad.line.gurmukhi.akhar + "</div>";
 					html += '<div class="gurmukhi unicode normal" style="font-family: AnmolBani; display: none;">' + shabad.line.gurmukhi.unicode + "</div>";
