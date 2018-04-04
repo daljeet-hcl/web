@@ -475,8 +475,9 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadcontrol").style.display = "block";
 			document.getElementById("sharelink").value = "http://gbnow.cc/s/" + shabadNo + "/" + document.getElementById("lineid").dataset.lineid;
 			if (shabadId > 0) {
-				document.getElementById("s" + shabadId).scrollIntoView({ behavior: "smooth", block: "start" });
-				window.scrollBy({ top: -80, left: 0, behavior: 'smooth' });
+				var rect = document.getElementById("s" + shabadId).getBoundingClientRect();
+				var ypos = rect.top - 80;
+				window.scroll({ top: ypos, left: 0, behavior: 'smooth' });
 			}
 		} else {
 			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw"></i><br><p>There was an error loading the Shabad.</p></center>';
