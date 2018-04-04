@@ -313,8 +313,8 @@ function gethukam() {
 			var unipagenum = pageno.replace(/0/g, "੦").replace(/1/g, "੧").replace(/2/g, "੨").replace(/3/g, "੩").replace(/4/g, "੪").replace(/5/g, "੫").replace(/6/g, "੬").replace(/7/g, "੭").replace(/8/g, "੮").replace(/9/g, "੯");
 			var appenden = document.createElement("span");
 			var appendgur = document.createElement("span");
-			var htmlen = data.hukamnamainfo.raag.english + " - " + data.hukamnamainfo.writer.english + " - " + '<a href="/page/' + data.hukamnamainfo.pageno + "/" + data.hukamnamainfo.source.id + '">' + angen + " " + data.hukamnamainfo.pageno + "</a>" + raagEnglishOut;
-			var htmlgur = data.hukamnamainfo.raag.unicode + " - " + data.hukamnamainfo.writer.unicode + " - " + '<a href="/page/' + data.hukamnamainfo.pageno + "/" + data.hukamnamainfo.source.id + '">' + anggur + " " + unipagenum + "</a>" + raagGurOut;
+			var htmlen = data.hukamnamainfo.raag.english + " - " + data.hukamnamainfo.writer.english + " - " + '<a href="/page/' + data.hukamnamainfo.pageno + "?source=" + data.hukamnamainfo.source.id + '">' + angen + " " + data.hukamnamainfo.pageno + "</a>" + raagEnglishOut;
+			var htmlgur = data.hukamnamainfo.raag.unicode + " - " + data.hukamnamainfo.writer.unicode + " - " + '<a href="/page/' + data.hukamnamainfo.pageno + "?source=" + data.hukamnamainfo.source.id + '">' + anggur + " " + unipagenum + "</a>" + raagGurOut;
 			appenden.innerHTML = htmlen;
 			appendgur.innerHTML = htmlgur;
 			document.getElementById("shabadinfoenglish").appendChild(appenden);
