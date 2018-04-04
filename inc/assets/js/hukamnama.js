@@ -74,13 +74,13 @@ gethukam();
 
 function toggleday() {
 	if (document.getElementById('daytoggle').checked) {
-		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-flatly.min.css");
+		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-flatly.min.css");
 		if (document.querySelector(".activeline")) {
 			document.querySelector(".activeline").style.backgroundColor = "#ECF0F1";
 		}
 		localStorage.setItem("s.onoff.day", "true");
 	} else {
-		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-3/dist/bootstrap-darkly.min.css");
+		document.getElementById("pagestyle").setAttribute("href", "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css");
 		if (document.querySelector(".activeline")) {
 			document.querySelector(".activeline").style.backgroundColor = "#303030";
 		}
