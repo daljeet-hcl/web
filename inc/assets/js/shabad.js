@@ -474,6 +474,7 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadinfo").style.display = "block";
 			document.getElementById("shabad").style.display = "block";
 			document.getElementById("shabadcontrol").style.display = "block";
+			document.getElementById("sharelink").value = "http://gbnow.cc/s/" + shabadNo + "/" + document.getElementById("lineid").dataset.lineid;
 			if (shabadId > 0) {
 				document.getElementById("s" + shabadId).scrollIntoView();
 				window.scrollBy(0, -80);
