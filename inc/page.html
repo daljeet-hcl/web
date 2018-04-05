@@ -160,26 +160,26 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Hukamnama</h4>
+						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Page</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<center>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/h') + '&t=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/h') + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/h') + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Hukamnama' + '%20' +  encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' +  document.getElementById('sourceid').dataset.sourceid) + '&t=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid) + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Page' + '%20' +  encodeURI('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
 								<br><br>
 								<div class="input-group">
-									<input readonly type="text" class="form-control" id="sharelink" value="http://gbnow.cc/h">
+									<input readonly type="text" class="form-control" id="sharelink">
 									<span class="input-group-btn">
 										<button data-clipboard-target="#sharelink" class="btn btn-default" id="sharecopybutton" type="button"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
 									</span>
 								</div>
 								<br>
-								<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/hukamnama');">Unicode Share</a>
+								<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/page' + parseInt(document.getElementById('page').dataset.page) + '/' + document.getElementById('sourceid').dataset.sourceid);">Unicode Share</a>
 								<br>
 							</center>
 						</div>
