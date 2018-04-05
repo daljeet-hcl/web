@@ -86,3 +86,9 @@ body {
 .hide {
 	opacity: 0;
 }
+#pageleftroot a, #pagerightroot a {
+    color: #3498DB;
+}
+#pageleftroot a:hover, #pagerightroot a:hover {
+    color: #4EA5E0;
+}
