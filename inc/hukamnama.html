@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-    <title>Hukamnama - GurbaniNow</title>
-    <link href="/favicon.png" rel="icon" type="image/png" />
+	<title>Hukamnama - GurbaniNow</title>
+	<link href="/favicon.png" rel="icon" type="image/png" />
 	<meta name="description" content="Daily Hukamnama From Sri Darbar Sahib, Sri Amritsar">
 	<meta name="keywords" content="sggs,sikh,sikhism,waheguru,guru,gurugranth,gurbani,gurbaninow,sttm,sikhitothemax,akj,dasamgranth,gurugobindsingh,damdamitaksal,taksal,nihung,akhandkeertanijatha,dasamduar,bani,baani,gurbaani,sikhi">
 	<meta name="author" content="GurbaniNow Dev Team">
@@ -11,28 +12,31 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.dark.css/3.3.7.5/css.css" id="pagestyle">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css" integrity="sha256-itsQMXiC7vueKlWeyXjigvif6ghxz++wfCOcdczJQRE=" crossorigin="anonymous">
-	<link rel="stylesheet" href="/assets/css/fonts.css/1.6.2/css.css">
-	<link rel="stylesheet" href="/assets/css/shabad.css/1.2.17/css.css">
-	<script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
-	<script async src="https://cdn.rawgit.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar/86f461a6/dist/jquery.bootstrap-autohidingnavbar.min.js"></script>
-	<script defer src="https://cdn.rawgit.com/boyofgreen/ManUp.js/6dae0a97/manup.min.js"></script>
-	<script defer src="/assets/js/hukamnama.js/1.2.20/js.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css" id="pagestyle">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesome-bootstrap-checkbox@0.3.7/awesome-bootstrap-checkbox.css" integrity="sha256-M9aoCVzUR/zsTFd2J1WmS91DpOOSbh3luX6xNnaY1QI=" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/fonts.css/1.3.0-2/css.css">
+	<link rel="stylesheet" href="/assets/css/shabad.css/1.3.0-6/css.css">
+	<script data-cfasync="false" defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/bootstrap-native.min.js" integrity="sha256-Kv93byFhUzwIVDch/he4AyOLfroKwM9FIc6OAtqqaow=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/polyfill.min.js" integrity="sha256-H+ETBMCg8Q8bUrUF6YAtdAtyAJwmElEkpRePbFY3GjA=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/gurbaninow@1.0.1/index.js" integrity="sha256-g+bsE+xxNCM6Idw6Csu1eY7dpro7suq4fkJMuZZz6lI=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.0/dist/clipboard.min.js" integrity="sha256-meF2HJJ2Tcruwz3z4XcxYDRMxKprjdruBHc3InmixCQ=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.3/dist/smoothscroll.min.js" integrity="sha256-nNe5AKslYHlRZxbJQzkA2ZD+H/Fgx1wQWbO6NHrj/sc=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/nodelist-foreach-polyfill@1.2.0/index.js" integrity="sha256-7D/Zkue8uPxcWdD8vqAghS3EGRX9QxinCJIYJXClIkg=" crossorigin="anonymous"></script>
+	<script defer src="/assets/js/hukamnama.js/1.3.0-6/js.js"></script>
 	<!--[if lt IE 9]>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
+
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav pull-left">
 				<li><a href="javascript:void(0)" style="font-size: 1.1em;" onclick="window.history.back();"><span class="fa fa-chevron-left" aria-hidden="true"></span>&nbsp;<b>BACK</b></a></li>
 			</ul>
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navlinks" onclick="$('#shabadformat').hide('slow');">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navlinks">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span> 
@@ -45,119 +49,154 @@
 					<li id="larivaarbtn" class="text-right"><a href="javascript:void(0)" onclick="togglelarivaar();">Larivaar&nbsp;&nbsp;<i class="fa fa-minus fa-fw" aria-hidden="true"></i></a></li>
 					<li id="assist" class="text-right"></li>
 					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#shabadformatsettings">Settings&nbsp;&nbsp;<i class="fa fa-cog fa-fw" aria-hidden="true"></i></a></li>
-					<li class="text-right"><a href="https://gurbaninow.com/share/hukamnama" target="_blank">Share&nbsp;(Unicode)&nbsp;&nbsp;<i class="fa fa-share fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#sharemenu">Share&nbsp;&nbsp;<i class="fa fa-share-alt fa-fw" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-    <div class="container-fluid">
+	<div class="container-fluid">
 		<div id="loading">
 			<br>
-			<center><i class="fa fa-refresh fa-spin fa-5x fa-fw"></i></center>
+			<center><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></center>
 		</div>
-		<div id="shabadout">
-			<div id="shabadformatsettings" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Shabad Settings</h4>
-						</div>
-						<div class="modal-body">
-							<div class="container-fluid">
-								<div id="setting-left">
-									<div class="checkbox checkbox-primary disabled">
-										<input type="checkbox" id="gurmukhitoggle" onclick="showhide(this.id,'gurmukhi');" disabled checked><label>Gurmukhi</label>
-									</div>
-									<div id="gurmukhifontsize">
-										<div class="btn-group btn-group-sm" role="group">
-											<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fa fa-minus"></i></button>
-											<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus"></i></button>
-										</div>
-									</div>
-									<h5><b>- Transliteration</b></h5>
-									<div class="checkbox">
-										<input type="checkbox" id="hinditoggle" onclick="showhide(this.id,'hindi');"><label>Hindi</label>
-									</div>
-									<div id="hindifontsize">
-										<div class="btn-group btn-group-sm" role="group">
-											<button type="button" class="btn btn-default" onclick="fontminus('hindi');"><i class="fa fa-minus"></i></button>
-											<button type="button" class="btn btn-default" onclick="fontplus('hindi');"><i class="fa fa-plus"></i></button>
-										</div>
-									</div>
-									<div class="checkbox">
-										<input type="checkbox" id="transliterationtoggle" onclick="showhide(this.id,'transliteration');"><label>English</label>
-									</div>
-									<div id="transliterationfontsize">
-										<div class="btn-group btn-group-sm" role="group">
-											<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus"></i></button>
-											<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus"></i></button>
-										</div>
-									</div>
-									<h5><b>- Translation</b></h5>
-									<div class="checkbox">
-										<input type="checkbox" id="englishtranslationtoggle" onclick="showhide(this.id,'english');"><label>English</label>
-									</div>
-									<div id="englishfontsize">
-										<div class="btn-group btn-group-sm" role="group">
-											<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus"></i></button>
-											<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus"></i></button>
-										</div>
-									</div>
-									<div class="checkbox">
-										<input type="checkbox" id="punjabitranslationtoggle" onclick="showhide(this.id,'punjabi');"><label>Punjabi</label>
-									</div>
-									<div id="punjabifontsize">
-										<div class="btn-group btn-group-sm" role="group">
-											<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus"></i></button>
-											<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus"></i></button>
-										</div>
+		<div id="shabadformatsettings" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Shabad Settings</h4>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<div id="setting-left">
+								<div class="checkbox checkbox-primary disabled">
+									<input type="checkbox" id="gurmukhitoggle" onclick="showhide(this.id,'gurmukhi');" disabled checked><label>Gurmukhi</label>
+								</div>
+								<div id="gurmukhifontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus"></i></button>
 									</div>
 								</div>
-								<div style="width: 49%; display: inline-block;">
-									<h5><b>- Misc. Settings</b></h5>
-									<div class="checkbox">
-										<input type="checkbox" id="daytoggle" onclick="toggleday();"><label>Day/Night Mode</label>
+								<h5><b>- Transliteration</b></h5>
+								<div class="checkbox">
+									<input type="checkbox" id="hinditoggle" onclick="showhide(this.id,'hindi');"><label>Hindi</label>
+								</div>
+								<div id="hindifontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('hindi');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('hindi');"><i class="fa fa-plus"></i></button>
 									</div>
-									<div class="checkbox">
-										<input type="checkbox" id="centertoggle" onclick="togglecenter();"><label>Center</label>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" id="transliterationtoggle" onclick="showhide(this.id,'transliteration');"><label>English</label>
+								</div>
+								<div id="transliterationfontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus"></i></button>
 									</div>
-									<div class="checkbox">
-										<input type="checkbox" id="shabadinfotoggle" onclick="toggleshabadinfo();"><label>Shabad Info</label>
+								</div>
+								<h5><b>- Translation</b></h5>
+								<div class="checkbox">
+									<input type="checkbox" id="englishtranslationtoggle" onclick="showhide(this.id,'english');"><label>English</label>
+								</div>
+								<div id="englishfontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus"></i></button>
 									</div>
-									<div class="dropdown">
-										<button class="btn btn-default btn-block dropdown-toggle" type="button" id="fontmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-											Font <span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu" style="width:100%;" aria-labelledby="fontmenu">
-											<li><a href="javascript:void(0)" onclick="togglefont('AnmolLipi');">AnmolLipi</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('AnmolLipiBold');">AnmolLipi Bold</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkhar');">GurbaniAkhar</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkharHeavy');">GurbaniAkhar Heavy</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkharThick');">GurbaniAkhar Thick <small>(Default)</small></a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('NotoSansGurmukhi');">NotoSans Gurmukhi</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('NotoSansGurmukhiBold');">NotoSans Gurmukhi Bold</a></li>
-											<li><a href="javascript:void(0)" onclick="togglefont('Prabhki');">Prabhki</a></li>
-										</ul>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" id="punjabitranslationtoggle" onclick="showhide(this.id,'punjabi');"><label>Punjabi</label>
+								</div>
+								<div id="punjabifontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus"></i></button>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<div style="width: 49%; display: inline-block;">
+								<h5><b>- Misc. Settings</b></h5>
+								<div class="checkbox">
+									<input type="checkbox" id="daytoggle" onclick="toggleday();"><label>Day/Night Mode</label>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" id="centertoggle" onclick="togglecenter();"><label>Center</label>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" id="shabadinfotoggle" onclick="toggleshabadinfo();"><label>Shabad Info</label>
+								</div>
+								<div class="dropdown">
+									<button class="btn btn-default btn-block dropdown-toggle" type="button" id="fontmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										Font <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" style="width:100%;" aria-labelledby="fontmenu">
+										<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkhar');">GurbaniAkhar</a></li>
+										<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkharHeavy');">GurbaniAkhar Heavy</a></li>
+										<li><a href="javascript:void(0)" onclick="togglefont('GurbaniAkharThick');">GurbaniAkhar Thick <small>(Default)</small></a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
 
+			</div>
+		</div>
+		<div id="sharemenu" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Hukamnama</h4>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<center>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/h') + '&t=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/h') + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/h') + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Hukamnama' + '%20' +  encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
+								<br><br>
+								<div class="input-group">
+									<input readonly type="text" class="form-control" id="sharelink" value="http://gbnow.cc/h">
+									<span class="input-group-btn">
+										<button data-clipboard-target="#sharelink" class="btn btn-default" id="sharecopybutton" type="button"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+									</span>
+								</div>
+								<br>
+								<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/hukamnama');">Unicode Share</a>
+								<br>
+							</center>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 			</div>
+		</div>
+		<div id="shabadout">
 			<div id="shabadinforoot">
 				<div id="shabadinfo" class="container">
 					<div class="well well-sm">
 						<center>
-							<p><div>Hukamnama from Sri Darbar Sahib, Sri Amritsar</div>
-							<div id="hukaminfo"></div></p>
-							<p><div style="font-family: AnmolBani; font-size: 1.2em; font-weight: bold;" id="shabadinfogurmukhi"></div>
-							<div id="shabadinfoenglish"></div></p>
+							<h4><a href="javascript:void(0)" onclick="window.location.href = 'https://gurbaninow.com/shabad/' + document.getElementById('shabadid').dataset.shabadid;">Open Shabad</a></h4>
+							<p>
+								<div>Hukamnama from Sri Darbar Sahib, Sri Amritsar</div>
+								<div id="hukaminfo"></div>
+							</p>
+							<p>
+								<div style="font-family: AnmolBani; font-size: 1.2em; font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;" id="shabadinfogurmukhi"></div>
+								<div id="shabadinfoenglish"></div>
+							</p>
 						</center>
 					</div>
 				</div>
@@ -170,10 +209,6 @@
 	<div id="scrolldown"><img height="30" width="30" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaAAAAGgCAMAAADb6ENrAAABblBMVEU0mNs1mNs1mds2mds3mds4mts4mtw5mtw6m9w8nNw9nNw+ndw/ndxAntxBnt1Cn91Dn91EoN1FoN1Hod1NpN5Ppd5Qpd5VqN9WqN9Xqd9Yqd9Zqt9aqt9aquBbq+Bcq+BdrOBerOBfrOBfreBgreBhreBhruBiruFjruFkr+Flr+FmsOFnsOFnseFpseFpsuFqsuFrsuJss+Jts+JutOJvtOJxteJ2uON3uON4uON5ueN6ueN7uuN8u+R+u+R+vOR/vOSAvOSCveSDvuSEvuWFv+WGv+WHwOWIwOWLweWLwuWNwuaNw+aPw+aQxOaSxeaVxuebyeejzeikzeis0emt0umv0+qx1Oq21uu62Ou82eu92uu/2uy/2+zB2+zC3OzE3ezG3uzH3u3J3+3L4O3M4e3O4u3P4u7R4+7T5O7W5e7X5u7Z5+/a5+/b6O/c6O/e6e/f6u/g6vDi6/Dj7PDl7fDo7vDp7/Hr7/Hs8PHo4zOPAAAFJElEQVR42u3cd3NVVRTG4Y0YEESaWMACFlAURQgK9oYdO6ggKmhQEEUpguvb+4c61CS37Nyz9rnP8wn2en+TmeQwQykAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANCVmW2fHz9z9LPNy9t69oYDR+ZOffXyxr7nWbb/cvzrwu6Gnr326/9eHd+s73WflcfjqsPN/BBtvXL11X9v73GfVb/GtU7OtPHsfde9Og70t8/Z6y9tpNANfSJe7Gmf1Tf2aaPQTX0iXupnn99uvrSBQrfoE/HKtPTJX+iWffpYaJ4+2QvN0yfi1b71+X2+S1MXmrdPxGu96nPn/H0yF1qgT8TrfepzbqFL0xZasE/EG73ps2bhPlkLLdIn4s2+9PljsUtTFlq0T8Rbvehz1+J9MhYaoE/E233o8+cgl6YrNFCfiIPT0idboQH7RLwzLX1yFRq4T8S7TfdZe37wSxMVGqJPxHvT0idPoaH6RLzfbJ91w/XJUmjIPu0WWndh2EtTFBq6T8QH09InQ6ER+kR82GKfi6Nc2nmhkfpEfNRcn/Wj9em60Ih9Ig5NS5+IEx0Wmh351fFxU302jN6ny0Jj9In4pKE+Gy+Nc2lnhcbq01KhMft0VWjMPhGftvL9bdw+3RQau08rfw/NnBn/0g4KVegTsauFQIdqXDrxQlX6xOWV+fusimiw0GylVzfwWW5PNFioVp+4kD/Q4WivULU+EevSBzodzRWq2CfuSR/or2itUM0+sSV9oLlorFDVPrEpfaAvoq1CdfvEmvSBdkRThSr3OZv/t7gVl1sqVLlP7G/gS8KBaKdQ7T7nW/ifBZYda6ZQ7T5xbxNfS1ecbqRQ9T57Gvn3hjvaKFS9zwulKKTPtBTaW7vP86UopM+0FJr6PskLVe+zrxSF6hXSJ3chfXIX0id3IX1yF9IndyF9biz0S6pC1fvMlqJQvUL65C6kT+5C1fvsLUWheoX0yV1InwWs7L6QPrkL6bNYoZ87LaRP7kLV++wpRaF6hfTJXUif3IWq93muFIXqFdIndyF9hit0asKFqvfZXYpC9Qrpk7tQ9T7PlqJQvUL65C6kz6iF5iZSqHqfZ0pRqF4hfXIX0mcsK5a6UPU+u0pRqF4hfXIX0id3oep9ni5FoXqF9KlV6KclKaRP7kLV+zxVikL1CumTu9A5fZIXqmxnKQrpo5A+vSykT+5C+uQupM9VMwkLPSlL6kL65C6kz02FfszU5wlBUhfSJ3chfXIX0id3IX1yF9JnwUInu+6zQ4TUhfTJXUif3IW2mz91IX1yF9Jn4EInuujzuOFTF9IndyF9chd6zOSpC+mTu5A+uQs9auzUhfTJXUif0d0+gUKPmDl1IX3GLPTD0vbZZuLUhfTJXUif3IW2Gjd1IX1yF9IndyF9chfSp3Kh7/WZpkL65C6kT+5C+ixRoe/q9HnYlKkL6ZO7kD65Cz1kxNSF9MldSJ8JFDo+ep8HzZe6kD65C+kzKctHKvSA4VIX0id3IX0mXOjb4fpsMVnqQvrkLqRP7kKbjZW6kD65C+nTYaFj+rReSJ/chfTJXeh+A6UupE/uQvokKXRUnxYL6ZO7kD65C91nlNSF9Mnmti+vyXNxk0Hymb30f58jq62R0czOI+fjytzBu02R1zITAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3fgHVwsLXnWdwPoAAAAASUVORK5CYII=" /></div>
 	<div id="scrollup"><img height="30" width="30" src="data:image/png;base64,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" /></div>
 </body>
-<script defer>
-	if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		$(".navbar-fixed-top").autoHidingNavbar();
-	}
-</script>
 <div id="shabadid" data-shabadid=""></div>
+
 </html>

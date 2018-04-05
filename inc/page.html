@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Shabad - GurbaniNow Search</title>
+	<title>Read Baani - GurbaniNow Search</title>
 	<link href="/favicon.png" rel="icon" type="image/png" />
-	<meta name="description" content="Shabad Viewer">
+	<meta name="description" content="Read Baani Page by Page">
 	<meta name="keywords" content="sggs,sikh,sikhism,waheguru,guru,gurugranth,gurbani,gurbaninow,sttm,sikhitothemax,akj,dasamgranth,gurugobindsingh,damdamitaksal,taksal,nihung,akhandkeertanijatha,dasamduar,bani,baani,gurbaani,sikhi">
 	<meta name="author" content="GurbaniNow Dev Team">
 	<meta name="theme-color" content="#4B6A8B">
@@ -23,7 +23,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.0/dist/clipboard.min.js" integrity="sha256-meF2HJJ2Tcruwz3z4XcxYDRMxKprjdruBHc3InmixCQ=" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.3/dist/smoothscroll.min.js" integrity="sha256-nNe5AKslYHlRZxbJQzkA2ZD+H/Fgx1wQWbO6NHrj/sc=" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/nodelist-foreach-polyfill@1.2.0/index.js" integrity="sha256-7D/Zkue8uPxcWdD8vqAghS3EGRX9QxinCJIYJXClIkg=" crossorigin="anonymous"></script>
-	<script defer src="/assets/js/shabad.js/1.3.0-17/js.js"></script>
+	<script defer src="/assets/js/page.js/1.3.0-5/js.js"></script>
 	<!--[if lt IE 9]>
 		<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
 	<![endif]-->
@@ -46,6 +46,12 @@
 				<a class="navbar-brand" href="/"><img alt="Brand" src="/logo.png"></a>
 			</div>
 			<div class="collapse navbar-collapse" id="navlinks">
+				<div class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="number" min="1" id="pagenumgo" class="form-control" placeholder="Go To Page">
+					</div>
+					<button id="pagego" onclick="getpageno(document.getElementById('pagenumgo').value);" class="btn btn-info"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+				</div>
 				<ul class="nav navbar-nav pull-right">
 					<li id="unicodebtn" class="text-right"><a href="javascript:void(0)" onclick="toggleunicode();" id="unicodebutton">Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i></a></li>
 					<li id="larivaarbtn" class="text-right"><a href="javascript:void(0)" onclick="togglelarivaar();">Larivaar&nbsp;&nbsp;<i class="fa fa-minus fa-fw" aria-hidden="true"></i></a></li>
@@ -80,25 +86,6 @@
 										<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus"></i></button>
 									</div>
 								</div>
-								<h5><b>- Translation</b></h5>
-								<div class="checkbox">
-									<input type="checkbox" id="englishtranslationtoggle" onclick="showhide(this.id,'english');"><label>English</label>
-								</div>
-								<div id="englishfontsize">
-									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus"></i></button>
-									</div>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" id="punjabitranslationtoggle" onclick="showhide(this.id,'punjabi');"><label>Punjabi</label>
-								</div>
-								<div id="punjabifontsize">
-									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus"></i></button>
-									</div>
-								</div>
 								<h5><b>- Transliteration</b></h5>
 								<div class="checkbox">
 									<input type="checkbox" id="hinditoggle" onclick="showhide(this.id,'hindi');"><label>Hindi</label>
@@ -116,6 +103,25 @@
 									<div class="btn-group btn-group-sm" role="group">
 										<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus"></i></button>
 										<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus"></i></button>
+									</div>
+								</div>
+								<h5><b>- Translation</b></h5>
+								<div class="checkbox">
+									<input type="checkbox" id="englishtranslationtoggle" onclick="showhide(this.id,'english');"><label>English</label>
+								</div>
+								<div id="englishfontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus"></i></button>
+									</div>
+								</div>
+								<div class="checkbox">
+									<input type="checkbox" id="punjabitranslationtoggle" onclick="showhide(this.id,'punjabi');"><label>Punjabi</label>
+								</div>
+								<div id="punjabifontsize">
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus"></i></button>
 									</div>
 								</div>
 							</div>
@@ -147,7 +153,6 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div id="sharemenu" class="modal fade" role="dialog">
@@ -155,17 +160,17 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Shabad</h4>
+						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Page</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<center>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' +  document.getElementById('lineid').dataset.lineid) + '&t=' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid)); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid) + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid)); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid)); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Shabad' + '%20' +  encodeURI('http://gbnow.cc/s/' + document.getElementById('shabadid').dataset.shabadid + '/' + document.getElementById('lineid').dataset.lineid)); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' +  document.getElementById('sourceid').dataset.sourceid) + '&t=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid) + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Page' + '%20' +  encodeURI('http://gbnow.cc/p/' + document.getElementById('page').dataset.page + '/' + document.getElementById('sourceid').dataset.sourceid)); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
 								<br><br>
 								<div class="input-group">
 									<input readonly type="text" class="form-control" id="sharelink">
@@ -174,7 +179,7 @@
 									</span>
 								</div>
 								<br>
-								<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/' + parseInt(document.getElementById('shabadid').dataset.shabadid));">Unicode Share</a>
+								<a href="javascript:void(0);" class="btn btn-default" onclick="window.open('https://gurbaninow.com/share/page/' + parseInt(document.getElementById('page').dataset.page) + '/' + document.getElementById('sourceid').dataset.sourceid);">Unicode Share</a>
 								<br>
 							</center>
 						</div>
@@ -191,7 +196,7 @@
 					<div class="well well-sm">
 						<center>
 							<p>
-								<div style="font-family: AnmolBani; font-size: 1.2em; font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;" id="shabadinfogurmukhi"></div>
+								<div style="font-family: AnmolBani; font-size: 1.2em; font-weight: bold;" id="shabadinfogurmukhi"></div>
 								<div id="shabadinfoenglish"></div>
 							</p>
 						</center>
@@ -203,9 +208,9 @@
 			<div id="shabadcontrol">
 				<center>
 					<ul class="pagination pagination-sm">
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) - 1, 0);"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-						<li class="active"><a>SHABAD</a></li>
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) + 1, 0);"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+						<li><a href="javascript:void(0)" onclick="changeangdown();"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+						<li class="active"><a>PAGE</a></li>
+						<li><a href="javascript:void(0)" onclick="changeangup();"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
 					</ul>
 				</center>
 			</div>

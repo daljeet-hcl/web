@@ -15,7 +15,7 @@ route('GET', '/', function () {
 });
 
 route('GET', '/assets/js/:file/:version/js.js', function ($args) {
-	$name = realpath('assets/js/'.$args['file']);
+	$name = realpath('inc/assets/js/'.$args['file']);
 	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
 		$file = file_get_contents($name);
 	}
@@ -26,7 +26,7 @@ route('GET', '/assets/js/:file/:version/js.js', function ($args) {
 });
 
 route('GET', '/assets/css/:file/:version/css.css', function ($args) {
-	$name = realpath('assets/css/'.$args['file']);
+	$name = realpath('inc/assets/css/'.$args['file']);
 	if (substr($name, 0, strlen(dirname(__FILE__))) === dirname(__FILE__)) {
 		$file = file_get_contents($name);
 	}
@@ -60,17 +60,13 @@ route('GET', '/shabad/:shabadid/:id', function ($args) {
 });
 
 route('GET', '/page/:page', function ($args) {
-	$html = file_get_contents('inc/ang.html');
+	@$source = $_GET['source'];
+	if($source == "") {
+		$source = "G";
+	}
+	$html = file_get_contents('inc/page.html');
 	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
-	$html .= "<div id=\"sourceid\" data-sourceid=\"G\"></div>\n";
-	$html .= "</html>";
-	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
-});
-
-route('GET', '/page/:page/:id', function ($args) {
-	$html = file_get_contents('inc/ang.html');
-	$html .= "\n<div id=\"page\" data-page=\"".$args['page']."\"></div>\n";
-	$html .= "<div id=\"sourceid\" data-sourceid=\"".$args['id']."\"></div>\n";
+	$html .= "<div id=\"sourceid\" data-sourceid=\"".$source."\"></div>\n";
 	$html .= "</html>";
 	return response($html, 200, ['content-type' => 'text/html; charset=utf-8']);
 });
