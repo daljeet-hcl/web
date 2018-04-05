@@ -191,7 +191,7 @@
 					<div class="well well-sm">
 						<div class="row" style="display: -webkit-flex; -webkit-align-items: center; display: flex; align-items: center;">
 							<div class="col-xs-2">
-								<i class="fa fa-chevron-left text-info" style="font-size: 50px;" aria-hidden="true"></i>
+								<a id="pageleft" href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) - 1, 0);"><i class="fa fa-chevron-left text-info" style="font-size: 50px;" aria-hidden="true"></i></a>
 							</div>
 							<div class="col-xs-8">
 								<center>
@@ -202,7 +202,7 @@
 								</center>
 							</div>
 							<div class="col-xs-2" style="text-align: right;">
-								<i class="fa fa-chevron-right text-info" style="font-size: 50px;" aria-hidden="true"></i>
+								<a id="pageright" href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) + 1, 0);"><i class="fa fa-chevron-right text-info" style="font-size: 50px;" aria-hidden="true"></i></a>
 							</div>
 						</div>
 					</div>
@@ -213,9 +213,9 @@
 			<div id="shabadcontrol">
 				<center>
 					<ul class="pagination pagination-sm">
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) - 1, 0);"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+						<li id="pageleft"><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) - 1, 0);"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
 						<li class="active"><a>SHABAD</a></li>
-						<li><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) + 1, 0);"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+						<li id="pageright"><a href="javascript:void(0)" onclick="getshabad(parseInt(document.getElementById('shabadid').dataset.shabadid) + 1, 0);"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
 					</ul>
 				</center>
 			</div>
