@@ -74,7 +74,7 @@ document.getElementById("scrollup").addEventListener('click', function() {
 });
 document.getElementById("scrolldown").addEventListener('click', function() {
 	window.scroll({
-		top: document.documentElement.clientHeight,
+		top: document.body.scrollHeight,
 		left: 0,
 		behavior: 'smooth'
 	});
