@@ -4,7 +4,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
-$config['displayErrorDetails'] = true;
+$config['displayErrorDetails'] = false;
 $config['addContentLengthHeader'] = false;
 
 $app = new \Slim\App(['settings' => $config]);
@@ -37,7 +37,7 @@ $app->group('/assets', function() {
 		$filename = $args['filename'];
 		$name = realpath("../src/js/$filename");
 		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
-			$file = file_get_contents($name);
+			@$file = file_get_contents($name);
 		}
 		$packer = $this->packer;
 		$packedjs = $packer($file, 'Normal', true, false, true)->pack();
@@ -51,7 +51,7 @@ $app->group('/assets', function() {
 		$filename = $args['filename'];
 		$name = realpath("../src/css/$filename");
 		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
-			$file = file_get_contents($name);
+			@$file = file_get_contents($name);
 		}
 		$response = $this->cache->allowCache($response, 'public', 31536000);
 		$response = $this->cache->withEtag($response, md5($file), 'weak');
