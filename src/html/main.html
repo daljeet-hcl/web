@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GurbaniNow Search</title>
+	<link href="/favicon.png" rel="icon" type="image/png" />
+	<meta name="description" content="GurbaniNow - Modern and Simple Way of Searching Gurbani">
+	<meta name="keywords" content="sggs,sikh,sikhism,waheguru,guru,gurugranth,gurbani,gurbaninow,sttm,sikhitothemax,akj,dasamgranth,gurugobindsingh,damdamitaksal,taksal,nihung,akhandkeertanijatha,dasamduar,bani,baani,gurbaani,sikhi">
+	<meta name="author" content="GurbaniNow Dev Team">
+	<meta name="theme-color" content="#4B6A8B">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesome-bootstrap-checkbox@0.3.7/awesome-bootstrap-checkbox.css" integrity="sha256-M9aoCVzUR/zsTFd2J1WmS91DpOOSbh3luX6xNnaY1QI=" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/<?= $version ?>/fonts.css">
+	<link rel="stylesheet" href="/assets/css/<?= $version ?>/main.css">
+	<script data-cfasync="false" defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/bootstrap-native.min.js" integrity="sha256-Kv93byFhUzwIVDch/he4AyOLfroKwM9FIc6OAtqqaow=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/polyfill.min.js" integrity="sha256-H+ETBMCg8Q8bUrUF6YAtdAtyAJwmElEkpRePbFY3GjA=" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/gurbaninow@1.0.1/index.js" integrity="sha256-g+bsE+xxNCM6Idw6Csu1eY7dpro7suq4fkJMuZZz6lI=" crossorigin="anonymous"></script>
+	<script defer src="/assets/js/<?= $version ?>/main.js"></script>
+	<!--[if lt IE 9]>
+		<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navlinks">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</button>
+				<a class="navbar-brand" href="https://gurbaninow.com/"><img alt="Brand" src="logo.png"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navlinks">
+				<ul class="nav navbar-nav pull-right">
+					<li class="text-right"><a href="/shabad/random">Random Shabad&nbsp;&nbsp;<i class="fa fa-random fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/hukamnama">Hukamnama&nbsp;&nbsp;<i class="fa fa-podcast fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/page/1">Read SGGS&nbsp;&nbsp;<i class="fa fa-book fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/about">About&nbsp;&nbsp;<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="input-group">
+			<span class="input-group-btn">
+				<button class="btn btn-default" data-toggle="modal" data-target="#searchsettings"><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<i class="fa fa-sort"></i></button>
+				<div class="btn-group">
+					<a href="javascript:void(0)" type="button" class="btn btn-info" onclick="togglekeyboard();"><i class="fa fa-keyboard-o fa-lg"></i></a>
+					<div class="gurmukhi-keyboard dropdown-menu" id="gurmukhi-keyboard" style="display: none; font-family: GurbaniAkharThick;">
+						<div class="page" id="gurmukhi-keyboard-page-1" style="display: block;">
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">a</button>
+									<button class="btn btn-xs btn-default gurmukhi">A</button>
+									<button class="btn btn-xs btn-default gurmukhi">e</button>
+									<button class="btn btn-xs btn-default gurmukhi">s</button>
+									<button class="btn btn-xs btn-default gurmukhi">h</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">k</button> 
+									<button class="btn btn-xs btn-default gurmukhi">K</button>
+									<button class="btn btn-xs btn-default gurmukhi">g</button>
+									<button class="btn btn-xs btn-default gurmukhi">G</button>
+									<button class="btn btn-xs btn-default gurmukhi">|</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">c</button>
+									<button class="btn btn-xs btn-default gurmukhi">C</button>
+									<button class="btn btn-xs btn-default gurmukhi">j</button>
+									<button class="btn btn-xs btn-default gurmukhi">J</button>
+									<button class="btn btn-xs btn-default gurmukhi">\</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">t</button>
+									<button class="btn btn-xs btn-default gurmukhi">T</button>
+									<button class="btn btn-xs btn-default gurmukhi">f</button>
+									<button class="btn btn-xs btn-default gurmukhi">F</button>
+									<button class="btn btn-xs btn-default gurmukhi">x</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">q</button>
+									<button class="btn btn-xs btn-default gurmukhi">Q</button>
+									<button class="btn btn-xs btn-default gurmukhi">d</button>
+									<button class="btn btn-xs btn-default gurmukhi">D</button>
+									<button class="btn btn-xs btn-default gurmukhi">n</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">p</button>
+									<button class="btn btn-xs btn-default gurmukhi">P</button>
+									<button class="btn btn-xs btn-default gurmukhi">b</button>
+									<button class="btn btn-xs btn-default gurmukhi">B</button>
+									<button class="btn btn-xs btn-default gurmukhi">m</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">X</button>
+									<button class="btn btn-xs btn-default gurmukhi">r</button>
+									<button class="btn btn-xs btn-default gurmukhi">l</button>
+									<button class="btn btn-xs btn-default gurmukhi">v</button>
+									<button class="btn btn-xs btn-default gurmukhi">V</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">&nbsp;</button>
+									<button data-action="page-2" class="btn btn-xs btn-default gurmukhi">uI</button>
+									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-times"></i></button>
+									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-search"></i></button>
+									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-long-arrow-left"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="page" id="gurmukhi-keyboard-page-2">
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">1</button>
+									<button class="btn btn-xs btn-default gurmukhi">2</button>
+									<button class="btn btn-xs btn-default gurmukhi">3</button>
+									<button class="btn btn-xs btn-default gurmukhi">4</button>
+									<button class="btn btn-xs btn-default gurmukhi">5</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">6</button>
+									<button class="btn btn-xs btn-default gurmukhi">7</button>
+									<button class="btn btn-xs btn-default gurmukhi">8</button>
+									<button class="btn btn-xs btn-default gurmukhi">9</button>
+									<button class="btn btn-xs btn-default gurmukhi">0</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">y</button>
+									<button class="btn btn-xs btn-default gurmukhi">Y</button>
+									<button class="btn btn-xs btn-default gurmukhi">i</button>
+									<button class="btn btn-xs btn-default gurmukhi">I</button>
+									<button class="btn btn-xs btn-default gurmukhi">w</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">W</button>
+									<button class="btn btn-xs btn-default gurmukhi">u</button>
+									<button class="btn btn-xs btn-default gurmukhi">U</button>
+									<button class="btn btn-xs btn-default gurmukhi">N</button>
+									<button class="btn btn-xs btn-default gurmukhi">M</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">R</button>
+									<button class="btn btn-xs btn-default gurmukhi">`</button>
+									<button class="btn btn-xs btn-default gurmukhi">~</button>
+									<button class="btn btn-xs btn-default gurmukhi">o</button>
+									<button class="btn btn-xs btn-default gurmukhi">O</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">H</button>
+									<button class="btn btn-xs btn-default gurmukhi">˜</button>
+									<button class="btn btn-xs btn-default gurmukhi">´</button>
+									<button class="btn btn-xs btn-default gurmukhi">Í</button>
+									<button class="btn btn-xs btn-default gurmukhi">ç</button>
+								</div>
+							</div>
+							<div class="keyboard-row">
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">E</button>
+									<button class="btn btn-xs btn-default gurmukhi">S</button>
+									<button class="btn btn-xs btn-default gurmukhi">z</button>
+									<button class="btn btn-xs btn-default gurmukhi">^</button>
+									<button class="btn btn-xs btn-default gurmukhi">&</button>
+								</div>
+								<div class="keyboard-row-set">
+									<button class="btn btn-xs btn-default gurmukhi">&nbsp;</button>
+									<button data-action="page-1" class="btn btn-xs btn-default gurmukhi">a</button>
+									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-times"></i></button>
+									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-search"></i></button>
+									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-long-arrow-left"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</span>
+			<input autocomplete="false" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus id="searchbox" class="form-control" class="gurmukhi" style="font-family: GurbaniAkharThick; font-size: 1.2em;" onkeyup="showresult(this.value, true);" type="search" placeholder="Koj...">
+			<span class="input-group-btn">
+				<a href="javascript:void(0)" type="button" class="btn btn-default" id="clearbtn" style="display: none;" onclick="clearbtn();"><i class="fa fa-times-circle-o fa-lg"></i></a>
+				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult(document.getElementById('searchbox').value, false); document.activeElement.blur();"><i class="fa fa-search fa-lg"></i></a>
+			</span>
+		</div>
+		<div id="searchsettings" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Search Settings</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Search By:</label>
+							<select id="searchtypeoption" name="searchtypeoption" onchange="setsourceinfo(this.value);" class="form-control">
+								<option value="0">First Letter Start (Gurmukhi/Unicode)</option>
+								<option value="1">First Letter Anywhere (Gurmukhi/Unicode)</option>
+								<option value="2">Full Word/Line (Gurmukhi)</option>
+								<option value="3">Full Word/Line (English)</option>
+								<option value="4">Search All Words (Gurmukhi)</option>
+								<option value="5">Search All Words (English)</option>
+								<option value="6">Search Any Words (Gurmukhi)</option>
+								<option value="7">Search Any Words (English)</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Scripture:</label>
+							<select id="sourceoption" name="sourceoption" class="form-control">
+								<option value="">All Scriptures</option>
+								<option value="G">Sri Guru Granth Sahib</option>
+								<option value="D">Sri Dasam Granth</option>
+								<option value="B">Bhai Gurdas Ji Vaaran</option>
+								<option value="N">Bhai Nand Lal Ji's Writings</option>
+								<option value="A">Amrit Keertan</option>
+								<option value="U">Uggardanti</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Writer:</label>
+							<select id="writeroption" name="writeroption" class="form-control">
+								<option value="">All Writers</option>
+								<option value="1">Guru Nanak Dev Ji</option>
+								<option value="2">Guru Angad Dev Ji</option>
+								<option value="3">Guru Amar Daas Ji</option>
+								<option value="4">Guru Raam Daas Ji</option>
+								<option value="5">Guru Arjan Dev Ji</option>
+								<option value="6">Guru Tegh Bahaadur Ji</option>
+								<option value="47">Guru Gobind Singh Ji</option>
+								<option value="7">Bhagat Bheekhan Ji</option>
+								<option value="8">Bhagat Beni Ji</option>
+								<option value="9">Bhagat Dhannaa Ji</option>
+								<option value="10">Bhagat Trilochan Ji</option>
+								<option value="11">Bhagat Jaidev Ji</option>
+								<option value="12">Bhagat Kabeer Ji</option>
+								<option value="13">Bhagat Naam Dev Ji</option>
+								<option value="14">Bhagat Peepaa Ji</option>
+								<option value="15">Bhagat Parmaanand Ji</option>
+								<option value="16">Bhagat Ravi Daas Ji</option>
+								<option value="17">Bhagat Raamaanand Ji</option>
+								<option value="18">Bhagat Surdaas Ji</option>
+								<option value="19">Bhagat Saadhnaa Ji</option>
+								<option value="20">Bhagat Sain Ji</option>
+								<option value="21">Bhagat Sheikh Fareed Ji</option>
+								<option value="22">Bhai Gurdaas Ji</option>
+								<option value="30">Bhatt Bal</option>
+								<option value="31">Bhatt Sathaa & Balvand</option>
+								<option value="32">Bhatt (Baba) Sundar</option>
+								<option value="33">Bhatt Gayandh</option>
+								<option value="34">Bhatt Harbans</option>
+								<option value="35">Bhatt Bhikhaa</option>
+								<option value="37">Bhatt Jal Jaalap</option>
+								<option value="38">Bhatt Keerath</option>
+								<option value="39">Bhatt Kal</option>
+								<option value="40">Bhatt Kall Sahaar</option>
+								<option value="41">Bhatt Kal2</option>
+								<option value="42">Bhatt Mathuraa</option>
+								<option value="43">Bhai Mardana</option>
+								<option value="44">Bhatt Nal</option>
+								<option value="45">Bhatt Sal</option>
+								<option value="46">Bhatt Tal</option>
+								<option value="48">Bhai Nand Laal Ji</option>
+								<option value="49">Bhai Gurdas Ji</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Raag/Chapter:</label>
+							<select id="raagoption" name="raagoption" class="form-control">
+								<option value="">All Raags</option>
+								<option value="1">Jap</option>
+								<option value="2">So Dar</option>
+								<option value="3">So Purakh</option>
+								<option value="4">Sohila</option>
+								<option value="5">Siree Raag</option>
+								<option value="6">Raag Maajh</option>
+								<option value="7">Raag Gauree</option>
+								<option value="8">Raag Aasaa</option>
+								<option value="9">Raag Gujri</option>
+								<option value="10">Raag Dayv Gandhaaree</option>
+								<option value="11">Raag Bihaagraa</option>
+								<option value="12">Raag Vadhans</option>
+								<option value="13">Raag Sorath</option>
+								<option value="14">Raag Dhanaasree</option>
+								<option value="15">Raag Jaithsree</option>
+								<option value="16">Raag Todee</option>
+								<option value="17">Raag Bairaaree</option>
+								<option value="18">Raag Tilang</option>
+								<option value="19">Raag Soohee</option>
+								<option value="20">Raag Bilaaval</option>
+								<option value="21">Raag Gond</option>
+								<option value="22">Raag Raamkalee</option>
+								<option value="23">Raag Nat Naaraayan</option>
+								<option value="24">Raag Maalee Gauraa</option>
+								<option value="25">Raag Maaroo</option>
+								<option value="26">Raag Tukhaari</option>
+								<option value="27">Raag Kaydaaraa</option>
+								<option value="28">Raag Bhairao</option>
+								<option value="29">Raag Basant</option>
+								<option value="30">Raag Saarang</option>
+								<option value="31">Raag Malaar</option>
+								<option value="32">Raag Kaanraa</option>
+								<option value="33">Raag Kalyaan</option>
+								<option value="34">Raag Prabhaatee</option>
+								<option value="35">Raag Jaijaavantee</option>
+								<option value="40">Salok Kabeer Ji</option>
+								<option value="41">Salok Fareed Ji</option>
+								<option value="42">Svaiyay Mehl 5</option>
+								<option value="43">Salok Vaaraan Thay Vadheek</option>
+								<option value="44">Salok Mehl 9</option>
+								<option value="45">Mundhaavanee Fifth Mehl</option>
+								<option value="46">Vaaran</option>
+								<option value="47">Amrit Keertan</option>
+								<option value="48">Jaap</option>
+								<option value="49">Akaal Ustaat</option>
+								<option value="50">Bachittar Natak</option>
+								<option value="51">Ukat Bilaas</option>
+								<option value="52">Chandi Charittar</option>
+								<option value="53">Chandi Di Vaar</option>
+								<option value="54">Giaan Parbodh</option>
+								<option value="55">24 Avtaar</option>
+								<option value="56">Brahma Avtaar</option>
+								<option value="57">Rudra Avtaar</option>
+								<option value="58">Paaras Naath Rudra</option>
+								<option value="59">Shabad Hazare 10</option>
+								<option value="60">33 Savaiye</option>
+								<option value="61">Khalsa Mahima</option>
+								<option value="62">Shastar Naam Maalaa</option>
+								<option value="63">Charitropakhyan</option>
+								<option value="64">Benti Choupai (Charitropakhyan)</option>
+								<option value="65">Zafarnama</option>
+								<option value="66">Hakiats</option>
+								<option value="67">Uggardanti</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<br>
+		<div class="panel panel-primary">
+			<div class="panel-heading"><b><div id="searchinfo">Search: Gurmukhi - First Letter (Start)</div></b></div>
+		</div>
+		<div id="searchresults"></div>
+	</div>
+</body>
+
+</html>
