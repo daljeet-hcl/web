@@ -81,7 +81,7 @@ $app->group('/shabad', function() {
 });
 
 $app->get('/page/{pageno:[0-9]+}[/]', function (Request $request, Response $response, array $args) {
-	$source = $request->getQueryParam('sourceid', 'G');
+	$source = $request->getQueryParam('source', 'G');
 	return $this->view->render($response, 'page.html', [
 		'version' => $this->version,
 		'pageno' => $args['pageno'],
