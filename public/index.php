@@ -35,7 +35,10 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 $app->group('/assets', function() {
     $this->get('/js/{version}/{filename}', function (Request $request, Response $response, array $args) {
 		$filename = $args['filename'];
-		$file = file_get_contents("../src/js/$filename");
+		$name = realpath("../src/js/$filename");
+		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
+			$file = file_get_contents($name);
+		}
 		$packer = $this->packer;
 		$packedjs = $packer($file, 'Normal', true, false, true)->pack();
 		$response = $this->cache->allowCache($response, 'public', 31536000);
@@ -46,7 +49,10 @@ $app->group('/assets', function() {
     });
     $this->get('/css/{version}/{filename}', function (Request $request, Response $response, array $args) {
 		$filename = $args['filename'];
-		$file = file_get_contents("../src/css/$filename");
+		$name = realpath("../src/css/$filename");
+		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
+			$file = file_get_contents($name);
+		}
 		$response = $this->cache->allowCache($response, 'public', 31536000);
 		$response = $this->cache->withEtag($response, md5($file), 'weak');
 		$response = $response->withHeader('Content-Type', 'text/css; charset=utf-8')
