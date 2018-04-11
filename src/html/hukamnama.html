@@ -13,7 +13,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css" id="pagestyle">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.0.9/web-fonts-with-css/css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesome-bootstrap-checkbox@0.3.7/awesome-bootstrap-checkbox.css" integrity="sha256-M9aoCVzUR/zsTFd2J1WmS91DpOOSbh3luX6xNnaY1QI=" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/css/<?= $version ?>/fonts.css">
 	<link rel="stylesheet" href="/assets/css/<?= $version ?>/shabad.css">
@@ -33,7 +33,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav pull-left">
-				<li><a href="javascript:void(0)" style="font-size: 1.1em;" onclick="window.history.back();"><span class="fa fa-chevron-left" aria-hidden="true"></span>&nbsp;<b>BACK</b></a></li>
+				<li><a href="javascript:void(0)" style="font-size: 1.1em;" onclick="window.history.back();"><span class="fas fa-chevron-left" aria-hidden="true"></span>&nbsp;<b>BACK</b></a></li>
 			</ul>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navlinks">
@@ -45,11 +45,11 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navlinks">
 				<ul class="nav navbar-nav pull-right">
-					<li id="unicodebtn" class="text-right"><a href="javascript:void(0)" onclick="toggleunicode();" id="unicodebutton">Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i></a></li>
-					<li id="larivaarbtn" class="text-right"><a href="javascript:void(0)" onclick="togglelarivaar();">Larivaar&nbsp;&nbsp;<i class="fa fa-minus fa-fw" aria-hidden="true"></i></a></li>
+					<li id="unicodebtn" class="text-right"><a href="javascript:void(0)" onclick="toggleunicode();" id="unicodebutton">Unicode&nbsp;&nbsp;<i class="fas fa-font fa-fw" aria-hidden="true"></i></a></li>
+					<li id="larivaarbtn" class="text-right"><a href="javascript:void(0)" onclick="togglelarivaar();">Larivaar&nbsp;&nbsp;<i class="fas fa-minus fa-fw" aria-hidden="true"></i></a></li>
 					<li id="assist" class="text-right"></li>
-					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#shabadformatsettings">Settings&nbsp;&nbsp;<i class="fa fa-cog fa-fw" aria-hidden="true"></i></a></li>
-					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#sharemenu">Share&nbsp;&nbsp;<i class="fa fa-share-alt fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#shabadformatsettings">Settings&nbsp;&nbsp;<i class="fas fa-cog fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#sharemenu">Share&nbsp;&nbsp;<i class="fas fa-share-alt fa-fw" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -57,7 +57,7 @@
 	<div class="container-fluid">
 		<div id="loading">
 			<br>
-			<center><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></center>
+			<center><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></center>
 		</div>
 		<div id="shabadformatsettings" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -74,8 +74,8 @@
 								</div>
 								<div id="gurmukhifontsize">
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontminus('gurmukhi');"><i class="fas fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('gurmukhi');"><i class="fas fa-plus"></i></button>
 									</div>
 								</div>
 								<h5><b>- Transliteration</b></h5>
@@ -84,8 +84,8 @@
 								</div>
 								<div id="hindifontsize">
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('hindi');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('hindi');"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontminus('hindi');"><i class="fas fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('hindi');"><i class="fas fa-plus"></i></button>
 									</div>
 								</div>
 								<div class="checkbox">
@@ -93,8 +93,8 @@
 								</div>
 								<div id="transliterationfontsize">
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontminus('transliteration');"><i class="fas fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('transliteration');"><i class="fas fa-plus"></i></button>
 									</div>
 								</div>
 								<h5><b>- Translation</b></h5>
@@ -103,8 +103,8 @@
 								</div>
 								<div id="englishfontsize">
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontminus('english');"><i class="fas fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('english');"><i class="fas fa-plus"></i></button>
 									</div>
 								</div>
 								<div class="checkbox">
@@ -112,8 +112,8 @@
 								</div>
 								<div id="punjabifontsize">
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fa fa-minus"></i></button>
-										<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontminus('punjabi');"><i class="fas fa-minus"></i></button>
+										<button type="button" class="btn btn-default" onclick="fontplus('punjabi');"><i class="fas fa-plus"></i></button>
 									</div>
 								</div>
 							</div>
@@ -153,22 +153,22 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title"><i class="fa fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Hukamnama</h4>
+						<h4 class="modal-title"><i class="fas fa-share-alt" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Share Hukamnama</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<center>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/h') + '&t=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-facebook fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/h') + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-google-plus fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/h') + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
-								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Hukamnama' + '%20' +  encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fa fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-primary" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://gbnow.cc/h') + '&t=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fab fa-facebook-f fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-info" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent('http://gbnow.cc/h') + '%20' + encodeURIComponent('#gurbaninow')); return false;"><i class="fab fa-twitter fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-danger" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fab fa-google-plus-g fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-default" title="Send Email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="far fa-envelope fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Send Email</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-warning" title="Submit to Reddit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('http://gbnow.cc/h') + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fab fa-reddit-alien fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a>
+								<a href="javascript:void(0)" target="_blank" class="btn btn-success" title="Share On WhatsApp" onclick="window.open('whatsapp://send?text=GurbaniNow%20Hukamnama' + '%20' +  encodeURIComponent('http://gbnow.cc/h')); return false;"><i class="fab fa-whatsapp fa-fw fa-lg" aria-hidden="true"></i><span class="sr-only">Share On WhatsApp</span></a>
 								<br><br>
 								<div class="input-group">
 									<input readonly type="text" class="form-control" id="sharelink" value="http://gbnow.cc/h">
 									<span class="input-group-btn">
-										<button data-clipboard-target="#sharelink" class="btn btn-default" id="sharecopybutton" type="button"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+										<button data-clipboard-target="#sharelink" class="btn btn-default" id="sharecopybutton" type="button"><i class="far fa-copy" aria-hidden="true"></i></button>
 									</span>
 								</div>
 								<!--<br>

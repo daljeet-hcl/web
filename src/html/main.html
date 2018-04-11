@@ -13,7 +13,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.0.9/web-fonts-with-css/css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/awesome-bootstrap-checkbox@0.3.7/awesome-bootstrap-checkbox.css" integrity="sha256-M9aoCVzUR/zsTFd2J1WmS91DpOOSbh3luX6xNnaY1QI=" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/css/<?= $version ?>/fonts.css">
 	<link rel="stylesheet" href="/assets/css/<?= $version ?>/main.css">
@@ -39,10 +39,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navlinks">
 				<ul class="nav navbar-nav pull-right">
-					<li class="text-right"><a href="/shabad/random">Random Shabad&nbsp;&nbsp;<i class="fa fa-random fa-fw" aria-hidden="true"></i></a></li>
-					<li class="text-right"><a href="/hukamnama">Hukamnama&nbsp;&nbsp;<i class="fa fa-podcast fa-fw" aria-hidden="true"></i></a></li>
-					<li class="text-right"><a href="/page/1">Read SGGS&nbsp;&nbsp;<i class="fa fa-book fa-fw" aria-hidden="true"></i></a></li>
-					<li class="text-right"><a href="/about">About&nbsp;&nbsp;<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/shabad/random">Random Shabad&nbsp;&nbsp;<i class="fas fa-random fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/hukamnama">Hukamnama&nbsp;&nbsp;<i class="fas fa-podcast fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/page/1">Read SGGS&nbsp;&nbsp;<i class="fas fa-book fa-fw" aria-hidden="true"></i></a></li>
+					<li class="text-right"><a href="/about">About&nbsp;&nbsp;<i class="fas fa-info-circle fa-fw" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -50,9 +50,9 @@
 	<div class="container">
 		<div class="input-group">
 			<span class="input-group-btn">
-				<button class="btn btn-default" data-toggle="modal" data-target="#searchsettings"><i class="fa fa-cog fa-lg"></i>&nbsp;&nbsp;<i class="fa fa-sort"></i></button>
+				<button class="btn btn-default" data-toggle="modal" data-target="#searchsettings"><i class="fas fa-cogs fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-sort"></i></button>
 				<div class="btn-group">
-					<a href="javascript:void(0)" type="button" class="btn btn-info" onclick="togglekeyboard();"><i class="fa fa-keyboard-o fa-lg"></i></a>
+					<a href="javascript:void(0)" type="button" class="btn btn-info" onclick="togglekeyboard();"><i class="far fa-keyboard fa-lg"></i></a>
 					<div class="gurmukhi-keyboard dropdown-menu" id="gurmukhi-keyboard" style="display: none; font-family: GurbaniAkharThick;">
 						<div class="page" id="gurmukhi-keyboard-page-1" style="display: block;">
 							<div class="keyboard-row">
@@ -114,9 +114,9 @@
 								<div class="keyboard-row-set">
 									<button class="btn btn-xs btn-default gurmukhi">&nbsp;</button>
 									<button data-action="page-2" class="btn btn-xs btn-default gurmukhi">uI</button>
-									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-times"></i></button>
-									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-search"></i></button>
-									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-long-arrow-left"></i></button>
+									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-times"></i></button>
+									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-search"></i></button>
+									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-long-arrow-alt-left"></i></button>
 								</div>
 							</div>
 						</div>
@@ -180,9 +180,9 @@
 								<div class="keyboard-row-set">
 									<button class="btn btn-xs btn-default gurmukhi">&nbsp;</button>
 									<button data-action="page-1" class="btn btn-xs btn-default gurmukhi">a</button>
-									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-times"></i></button>
-									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-search"></i></button>
-									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fa fa-long-arrow-left"></i></button>
+									<button data-action="close" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-times"></i></button>
+									<button data-action="search" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-search"></i></button>
+									<button data-action="bksp" class="btn btn-xs btn-default gurmukhi"><i class="fas fa-long-arrow-alt-left"></i></button>
 								</div>
 							</div>
 						</div>
@@ -191,8 +191,8 @@
 			</span>
 			<input autocomplete="false" autocorrect="off" autocapitalize="none" spellcheck="false" autofocus id="searchbox" class="form-control" class="gurmukhi" style="font-family: GurbaniAkharThick; font-size: 1.2em;" onkeyup="showresult(this.value, true);" type="search" placeholder="Koj...">
 			<span class="input-group-btn">
-				<a href="javascript:void(0)" type="button" class="btn btn-default" id="clearbtn" style="display: none;" onclick="clearbtn();"><i class="fa fa-times-circle-o fa-lg"></i></a>
-				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult(document.getElementById('searchbox').value, false); document.activeElement.blur();"><i class="fa fa-search fa-lg"></i></a>
+				<a href="javascript:void(0)" type="button" class="btn btn-default" id="clearbtn" style="display: none;" onclick="clearbtn();"><i class="far fa-times-circle fa-lg"></i></a>
+				<a href="javascript:void(0)" type="button" class="btn btn-primary" onclick="showresult(document.getElementById('searchbox').value, false); document.activeElement.blur();"><i class="fas fa-search fa-lg"></i></a>
 			</span>
 		</div>
 		<div id="searchsettings" class="modal fade" role="dialog">

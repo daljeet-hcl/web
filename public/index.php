@@ -24,7 +24,7 @@ $container['packer'] = function ($c) {
 };
 
 //APP VERSION
-$container['version'] = '1.3.1-0';
+$container['version'] = '1.3.1-4';
 
 $app->get('/', function (Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'main.html', [
