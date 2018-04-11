@@ -46,3 +46,18 @@ body {
 input::-ms-clear {
 	display: none;
 }
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after,
+.checkbox input[type=checkbox]:checked + label:after {
+    font-family: "Font Awesome 5 Free" !important;
+	font-weight: 900 !important;
+    content: "\f00c" !important;
+}
+
+input[type="checkbox"].styled:checked label:after,
+input[type="radio"].styled:checked label:after,
+.checkbox label:after {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 9px;
+}
