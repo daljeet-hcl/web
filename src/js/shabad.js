@@ -113,7 +113,7 @@ function togglelarivaar() {
 		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 			el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 		});
-		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
+		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="far fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 		document.getElementById("larivaarbtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.larivaar", "false");
@@ -210,7 +210,7 @@ function toggleunicode() {
 				el.style.display = "";
 			});
 		}
-		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i>';
+		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<i class="fas fa-font fa-fw" aria-hidden="true"></i>';
 		document.getElementById("unicodebtn").classList.remove("active");
 	}
 }
@@ -287,7 +287,7 @@ function getshabad(shabadNo, shabadId) {
 	document.getElementById("shabadinfo").style.display = "none";
 	document.getElementById("shabad").style.display = "none";
 	document.getElementById("shabadcontrol").style.display = "none";
-	document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></center>';
+	document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></center>';
 	document.getElementById("loading").style.display = "";
 	document.getElementById("shabad").innerHTML = "";
 	document.getElementById("shabadinfogurmukhi").innerHTML = "";
@@ -412,7 +412,7 @@ function getshabad(shabadNo, shabadId) {
 				document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 					el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 				});
-				document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
+				document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="far fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 				document.getElementById("larivaarbtn").classList.add("active");
 			}
 			if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
@@ -495,11 +495,11 @@ function getshabad(shabadNo, shabadId) {
 				});
 			}
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Shabad.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Shabad.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Shabad.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><p>There was an error loading the Shabad.</p></center>';
 	};
 	request.send();
 }

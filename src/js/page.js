@@ -104,7 +104,7 @@ function togglelarivaar() {
 		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 			el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 		});
-		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
+		document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="far fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 		document.getElementById("larivaarbtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.larivaar", "false");
@@ -201,7 +201,7 @@ function toggleunicode() {
 				el.style.display = "";
 			});
 		}
-		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<i class="fa fa-font fa-fw" aria-hidden="true"></i>';
+		document.getElementById("unicodebutton").innerHTML = 'Unicode&nbsp;&nbsp;<i class="fas fa-font fa-fw" aria-hidden="true"></i>';
 		document.getElementById("unicodebtn").classList.remove("active");
 	}
 }
@@ -278,7 +278,7 @@ function getpage(pageno, sourceid) {
 	document.getElementById("shabadinfo").style.display = "none";
 	document.getElementById("shabad").style.display = "none";
 	document.getElementById("shabadcontrol").style.display = "none";
-	document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></center>';
+	document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-circle-notch fa-spin fa-3x fa-fw"></i></center>';
 	document.getElementById("loading").style.display = "";
 	document.getElementById("shabad").innerHTML = "";
 	document.getElementById("shabadinfogurmukhi").innerHTML = "";
@@ -293,9 +293,9 @@ function getpage(pageno, sourceid) {
 		if (this.status >= 200 && this.status < 400) {
 			var data = JSON.parse(this.response);
 			if (pageno <= 0) {
-				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
+				document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
 			} else if (data.count === 0 && pageno > 0) {
-				document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
+				document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
 			} else {
 				if (data.source.id == "G") {
 					angen = "Ang";
@@ -390,7 +390,7 @@ function getpage(pageno, sourceid) {
 					document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 						el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 					});
-					document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="fa fa-life-ring fa-fw" aria-hidden="true"></i></a>';
+					document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="far fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 					document.getElementById("larivaarbtn").classList.add("active");
 				}
 				if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
@@ -465,11 +465,11 @@ function getpage(pageno, sourceid) {
 				document.getElementById("sharelink").value = "http://gbnow.cc/p/" + pageno + "/" + sourceid;
 			}
 		} else {
-			document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
+			document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
 		}
 	};
 	request.onerror = function() {
-		document.getElementById("loading").innerHTML = '<br><center><i class="fa fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
+		document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>There was an error loading the Page.</p></center>';
 	};
 	request.send();
 }
