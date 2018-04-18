@@ -2,6 +2,10 @@ if (sessionStorage.getItem('s.data.searchtype') === null) {
 	sessionStorage.setItem('s.data.searchtype', 0);
 }
 
+if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	document.getElementById("presenter").style.display = "none";
+}
+
 function showresult(string, ontype) {
 	if (string.length === 0) {
 		document.getElementById("searchinfo").textContent = "Search Box is Empty!";

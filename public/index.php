@@ -11,6 +11,9 @@ $app = new \Slim\App(['settings' => $config]);
 
 $container = $app->getContainer();
 
+//APP VERSION
+$container['version'] = '1.3.1-5';
+
 $container['view'] = function ($c) {
     return new \Slim\Views\PhpRenderer('../src/html/');
 };
@@ -22,9 +25,6 @@ $container['packer'] = function ($c) {
 		return new Tholu\Packer\Packer($script, $encoding, $fastDecode, $specialChars, $removeSemicolons);
     };
 };
-
-//APP VERSION
-$container['version'] = '1.3.1-4';
 
 $app->get('/', function (Request $request, Response $response, array $args) {
 	return $this->view->render($response, 'main.html', [
@@ -111,6 +111,19 @@ $app->group('/about', function() {
     $this->get('/terms[/]', function (Request $request, Response $response, array $args) {
 		return $this->view->render($response, 'tos.html');
     });
+});
+
+//TEMP PRESENTER
+$app->get('/present[/]', function (Request $request, Response $response, array $args) {
+	return $this->view->render($response, 'present.html', [
+		'version' => $this->version
+	]);
+});
+
+$app->get('/present/view[/]', function (Request $request, Response $response, array $args) {
+	return $this->view->render($response, 'view.html', [
+		'version' => $this->version
+	]);
 });
 
 $app->run();
