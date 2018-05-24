@@ -52,29 +52,29 @@ if (localStorage.getItem("s.onoff.unicode") === null) {
 
 new ClipboardJS("#sharecopybutton");
 
-window.addEventListener('scroll', function() {
+window.addEventListener("scroll", function() {
 	if (window.scrollY !== 0) {
-		document.getElementById("scrollup").classList.add('show');
-		document.getElementById("scrollup").classList.remove('hide');
-		document.getElementById("scrolldown").classList.add('show');
-		document.getElementById("scrolldown").classList.remove('hide');
+		document.getElementById("scrollup").classList.add("show");
+		document.getElementById("scrollup").classList.remove("hide");
+		document.getElementById("scrolldown").classList.add("show");
+		document.getElementById("scrolldown").classList.remove("hide");
 	} else {
-		document.getElementById("scrollup").classList.add('hide');
-		document.getElementById("scrolldown").classList.add('hide');
+		document.getElementById("scrollup").classList.add("hide");
+		document.getElementById("scrolldown").classList.add("hide");
 	}
 });
-document.getElementById("scrollup").addEventListener('click', function() {
+document.getElementById("scrollup").addEventListener("click", function() {
 	window.scroll({
 		top: 0,
 		left: 0,
-		behavior: 'smooth'
+		behavior: "smooth"
 	});
 });
-document.getElementById("scrolldown").addEventListener('click', function() {
+document.getElementById("scrolldown").addEventListener("click", function() {
 	window.scroll({
 		top: document.body.scrollHeight,
 		left: 0,
-		behavior: 'smooth'
+		behavior: "smooth"
 	});
 });
 
@@ -83,7 +83,7 @@ var sourceid = document.getElementById("sourceid").dataset.sourceid;
 getpage(pageno, sourceid);
 
 function toggleday() {
-	if (document.getElementById('daytoggle').checked) {
+	if (document.getElementById("daytoggle").checked) {
 		var url = "https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-flatly.min.css";
 		if (document.getElementById("pagestyle").getAttribute("href") === url) {
 			return false;
@@ -109,7 +109,7 @@ function toggleday() {
 }
 
 function togglelarivaar() {
-	if (localStorage.getItem("s.onoff.larivaar") == "false") {
+	if (localStorage.getItem("s.onoff.larivaar") === "false") {
 		localStorage.setItem("s.onoff.larivaar", "true");
 		document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 			el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
@@ -127,7 +127,7 @@ function togglelarivaar() {
 		document.querySelectorAll(".assist").forEach(function(el) {
 			el.style.display = "none";
 		});
-		if (localStorage.getItem("s.onoff.unicode") == "true") {
+		if (localStorage.getItem("s.onoff.unicode") === "true") {
 			document.querySelectorAll(".unicode.normal").forEach(function(el) {
 				el.style.display = "";
 			});
@@ -141,12 +141,12 @@ function togglelarivaar() {
 }
 
 function togglelarivaarassist() {
-	if (localStorage.getItem("s.onoff.larivaarassist") == "false") {
+	if (localStorage.getItem("s.onoff.larivaarassist") === "false") {
 		localStorage.setItem("s.onoff.larivaarassist", "true");
 		document.querySelectorAll(".normal").forEach(function(el) {
 			el.style.display = "none";
 		});
-		if (localStorage.getItem("s.onoff.unicode") == "true") {
+		if (localStorage.getItem("s.onoff.unicode") === "true") {
 			document.querySelectorAll(".unicode.assist").forEach(function(el) {
 				el.style.display = "";
 			});
@@ -161,7 +161,7 @@ function togglelarivaarassist() {
 		document.querySelectorAll(".assist").forEach(function(el) {
 			el.style.display = "none";
 		});
-		if (localStorage.getItem("s.onoff.unicode") == "true") {
+		if (localStorage.getItem("s.onoff.unicode") === "true") {
 			document.querySelectorAll(".unicode.normal").forEach(function(el) {
 				el.style.display = "";
 			});
@@ -175,9 +175,9 @@ function togglelarivaarassist() {
 }
 
 function toggleunicode() {
-	if (localStorage.getItem("s.onoff.unicode") == "false") {
+	if (localStorage.getItem("s.onoff.unicode") === "false") {
 		localStorage.setItem("s.onoff.unicode", "true");
-		if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
+		if (localStorage.getItem("s.onoff.larivaarassist") === "true") {
 			document.querySelectorAll(".akhar.assist").forEach(function(el) {
 				el.style.display = "none";
 			});
@@ -196,7 +196,7 @@ function toggleunicode() {
 		document.getElementById("unicodebtn").classList.add("active");
 	} else {
 		localStorage.setItem("s.onoff.unicode", "false");
-		if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
+		if (localStorage.getItem("s.onoff.larivaarassist") === "true") {
 			document.querySelectorAll(".unicode.assist").forEach(function(el) {
 				el.style.display = "none";
 			});
@@ -217,23 +217,23 @@ function toggleunicode() {
 }
 
 function togglecenter() {
-	if (document.getElementById('centertoggle').checked) {
+	if (document.getElementById("centertoggle").checked) {
 		localStorage.setItem("s.onoff.center", "true");
-		document.getElementById('shabad').style.textAlign = "center";
+		document.getElementById("shabad").style.textAlign = "center";
 	} else {
 		localStorage.setItem("s.onoff.center", "false");
-		document.getElementById('shabad').style.textAlign = "left";
+		document.getElementById("shabad").style.textAlign = "left";
 	}
 }
 
 function toggleshabadinfo() {
-	if (document.getElementById('shabadinfotoggle').checked) {
+	if (document.getElementById("shabadinfotoggle").checked) {
 		localStorage.setItem("s.onoff.shabadinfo", "true");
-		document.getElementById('shabadinforoot').style.display = "block";
+		document.getElementById("shabadinforoot").style.display = "block";
 	} else {
-		document.getElementById('shabadinfotoggle').checked = false;
+		document.getElementById("shabadinfotoggle").checked = false;
 		localStorage.setItem("s.onoff.shabadinfo", "false");
-		document.getElementById('shabadinforoot').style.display = "none";
+		document.getElementById("shabadinforoot").style.display = "none";
 	}
 }
 
@@ -298,7 +298,7 @@ function getpage(pageno, sourceid) {
 		ang: pageno,
 		source: sourceid
 	});
-	request.open('GET', url, true);
+	request.open("GET", url, true);
 	request.onload = function() {
 		if (this.status >= 200 && this.status < 400) {
 			var data = JSON.parse(this.response);
@@ -307,10 +307,10 @@ function getpage(pageno, sourceid) {
 			} else if (data.count === 0 && pageno > 0) {
 				document.getElementById("loading").innerHTML = '<br><center><i class="fas fa-exclamation-triangle fa-3x fa-fw text-warning"></i><br><br><p>This Page does not exist in this Source.</p></center>';
 			} else {
-				if (data.source.id == "G") {
+				if (data.source.id === "G") {
 					angen = "Ang";
 					anggur = "ਅੰਗ";
-				} else if (data.source.id == "D" || data.source.id == "A" || data.source.id == "U") {
+				} else if (data.source.id === "D" || data.source.id === "A" || data.source.id === "U") {
 					angen = "Panaa";
 					anggur = "ਪੰਨਾ";
 				} else {
@@ -321,8 +321,8 @@ function getpage(pageno, sourceid) {
 				var unipagenum = fpageno.replace(/0/g, "੦").replace(/1/g, "੧").replace(/2/g, "੨").replace(/3/g, "੩").replace(/4/g, "੪").replace(/5/g, "੫").replace(/6/g, "੬").replace(/7/g, "੭").replace(/8/g, "੮").replace(/9/g, "੯");
 				var appenden = document.createElement("span");
 				var appendgur = document.createElement("span");
-				htmlen = data.source.english + ' - ' + angen + ' ' + data.pageno;
-				htmlgur = data.source.unicode + ' - ' + anggur + ' ' + unipagenum;
+				htmlen = data.source.english + " - " + angen + " " + data.pageno;
+				htmlgur = data.source.unicode + " - " + anggur + " " + unipagenum;
 				appenden.innerHTML = htmlen;
 				appendgur.innerHTML = htmlgur;
 				document.getElementById("shabadinfoenglish").appendChild(appenden);
@@ -396,18 +396,18 @@ function getpage(pageno, sourceid) {
 				document.querySelectorAll(".punjabi").forEach(function(el) {
 					el.style.fontSize = parseInt(localStorage.getItem("s.fontsize.punjabi")) + "px";
 				});
-				if (localStorage.getItem("s.onoff.larivaar") == "true") {
+				if (localStorage.getItem("s.onoff.larivaar") === "true") {
 					document.querySelectorAll(".gurmukhi.normal").forEach(function(el) {
 						el.innerHTML = el.innerHTML.split(" ").join("<wbr>");
 					});
 					document.getElementById("assist").innerHTML = '<a href="javascript:void(0)" onclick="togglelarivaarassist();">LarivaarAssist&nbsp;&nbsp;<i class="far fa-life-ring fa-fw" aria-hidden="true"></i></a>';
 					document.getElementById("larivaarbtn").classList.add("active");
 				}
-				if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
+				if (localStorage.getItem("s.onoff.larivaarassist") === "true") {
 					document.querySelectorAll(".normal").forEach(function(el) {
 						el.style.display = "none";
 					});
-					if (localStorage.getItem("s.onoff.unicode") == "true") {
+					if (localStorage.getItem("s.onoff.unicode") === "true") {
 						document.querySelectorAll(".unicode.assist").forEach(function(el) {
 							el.style.display = "";
 						});
@@ -418,33 +418,33 @@ function getpage(pageno, sourceid) {
 					}
 					document.getElementById("assist").classList.add("active");
 				}
-				if (localStorage.getItem("s.onoff.hindi") == "true") {
+				if (localStorage.getItem("s.onoff.hindi") === "true") {
 					document.getElementById("hinditoggle").setAttribute("checked", "true");
 				}
 				showhide("hinditoggle", "hindi");
-				if (localStorage.getItem("s.onoff.transliteration") == "true") {
+				if (localStorage.getItem("s.onoff.transliteration") === "true") {
 					document.getElementById("transliterationtoggle").setAttribute("checked", "true");
 				}
 				showhide("transliterationtoggle", "transliteration");
-				if (localStorage.getItem("s.onoff.english") == "true") {
+				if (localStorage.getItem("s.onoff.english") === "true") {
 					document.getElementById("englishtranslationtoggle").setAttribute("checked", "true");
 				}
 				showhide("englishtranslationtoggle", "english");
-				if (localStorage.getItem("s.onoff.punjabi") == "true") {
+				if (localStorage.getItem("s.onoff.punjabi") === "true") {
 					document.getElementById("punjabitranslationtoggle").setAttribute("checked", "true");
 				}
 				showhide("punjabitranslationtoggle", "punjabi");
-				if (localStorage.getItem("s.onoff.day") == "true") {
+				if (localStorage.getItem("s.onoff.day") === "true") {
 					document.getElementById("daytoggle").setAttribute("checked", "true");
 				}
-				if (localStorage.getItem("s.onoff.shabadinfo") == "true") {
+				if (localStorage.getItem("s.onoff.shabadinfo") === "true") {
 					document.getElementById("shabadinfotoggle").setAttribute("checked", "true");
 				}
-				if (localStorage.getItem("s.onoff.center") == "true") {
+				if (localStorage.getItem("s.onoff.center") === "true") {
 					document.getElementById("centertoggle").setAttribute("checked", "true");
 				}
-				if (localStorage.getItem("s.onoff.unicode") == "true") {
-					if (localStorage.getItem("s.onoff.larivaarassist") == "true") {
+				if (localStorage.getItem("s.onoff.unicode") === "true") {
+					if (localStorage.getItem("s.onoff.larivaarassist") === "true") {
 						document.querySelectorAll(".akhar.assist").forEach(function(el) {
 							el.style.display = "none";
 						});
@@ -501,7 +501,7 @@ function getpageno(num) {
 
 document.getElementById("pagenumgo").addEventListener("keyup", function(e) {
 	if (e.which === 13) {
-		getpageno(document.getElementById('pagenumgo').value);
+		getpageno(document.getElementById("pagenumgo").value);
 	}
 });
 

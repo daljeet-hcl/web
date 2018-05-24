@@ -1,5 +1,5 @@
-if (sessionStorage.getItem('s.data.searchtype') === null) {
-	sessionStorage.setItem('s.data.searchtype', 0);
+if (sessionStorage.getItem("s.data.searchtype") === null) {
+	sessionStorage.setItem("s.data.searchtype", 0);
 }
 
 if (/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -40,16 +40,16 @@ function showresult(string, ontype) {
 				} else {
 					document.getElementById("searchresults").innerHTML = "";
 					data.shabads.forEach(function(shabads, i) {
-						if (shabads.shabad.source.id == "G") {
+						if (shabads.shabad.source.id === "G") {
 							var ang = "Ang";
-						} else if (shabads.shabad.source.id == "D" || shabads.shabad.source.id == "A" || shabads.shabad.source.id == "U") {
+						} else if (shabads.shabad.source.id === "D" || shabads.shabad.source.id === "A" || shabads.shabad.source.id === "U") {
 							var ang = "Panaa";
 						} else {
 							var ang = "Vaar";
 						}
-						if (shabads.shabad.source.id == "G") {
+						if (shabads.shabad.source.id === "G") {
 							var source = " (SGGS)";
-						} else if (shabads.shabad.source.id == "D") {
+						} else if (shabads.shabad.source.id === "D") {
 							var source = " (Sri Dasam Granth)";
 						} else {
 							var source = "";
@@ -69,7 +69,7 @@ function showresult(string, ontype) {
 						append.innerHTML = html;
 						document.getElementById("searchresults").appendChild(append);
 					});
-					if (searchcount == 1) {
+					if (searchcount === 1) {
 						var resultText = "Your Search Returned 1 Shabad";
 					} else {
 						var resultText = "Your Search Returned " + searchcount + " Shabads";
@@ -88,37 +88,37 @@ function showresult(string, ontype) {
 }
 
 function setsourceinfo(selectedvalue) {
-	if (selectedvalue == "0") {
+	if (selectedvalue === "0") {
 		var type = "Gurmukhi - First Letter (Start)";
-	} else if (selectedvalue == "1") {
+	} else if (selectedvalue === "1") {
 		var type = "Gurmukhi - First Letter (Anywhere)";
-	} else if (selectedvalue == "2") {
+	} else if (selectedvalue === "2") {
 		var type = "Gurmukhi - Full Word/Line";
-	} else if (selectedvalue == "3") {
+	} else if (selectedvalue === "3") {
 		var type = "English - Full Word/Line";
-	} else if (selectedvalue == "4") {
+	} else if (selectedvalue === "4") {
 		var type = "Gurmukhi - Search All Words";
-	} else if (selectedvalue == "5") {
+	} else if (selectedvalue === "5") {
 		var type = "English - Search All Words";
-	} else if (selectedvalue == "6") {
+	} else if (selectedvalue === "6") {
 		var type = "Gurmukhi - Search Any Words";
-	} else if (selectedvalue == "7") {
+	} else if (selectedvalue === "7") {
 		var type = "English - Search Any Words";
 	}
 	document.getElementById("searchinfo").textContent = "Search: " + type;
-	if (selectedvalue == "0" || selectedvalue == "1" || selectedvalue == "2" || selectedvalue == "4" || selectedvalue == "6") {
+	if (selectedvalue === "0" || selectedvalue === "1" || selectedvalue === "2" || selectedvalue === "4" || selectedvalue === "6") {
 		document.getElementById("searchbox").setAttribute("style", "font-family: GurbaniAkharThick; font-size: 1.2em;");
 		document.getElementById("searchbox").setAttribute("placeholder", "Koj...");
 	}
-	if (selectedvalue == "3" || selectedvalue == "5" || selectedvalue == "7") {
+	if (selectedvalue === "3" || selectedvalue === "5" || selectedvalue === "7") {
 		document.getElementById("searchbox").setAttribute("style", "");
 		document.getElementById("searchbox").setAttribute("placeholder", "Search...");
 	}
-	sessionStorage.setItem('s.data.searchtype', selectedvalue);
+	sessionStorage.setItem("s.data.searchtype", selectedvalue);
 }
 
 function updatesourceinfo() {
-	var searchtype = sessionStorage.getItem('s.data.searchtype');
+	var searchtype = sessionStorage.getItem("s.data.searchtype");
 	if (searchtype !== 0 && document.getElementById("searchbox").value.length === 0) {
 		setsourceinfo(document.getElementById("searchtypeoption").value);
 	}
@@ -157,15 +157,15 @@ document.addEventListener("keyup", function(e) {
 });
 
 document.querySelectorAll("#gurmukhi-keyboard button").forEach(function(el) {
-	el.addEventListener('click', function() {
+	el.addEventListener("click", function() {
 		if (this.dataset.action) {
 			var action = this.dataset.action;
-			if (action == "bksp") {
+			if (action === "bksp") {
 				document.getElementById("searchbox").value = document.getElementById("searchbox").value.substring(0, document.getElementById("searchbox").value.length - 1);
 				showresult(document.getElementById("searchbox").value, true);
-			} else if (action == "close") {
+			} else if (action === "close") {
 				document.getElementById("gurmukhi-keyboard").style.display = "none";
-			} else if (action == "search") {
+			} else if (action === "search") {
 				showresult(document.getElementById("searchbox").value, false);
 				document.getElementById("gurmukhi-keyboard").style.display = "none";
 			} else if (action.includes("page")) {

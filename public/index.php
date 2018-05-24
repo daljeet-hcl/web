@@ -12,7 +12,7 @@ $app = new \Slim\App(['settings' => $config]);
 $container = $app->getContainer();
 
 //APP VERSION
-$container['version'] = '1.3.1-5';
+$container['version'] = '1.3.1-6';
 
 $container['view'] = function ($c) {
     return new \Slim\Views\PhpRenderer('../src/html/');
@@ -113,17 +113,17 @@ $app->group('/about', function() {
     });
 });
 
-//TEMP PRESENTER
-$app->get('/present[/]', function (Request $request, Response $response, array $args) {
-	return $this->view->render($response, 'present.html', [
-		'version' => $this->version
-	]);
-});
-
-$app->get('/present/view[/]', function (Request $request, Response $response, array $args) {
-	return $this->view->render($response, 'view.html', [
-		'version' => $this->version
-	]);
+$app->group('/present', function() {
+    $this->get('[/]', function (Request $request, Response $response, array $args) {
+		return $this->view->render($response, 'present.html', [
+			'version' => $this->version
+		]);
+    });
+    $this->get('/view[/]', function (Request $request, Response $response, array $args) {
+		return $this->view->render($response, 'view.html', [
+			'version' => $this->version
+		]);
+    });
 });
 
 $app->run();
