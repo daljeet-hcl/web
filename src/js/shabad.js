@@ -341,7 +341,7 @@ function getshabad(shabadNo, shabadId) {
 			document.getElementById("shabadinfoenglish").appendChild(appenden);
 			document.getElementById("shabadinfogurmukhi").appendChild(appendgur);
 			data.shabad.forEach(function(shabad, i) {
-				if (shabadId === shabad.line.id) {
+				if (shabadId == shabad.line.id) {
 					var active = true;
 					document.title = shabad.line.gurmukhi.unicode + " - GurbaniNow Search";
 				} else {

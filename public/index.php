@@ -12,7 +12,7 @@ $app = new \Slim\App(['settings' => $config]);
 $container = $app->getContainer();
 
 //APP VERSION
-$container['version'] = '1.3.1-6';
+$container['version'] = '1.3.1-7';
 
 $container['view'] = function ($c) {
     return new \Slim\Views\PhpRenderer('../src/html/');
@@ -104,9 +104,6 @@ $app->get('/hukamnama', function (Request $request, Response $response, array $a
 $app->group('/about', function() {
     $this->get('[/]', function (Request $request, Response $response, array $args) {
 		return $this->view->render($response, 'about.html');
-    });
-    $this->get('/opensource[/]', function (Request $request, Response $response, array $args) {
-		return $this->view->render($response, 'oss.html');
     });
     $this->get('/terms[/]', function (Request $request, Response $response, array $args) {
 		return $this->view->render($response, 'tos.html');
