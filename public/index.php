@@ -108,6 +108,9 @@ $app->group('/about', function() {
     $this->get('/terms[/]', function (Request $request, Response $response, array $args) {
 		return $this->view->render($response, 'tos.html');
     });
+    $this->get('/privacy[/]', function (Request $request, Response $response, array $args) {
+		return $this->view->render($response, 'privacy.html');
+    });
 });
 
 $app->group('/present', function() {
