@@ -12,7 +12,7 @@ $app = new \Slim\App(['settings' => $config]);
 $container = $app->getContainer();
 
 //APP VERSION
-$container['version'] = '1.3.1-7';
+$container['version'] = '1.3.1-8';
 
 $container['view'] = function ($c) {
     return new \Slim\Views\PhpRenderer('../src/html/');
@@ -53,10 +53,24 @@ $app->group('/assets', function() {
 		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
 			@$file = file_get_contents($name);
 		}
+		$file = str_replace('<?= $version ?>', $args['version'], $file);
 		$response = $this->cache->allowCache($response, 'public', 31536000);
 		$response = $this->cache->withEtag($response, md5($file), 'weak');
 		$response = $response->withHeader('Content-Type', 'text/css; charset=utf-8')
 			->write($file);
+		return $response;
+    });
+    $this->get('/fonts/{version}/{encoding}/{font}/{weight}/{filename}', function (Request $request, Response $response, array $args) {
+		$filename = $args['encoding'].'/'.$args['font'].'/'.$args['weight'].'/'.$args['filename'];
+		$name = realpath("../src/fonts/$filename");
+		if (substr($name, 0, strlen(dirname($name))) === dirname($name)) {
+			@$file = new \GuzzleHttp\Psr7\LazyOpenStream($name, 'r');
+		}
+		$response = $this->cache->allowCache($response, 'public', 31536000);
+		$response = $this->cache->withEtag($response, md5($file));
+		$response = $response->withHeader('Content-Type', 'application/octet-stream')
+			->withHeader('Content-Length', filesize($name))
+			->withBody($file);
 		return $response;
     });
 });

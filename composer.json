@@ -3,6 +3,7 @@
         "slim/slim": "^3.0",
         "slim/php-view": "^2.2",
         "tholu/php-packer": "^0.2.0",
-        "slim/http-cache": "^0.4.0"
+        "slim/http-cache": "^0.4.0",
+        "guzzlehttp/psr7": "^1.4"
     }
 }
