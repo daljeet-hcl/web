@@ -117,8 +117,10 @@ $app->get('/hukamnama', function (Request $request, Response $response, array $a
 
 $app->group('/about', function() {
     $this->get('[/]', function (Request $request, Response $response, array $args) {
-		return $this->view->render($response, 'about.html');
-    });
+		return $this->view->render($response, 'about.html', [
+			'version' => $this->version
+		]);
+	});
     $this->get('/terms[/]', function (Request $request, Response $response, array $args) {
 		return $this->view->render($response, 'tos.html');
     });

@@ -36,6 +36,7 @@
 	<link rel="apple-touch-icon" sizes="167x167" href="/icons/apple/ipad-retina.png">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GurbaniNow/bootstrap@3.3.7-5/dist/bootstrap-darkly.min.css" id="pagestyle">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.0.9/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="/assets/css/<?= $version ?>/fonts.css">
 	<script data-cfasync="false" defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/bootstrap-native.min.js" integrity="sha256-Kv93byFhUzwIVDch/he4AyOLfroKwM9FIc6OAtqqaow=" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.22/dist/polyfill.min.js" integrity="sha256-H+ETBMCg8Q8bUrUF6YAtdAtyAJwmElEkpRePbFY3GjA=" crossorigin="anonymous"></script>
 	<style>
@@ -71,21 +72,52 @@
 	</nav>
 	<div class="container">
 		<div style="align: center; text-align: center;" class="jumbotron">
+			<p style="font-family: AnmolBani;">ਏਕੋ ਜਪਿ ਏਕੋ ਸਾਲਾਹਿ ॥</p>
 			<img src="https://gurbaninow.com/logo.png" width="100px" height="100px" />
 			<br><br>
 			<p>Modern and Simple Way of Searching Gurbani</p>
+			<a type="button" class="btn btn-info" href="mailto:contact@gurbaninow.com">
+				<i class="far fa-envelope fa-fw"></i> Contact Us
+			</a>
 		</div>
-		<h4 style="text-align: center;">Developer</h4>
-		<ul class="list-group">
-			<a target="_blank" href="https://github.com/GurbaniNow" class="list-group-item">
-				<i class="fab fa-github fa-fw" aria-hidden="true"></i>
-				GitHub
-			</a>
-			<a target="_blank" href="https://github.com/GurbaniNow/api/blob/master/README.md" class="list-group-item">
-				<i class="fas fa-code fa-fw" aria-hidden="true"></i>
-				GurbaniNow API Docs
-			</a>
-		</ul>
+		<h3 style="text-align: center;">Developer Resources</h3>
+		<div class="row">
+		  <div class="col-sm-6">
+			<h4 style="text-align: center;">GurbaniNow</h4>
+			<ul class="list-group">
+				<a target="_blank" href="https://github.com/GurbaniNow/api/blob/master/README.md" class="list-group-item">
+					<i class="fas fa-code fa-fw" aria-hidden="true"></i>
+					GurbaniNow API Docs
+				</a>
+				<a target="_blank" href="https://github.com/GurbaniNow/web" class="list-group-item">
+					<i class="fab fa-github fa-fw" aria-hidden="true"></i>
+					GurbaniNow/web
+				</a>
+				<a target="_blank" href="https://github.com/GurbaniNow/gurmukhi-fonts" class="list-group-item">
+					<i class="fab fa-github fa-fw" aria-hidden="true"></i>
+					GurbaniNow/gurmukhi-fonts
+				</a>
+			</ul>
+		  </div>
+		  <div class="col-sm-6">
+			<h4 style="text-align: center;">Shabad OS</h4>
+			<ul class="list-group">
+				<a target="_blank" href="https://shabados.com/" class="list-group-item">
+					<i class="fas fa-link fa-fw" aria-hidden="true"></i>
+					Website
+				</a>
+				<a target="_blank" href="https://github.com/ShabadOS/database" class="list-group-item">
+					<i class="fab fa-github fa-fw" aria-hidden="true"></i>
+					ShabadOS/database
+				</a>
+				<a target="_blank" href="https://github.com/ShabadOS/gurmukhi-utils" class="list-group-item">
+					<i class="fab fa-github fa-fw" aria-hidden="true"></i>
+					ShabadOS/gurmukhi-utils
+				</a>
+			</ul>
+		  </div>
+		</div>
+		<hr>
 	</div>
 	<div style="text-align: center;" class="text-muted">GurbaniNow &copy; 2015-2018 GurbaniNow Dev Team. All Rights Reserved.</div>
 	<div style="text-align: center;" class="text-muted"><a href="/about/terms">Terms of Use</a>&nbsp;-&nbsp;<a href="/about/privacy">Privacy Policy</a>&nbsp;-&nbsp;<a href="https://github.com/GurbaniNow/web/blob/master/LICENSE">Open Source</a></div>
